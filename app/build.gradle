@@ -39,6 +39,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    buildFeatures {
+        dataBinding true
+    }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -79,10 +84,25 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.google.code.gson:gson:2.9.0'
 
+    // Custom Font
+    implementation 'io.github.inflationx:calligraphy3:3.1.1'
+    implementation 'io.github.inflationx:viewpump:2.0.3'
+
     // Image
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     kapt 'com.github.bumptech.glide:compiler:4.12.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'id.zelory:compressor:3.0.1'
     api 'com.otaliastudios:cameraview:2.7.1'
+
+    // Location
+    implementation 'com.yayandroid:LocationManager:2.4.1'
+
+    // Permission
+    implementation 'com.karumi:dexter:6.2.3'
+
+    // QR Code
+
+    // Logger
+    implementation 'com.orhanobut:logger:2.2.0'
 }

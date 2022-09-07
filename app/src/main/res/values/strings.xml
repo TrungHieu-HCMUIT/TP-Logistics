@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">TPLogisticsApplication</string>
+
+    <!-- Alert -->
+    <string name="alert_msg_an_error_has_occurred">An error has occurred</string>
+    <string name="alert_msg_no_data">No Data</string>
+    <string name="alert_msg_download_successful">Download successful!</string>
+    <string name="alert_msg_upload_successful">Upload successful!</string>
+    <string name="alert_msg_account_conflict">
+        Your account is logged in on another device.\nThis account will be logged out on current device.
+    </string>
+    <string name="alert_msg_connection_error">No internet connection. Please try again.</string>
+    <string name="alert_btn_positive">OK</string>
+    <string name="alert_btn_negative">Cancel</string>
+    <string name="alert_btn_go_to_settings">Settings</string>
+    <string name="alert_btn_yes">Yes</string>
+    <string name="alert_btn_no">No</string>
+    <string name="alert_btn_next">Next</string>
+    <string name="alert_btn_continue">Continue</string>
+    <string name="alert_btn_reset">Reset</string>
+
+    <!-- Permission -->
+    <string name="permission_msg">Please accept all permissions to continue using this app</string>
+
+
 </resources>

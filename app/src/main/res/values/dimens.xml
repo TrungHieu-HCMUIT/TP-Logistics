@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Layout -->
+    <dimen name="layout_padding_default">@dimen/_24sdp</dimen>
+    <dimen name="layout_margin_default">@dimen/_16sdp</dimen>
+    <dimen name="layout_border_top">@dimen/_56sdp</dimen>
+    <dimen name="layout_border_top_less">@dimen/_36sdp</dimen>
+    <dimen name="layout_border_top_negative">@dimen/_minus48sdp</dimen>
+    <dimen name="layout_avatar_margin_top">@dimen/_32sdp</dimen>
+    <dimen name="layout_detail_padding_default">@dimen/_16sdp</dimen>
+    <dimen name="card_layout_padding_default">@dimen/_12sdp</dimen>
+    <dimen name="view_statistic_border">@dimen/_4sdp</dimen>
+
+    <!-- Text -->
+    <dimen name="text_title">@dimen/_18ssp</dimen>
+    <dimen name="text_bigger">@dimen/_14ssp</dimen>
+    <dimen name="text_smaller">@dimen/_10ssp</dimen>
+    <dimen name="text_smallest">@dimen/_7ssp</dimen>
+    <dimen name="text_net_weight">@dimen/_25ssp</dimen>
+
+    <!-- Image -->
+    <dimen name="driver_avatar">@dimen/_100sdp</dimen>
+    <dimen name="driver_avatar_margin_top">@dimen/_48sdp</dimen>
+    <dimen name="driver_avatar_border_width">@dimen/_2sdp</dimen>
+    <dimen name="qr_image_big">@dimen/_220sdp</dimen>
+    <dimen name="qr_image_small">@dimen/_50sdp</dimen>
+
+    <!-- App -->
+    <dimen name="job_detail_drawable_start">@dimen/_15sdp</dimen>
+    <dimen name="job_detail_spacing_btw_2_col">@dimen/_16sdp</dimen>
+    <dimen name="map_peek_height">@dimen/_250sdp</dimen>
+
+</resources>

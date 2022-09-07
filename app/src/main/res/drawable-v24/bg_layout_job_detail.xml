@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@android:color/transparent" />
+
+    <item>
+
+        <shape android:shape="rectangle">
+
+            <solid android:color="@color/surface" />
+            <corners
+                android:topLeftRadius="@dimen/layout_border_top"
+                android:topRightRadius="@dimen/layout_border_top" />
+
+        </shape>
+
+    </item>
+
+</layer-list>

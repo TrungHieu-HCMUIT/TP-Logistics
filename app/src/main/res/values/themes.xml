@@ -1,16 +1,377 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <!-- Base application theme. -->
-    <style name="Theme.TPLogisticsApplication" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Base" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primaryVariant</item>
+        <item name="colorOnPrimary">@color/onPrimary</item>
+
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondaryVariant</item>
+        <item name="colorOnSecondary">@color/onSecondary</item>
+
+        <!-- Others -->
+        <item name="android:textColorPrimary">@color/textPrimary</item>
+        <item name="android:textColorSecondary">@color/textSecondary</item>
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/onError</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/onSurface</item>
+        <item name="android:colorBackground">@color/background</item>
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+
+        <!-- Ripple effect -->
+        <item name="colorControlHighlight">@color/primary</item>
+
+        <!-- View -->
+        <item name="android:spinnerStyle">@style/Spinner</item>
+
     </style>
+
+    <!-- For splashscreen -->
+    <style name="Theme.Splashscreen" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryNew</item>
+        <item name="colorPrimaryVariant">@color/primaryNew</item>
+        <item name="colorOnPrimary">@color/onPrimary</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondaryVariant</item>
+        <item name="colorOnSecondary">@color/onSecondary</item>
+
+        <!-- Others -->
+        <item name="android:textColorPrimary">@color/textPrimary</item>
+        <item name="android:textColorSecondary">@color/textSecondary</item>
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/onError</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/onSurface</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
+        <!-- Ripple effect -->
+        <item name="colorControlHighlight">@color/primary</item>
+
+        <!-- View -->
+        <item name="android:spinnerStyle">@style/Spinner</item>
+
+    </style>
+
+    <!-- Alert Dialog -->
+    <style name="Base.MaterialAlertDialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="android:colorAccent">@color/secondary</item>
+        <item name="android:textColor">@color/onSurface</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Base.Alert.PositiveButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Base.Alert.NegativeButton</item>
+    </style>
+
+    <style name="Base.Alert.PositiveButton" parent="@style/Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/onSecondary</item>
+        <item name="backgroundTint">@color/secondary</item>
+        <item name="rippleColor">@color/ripple</item>
+    </style>
+
+    <style name="Base.Alert.NegativeButton" parent="@style/Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="rippleColor">@color/ripple</item>
+    </style>
+
+    <!-- Date Picker -->
+    <style name="TPLogistics.DatePicker" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="materialCalendarHeaderToggleButton">@style/DatePicker.Header.ToggleButton</item>
+    </style>
+
+    <style name="DatePicker.Header.ToggleButton" parent="Widget.MaterialComponents.MaterialCalendar.HeaderToggleButton">
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <!-- Spinner -->
+    <style name="Spinner" parent="Widget.AppCompat.Spinner">
+        <item name="android:dropDownVerticalOffset">@dimen/_40sdp</item>
+        <item name="overlapAnchor">false</item>
+        <item name="android:popupBackground">@color/surface</item>
+    </style>
+
+    <!-- Parent Layout -->
+    <style name="RootLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@color/primary</item>
+    </style>
+
+    <style name="RootLayout.Padding" parent="RootLayout">
+        <item name="android:padding">@dimen/layout_padding_default</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="RootLayout.WrapHeight" parent="RootLayout">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="RootLayout.WrapHeight.Padding" parent="RootLayout.WrapHeight">
+        <item name="android:padding">@dimen/layout_padding_default</item>
+    </style>
+
+    <style name="RootLayout.WrapHeight.CardLayout.Padding" parent="RootLayout.WrapHeight.Padding">
+        <item name="android:padding">@dimen/card_layout_padding_default</item>
+    </style>
+
+    <style name="TPLogistics.Layout.BorderTop" parent="RootLayout">
+        <item name="android:background">@drawable/bg_layout_top</item>
+        <item name="android:paddingTop">@dimen/layout_border_top</item>
+        <item name="android:paddingBottom">@dimen/_8sdp</item>
+        <item name="android:paddingStart">@dimen/layout_padding_default</item>
+        <item name="android:paddingEnd">@dimen/layout_padding_default</item>
+    </style>
+
+    <style name="TPLogistics.Layout.BorderTop.Less" parent="RootLayout">
+        <item name="android:background">@drawable/bg_layout_top_less_border</item>
+        <item name="android:paddingTop">@dimen/layout_border_top_less</item>
+        <item name="android:paddingBottom">@dimen/_8sdp</item>
+        <item name="android:paddingStart">@dimen/layout_padding_default</item>
+        <item name="android:paddingEnd">@dimen/layout_padding_default</item>
+    </style>
+
+    <style name="TPLogistics.Layout.BorderTop.NoPadding" parent="TPLogistics.Layout.BorderTop">
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+    <style name="TPLogistics.Layout.BorderTop.Less.NoPadding" parent="TPLogistics.Layout.BorderTop.Less">
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+    <style name="TPLogistics.Layout.BorderTop.JobDetail" parent="TPLogistics.Layout.BorderTop.NoPadding">
+        <item name="android:background">@drawable/bg_layout_job_detail</item>
+        <item name="android:paddingTop">@dimen/layout_detail_padding_default</item>
+        <item name="android:paddingBottom">@dimen/_8sdp</item>
+        <item name="android:paddingStart">@dimen/layout_detail_padding_default</item>
+        <item name="android:paddingEnd">@dimen/layout_detail_padding_default</item>
+    </style>
+
+    <!-- Card View -->
+    <style name="Base.MaterialCardView" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardCornerRadius">@dimen/_8sdp</item>
+        <item name="cardBackgroundColor">@color/surface</item>
+        <item name="cardElevation">@dimen/_4sdp</item>
+    </style>
+
+    <style name="TPLogistics.MaterialCardView.VerifyCode" parent="Base.MaterialCardView">
+        <item name="android:layout_width">@dimen/_50sdp</item>
+        <item name="android:layout_height">@dimen/_50sdp</item>
+        <item name="cardBackgroundColor">@android:color/transparent</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <!-- Text View -->
+    <style name="Base.TextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">@dimen/_4sdp</item>
+    </style>
+
+    <style name="TPLogistics.TextAppearance.Primary" parent="Base.TextAppearance">
+        <item name="android:textColor">@color/textPrimary</item>
+    </style>
+
+    <style name="TPLogistics.TextAppearance.Secondary" parent="Base.TextAppearance">
+        <item name="android:textColor">@color/textSecondary</item>
+    </style>
+
+    <!-- Text Input -->
+    <style name="TPLogistics.TextInput.Layout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="hintTextColor">@color/textSecondary</item>
+        <item name="android:textColorHint">@color/textSecondary</item>
+        <item name="hintEnabled">true</item>
+        <item name="errorTextColor">@color/error</item>
+        <item name="boxStrokeWidth">@dimen/_1sdp</item>
+        <item name="boxStrokeColor">@color/til_stroke_color</item>
+        <item name="boxStrokeErrorColor">@color/error</item>
+        <item name="boxBackgroundColor">@color/surface</item>
+        <item name="passwordToggleDrawable">@drawable/ic_password</item>
+        <item name="endIconTint">@color/textPrimary</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+    </style>
+
+    <style name="TPLogistics.TextInput.EditText" parent="ThemeOverlay.MaterialComponents.TextInputEditText.FilledBox.Dense">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">text</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textColor">@color/edt_text_color</item>
+        <item name="android:textAppearance">@style/TPLogistics.TextAppearance.Primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+    </style>
+
+    <style name="TPLogistics.TextInput.Layout.Dropdown" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="boxStrokeColor">@color/til_stroke_color</item>
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+        <item name="boxStrokeWidth">@dimen/_1sdp</item>
+        <item name="endIconTint">@color/textSecondary</item>
+        <item name="endIconMode">dropdown_menu</item>
+    </style>
+
+    <style name="TPLogistics.TextInput.AutoComplete.Dropdown" parent="Widget.AppCompat.AutoCompleteTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TPLogistics.TextAppearance.Primary</item>
+        <item name="android:inputType">none</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:paddingTop">@dimen/_8sdp</item>
+        <item name="android:paddingBottom">@dimen/_8sdp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Button -->
+    <style name="TPLogistics.MaterialButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TPLogistics.TextAppearance.Primary</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">@dimen/_24sdp</item>
+        <item name="android:padding">@dimen/_12sdp</item>
+    </style>
+
+    <style name="TPLogistics.MaterialButton.Accent" parent="TPLogistics.MaterialButton">
+        <item name="backgroundTint">@color/btn_accent_bg</item>
+        <item name="android:textColor">@color/onSecondary</item>
+    </style>
+
+    <style name="TPLogistics.MaterialButton.Accent.Margin" parent="TPLogistics.MaterialButton.Accent">
+        <item name="android:layout_marginStart">@dimen/_24sdp</item>
+        <item name="android:layout_marginEnd">@dimen/_24sdp</item>
+        <item name="android:layout_marginTop">@dimen/layout_margin_default</item>
+        <item name="android:layout_marginBottom">@dimen/layout_margin_default</item>
+    </style>
+
+    <style name="TPLogistics.MaterialButton.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="strokeColor">@color/primary</item>
+        <item name="strokeWidth">@dimen/_1sdp</item>
+        <item name="cornerRadius">@dimen/_16sdp</item>
+        <item name="android:padding">@dimen/_12sdp</item>
+        <item name="android:textAppearance">@style/TPLogistics.TextAppearance.Primary</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TPLogistics.MaterialButton.Secondary.Grey" parent="TPLogistics.MaterialButton.Secondary">
+        <item name="backgroundTint">@color/surfaceSecondary</item>
+        <item name="strokeColor">@android:color/transparent</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+    <style name="TPLogistics.MaterialButton.Text" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TPLogistics.TextAppearance.Primary</item>
+        <item name="android:textColor">@color/btn_text</item>
+        <item name="android:padding">@dimen/_4sdp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="rippleColor">@color/ripple</item>
+        <item name="iconTint">@color/onSurface</item>
+        <item name="iconSize">@dimen/_16sdp</item>
+        <item name="iconPadding">@dimen/_8sdp</item>
+        <item name="iconGravity">start</item>
+        <item name="android:drawablePadding">@dimen/_8sdp</item>
+    </style>
+
+    <style name="TPLogistics.MaterialButton.Icon" parent="TPLogistics.MaterialButton.Text">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconTint">@null</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconSize">@dimen/_12sdp</item>
+    </style>
+
+    <!-- Checkbox -->
+    <style name="TPLogistics.Checkbox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TPLogistics.TextAppearance.Primary</item>
+        <item name="android:button">@null</item>
+        <item name="drawableStartCompat">@drawable/ic_checkbox</item>
+        <item name="android:drawablePadding">@dimen/_8sdp</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <!-- Radio Button -->
+    <style name="TPLogistics.Radio.NoButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TPLogistics.TextAppearance.Primary</item>
+        <item name="android:textColor">@color/rdo_no_button_text_color</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawablePadding">@dimen/_8sdp</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="TPLogistics.Radio.NoButton.ReversedTextColor" parent="TPLogistics.Radio.NoButton">
+        <item name="android:textColor">@color/rdo_text_color</item>
+    </style>
+
+    <style name="TPLogistics.Radio" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TPLogistics.TextAppearance.Primary</item>
+        <item name="android:textColor">@color/rdo_text_color</item>
+        <item name="android:button">@null</item>
+        <item name="drawableStartCompat">@drawable/ic_radio</item>
+        <item name="android:drawablePadding">@dimen/_8sdp</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <!-- Bottom Sheet -->
+    <style name="Base.BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/ModalBottomSheetDialog</item>
+    </style>
+
+    <style name="ModalBottomSheetDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>

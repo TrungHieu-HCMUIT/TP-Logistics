@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="progress"
+            type="Integer" />
+
+        <variable
+            name="fileIndex"
+            type="Integer" />
+
+        <variable
+            name="totalFiles"
+            type="Integer" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Base.MaterialCardView"
+        app:cardCornerRadius="@dimen/_16sdp">
+
+        <LinearLayout
+            style="@style/RootLayout.WrapHeight"
+            android:background="@color/surface"
+            android:padding="@dimen/_8sdp">
+
+            <include layout="@layout/spacing_vertical" />
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TPLogistics.TextAppearance.Primary"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@{title ?? ``}"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvProgressCount"
+                    style="@style/TPLogistics.TextAppearance.Primary"
+                    android:gravity="center|end"
+                    android:text="@{String.format(`%d/%d`, fileIndex ?? 1, totalFiles ?? 1)}"
+                    tools:text="1/1" />
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:progress="@{progress ?? 100}"
+                tools:progress="50" />
+
+            <include layout="@layout/spacing_vertical" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
