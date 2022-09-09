@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="codeList"
+            type="String[]" />
+
+        <variable
+            name="showKeyboardOnClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{showKeyboardOnClick}"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edtVerifyCode"
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="@dimen/_1sdp"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            tools:ignore="Autofill,LabelFor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <include
+                layout="@layout/widget_item_verify_code"
+                app:code="@{codeList.length >= 1 ? codeList[0] : ``}" />
+
+            <View
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="0dp" />
+
+            <include
+                layout="@layout/widget_item_verify_code"
+                app:code="@{codeList.length >= 2 ? codeList[1] : ``}" />
+
+            <View
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="0dp" />
+
+            <include
+                layout="@layout/widget_item_verify_code"
+                app:code="@{codeList.length >= 3 ? codeList[2] : ``}" />
+
+            <View
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="0dp" />
+
+            <include
+                layout="@layout/widget_item_verify_code"
+                app:code="@{codeList.length >= 4 ? codeList[3] : ``}" />
+
+            <View
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="0dp" />
+
+            <include
+                layout="@layout/widget_item_verify_code"
+                app:code="@{codeList.length >= 5 ? codeList[4] : ``}" />
+
+            <View
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="0dp" />
+
+            <include
+                layout="@layout/widget_item_verify_code"
+                app:code="@{codeList.length >= 6 ? codeList[5] : ``}" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

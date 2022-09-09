@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="code"
+            type="String" />
+
+    </data>
+
+    <TextView
+        style="@style/TPLogistics.TextAppearance.Primary"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_textview_bottom_line_primary"
+        android:ems="1"
+        android:gravity="center"
+        android:text="@{code ?? ``}"
+        android:textSize="@dimen/_25ssp"
+        android:textStyle="bold"
+        tools:text="1" />
+
+</layout>
