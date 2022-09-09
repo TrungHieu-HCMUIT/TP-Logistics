@@ -35,7 +35,7 @@
         android:theme="@style/Theme.Base"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.screens.intro.IntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

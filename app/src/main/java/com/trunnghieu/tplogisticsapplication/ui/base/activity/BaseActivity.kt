@@ -115,10 +115,10 @@ abstract class BaseActivity<T : ViewDataBinding, VM : BaseViewModel> : AppCompat
                 }
             }
 
-        // [VERSION 1.6]
-        loadDefaultAppLanguage(
-            TPLogisticsConst.AppLanguage.values().find { it.code == defaultAppLanguage }!!
-        )
+        // TODO: Load default language
+//        loadDefaultAppLanguage(
+//            TPLogisticsConst.AppLanguage.values().find { it.code == defaultAppLanguage }!!
+//        )
 
         // Init
         initView()

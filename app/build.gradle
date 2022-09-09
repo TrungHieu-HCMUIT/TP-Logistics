@@ -101,8 +101,9 @@ dependencies {
     // Permission
     implementation 'com.karumi:dexter:6.2.3'
 
-    // QR Code
-
     // Logger
     implementation 'com.orhanobut:logger:2.2.0'
+
+    // Lottie animation
+    implementation 'com.airbnb.android:lottie:3.7.0'
 }
