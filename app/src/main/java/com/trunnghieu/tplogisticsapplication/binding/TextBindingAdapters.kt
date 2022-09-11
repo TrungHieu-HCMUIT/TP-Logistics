@@ -1,6 +1,8 @@
 package com.trunnghieu.tplogisticsapplication.binding
 
 import android.graphics.Typeface
+import android.os.Build
+import android.text.Html
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
 import android.widget.TextView
@@ -28,7 +30,11 @@ fun showItalicBoldWithDefaultBold(textView: TextView, showItalicBold: Boolean) {
 
 @BindingAdapter("htmlText")
 fun setHtmlText(textView: TextView, htmlText: String) {
-    textView.text = HtmlCompat.fromHtml(htmlText, HtmlCompat.FROM_HTML_MODE_LEGACY)
+    textView.text = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+        Html.fromHtml(htmlText, Html.FROM_HTML_MODE_COMPACT)
+    } else {
+        Html.fromHtml(htmlText)
+    }
 }
 
 @BindingAdapter("passwordToggleEnabled")

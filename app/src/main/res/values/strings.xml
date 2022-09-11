@@ -39,6 +39,26 @@
     </string>
     <string name="login_err_invalid_login_info">Invalid username or password. Please enter the correct username and password</string>
 
+    <!-- Reset Password -->
+    <string name="reset_pass_title">Reset Password</string>
+    <string name="reset_pass_switch">Reset Password by User ID</string>
+    <string name="reset_pass_msg_for_driver">Please enter your Phone Number to receive a temporary password.</string>
+    <string name="reset_pass_msg_for_dr">Please enter your User ID to receive a temporary password.</string>
+    <string name="reset_pass_btn_send">Send</string>
+    <string name="reset_pass_msg_2">
+        Thank you! We have sent a temporary password via SMS to your registered phone number. Please use the temporary password to log in and change it to a new password.
+    </string>
+    <string name="reset_pass_btn_login">Login</string>
+    <string name="reset_pass_err_phone_number_is_empty">Phone Number are required and can not empty.</string>
+    <string name="reset_pass_err_user_id_is_empty">User ID are required and can not empty.</string>
+    <string name="reset_pass_resend_sms">Haven\'t received an SMS?</string>
+    <string name="reset_pass_tap_to_resend">
+        <p>
+        Tap here to <b>Resend SMS</b>
+        </p>
+    </string>
+    <string name="reset_pass_err_invalid_phone_number">Invalid username or user is not active</string>
+
     <!-- Menu -->
     <string name="menu_open" translatable="false">OPEN</string>
     <string name="menu_close" translatable="false">CLOSE</string>
