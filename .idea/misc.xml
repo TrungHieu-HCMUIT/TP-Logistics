@@ -20,6 +20,7 @@
         <entry key="app/src/main/res/drawable/sized_ic_switch.xml" value="0.1765" />
         <entry key="app/src/main/res/layout/activity_intro.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2760208129882813" />
+        <entry key="app/src/main/res/layout/activity_reset_password.xml" value="0.25" />
         <entry key="app/src/main/res/layout/dialog_message.xml" value="0.23052536231884058" />
         <entry key="app/src/main/res/layout/dialog_progress.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/item_language_menu.xml" value="0.2246376811594203" />
@@ -30,6 +31,8 @@
         <entry key="app/src/main/res/layout/view_app_name.xml" value="0.259963768115942" />
         <entry key="app/src/main/res/layout/view_error_message.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/view_input.xml" value="0.2246376811594203" />
+        <entry key="app/src/main/res/layout/view_toolbar.xml" value="0.2246376811594203" />
+        <entry key="app/src/main/res/layout/view_toolbar_thin.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/widget_item_verify_code.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/widget_verify_code.xml" value="0.37604166666666666" />
       </map>

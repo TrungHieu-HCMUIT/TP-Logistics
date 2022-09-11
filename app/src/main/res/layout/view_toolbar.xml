@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="leftIcon"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="leftIconOnClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="showLeftIcon"
+            type="Boolean" />
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="showRefresh"
+            type="Boolean" />
+
+        <variable
+            name="refreshOnClick"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <FrameLayout
+        style="@style/RootLayout.WrapHeight"
+        android:background="@color/primary"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingTop="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_16sdp">
+
+        <ImageButton
+            style="@style/TPLogistics.MaterialButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:onClick="@{leftIconOnClick}"
+            android:src="@{leftIcon ?? @drawable/ic_back}"
+            android:visibility="@{(showLeftIcon ?? true) ? View.VISIBLE : View.GONE}"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/ic_back" />
+
+        <TextView
+            style="@style/TPLogistics.TextAppearance.Primary"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingStart="@dimen/_42sdp"
+            android:paddingEnd="@dimen/_42sdp"
+            android:text="@{title ?? ``}"
+            android:textColor="@color/onPrimary"
+            android:textSize="@dimen/text_title"
+            android:textStyle="bold"
+            tools:text="Title" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_gravity="center|end"
+            android:onClick="@{refreshOnClick}"
+            android:scaleX="2.5"
+            android:scaleY="2.5"
+            android:visibility="@{(showRefresh ?? false) ? View.VISIBLE : View.GONE}"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="anims/ic_refresh.json"
+            app:lottie_loop="true" />
+
+    </FrameLayout>
+
+</layout>

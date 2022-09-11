@@ -89,7 +89,7 @@
                 android:background="@null"
                 android:button="@null"
                 android:checked="@={!vm.isDriver()}"
-                android:drawableEnd="@drawable/ic_switch_small"
+                android:drawableEnd="@drawable/ic_switch"
                 android:minWidth="0dp"
                 android:minHeight="0dp"
                 android:text="@string/login_switch"
