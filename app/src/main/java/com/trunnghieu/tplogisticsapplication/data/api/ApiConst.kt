@@ -1,6 +1,6 @@
 package com.trunnghieu.tplogisticsapplication.data.api
 
-import com.trunnghieu.tplogisticsapplication.utils.constant.Const
+import com.trunnghieu.tplogisticsapplication.utils.constants.Const
 
 object ApiConst {
 

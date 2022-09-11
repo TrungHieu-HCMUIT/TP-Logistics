@@ -2,7 +2,7 @@ package com.trunnghieu.tplogisticsapplication.data.api
 
 import com.trunnghieu.tplogisticsapplication.data.api.helper.ApiLogger
 import com.trunnghieu.tplogisticsapplication.data.api.helper.HeaderInterceptor
-import com.trunnghieu.tplogisticsapplication.utils.constant.Const
+import com.trunnghieu.tplogisticsapplication.utils.constants.Const
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
 import okhttp3.logging.HttpLoggingInterceptor

@@ -1,7 +1,4 @@
-package com.trunnghieu.tplogisticsapplication.utils.constant
-
-import android.os.Build
-import com.trunnghieu.tplogisticsapplication.R
+package com.trunnghieu.tplogisticsapplication.utils.constants
 
 object TPLogisticsConst {
 

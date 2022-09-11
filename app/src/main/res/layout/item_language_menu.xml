@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.login.language.LanguageMenu" />
+
+        <variable
+            name="selected"
+            type="Boolean" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Base.MaterialCardView"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            style="@style/RootLayout.WrapHeight"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/_6sdp"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:background="@{item.languageIcon}"
+                tools:background="@drawable/img_lang_en"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                style="@style/TPLogistics.TextAppearance.Primary"
+                android:text="@{item.language}"
+                android:textColor="@{selected? @color/primary : @color/textSecondary}"
+                android:textStyle="bold"
+                tools:text="English" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

@@ -1,8 +1,8 @@
 package com.trunnghieu.tplogisticsapplication.ui.location
 
 import com.google.android.gms.location.LocationRequest
-import com.trunnghieu.tplogisticsapplication.utils.constant.Const
-import com.trunnghieu.tplogisticsapplication.utils.constant.TPLogisticsConst
+import com.trunnghieu.tplogisticsapplication.utils.constants.Const
+import com.trunnghieu.tplogisticsapplication.utils.constants.TPLogisticsConst
 import com.yayandroid.locationmanager.LocationManager
 import com.yayandroid.locationmanager.configuration.DefaultProviderConfiguration
 import com.yayandroid.locationmanager.configuration.GooglePlayServicesConfiguration

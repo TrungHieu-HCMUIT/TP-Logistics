@@ -326,7 +326,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAppearance">@style/TPLogistics.TextAppearance.Primary</item>
         <item name="android:button">@null</item>
-        <item name="drawableStartCompat">@drawable/ic_checkbox</item>
+        <item name="drawableStartCompat">@drawable/ic_checkbox_small</item>
         <item name="android:drawablePadding">@dimen/_8sdp</item>
         <item name="android:background">?attr/selectableItemBackground</item>
     </style>

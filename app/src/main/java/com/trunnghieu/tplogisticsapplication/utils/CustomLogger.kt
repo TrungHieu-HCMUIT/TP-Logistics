@@ -2,7 +2,7 @@ package com.trunnghieu.tplogisticsapplication.utils
 
 
 import com.orhanobut.logger.Logger
-import com.trunnghieu.tplogisticsapplication.utils.constant.Const
+import com.trunnghieu.tplogisticsapplication.utils.constants.Const
 
 object CustomLogger {
 

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="enabled"
+            type="Boolean" />
+
+        <variable
+            name="hint"
+            type="String" />
+
+        <variable
+            name="inputType"
+            type="Integer" />
+
+        <variable
+            name="maxLength"
+            type="Integer" />
+
+        <variable
+            name="text"
+            type="String" />
+
+        <variable
+            name="suffixText"
+            type="String" />
+
+        <variable
+            name="passwordToggleEnabled"
+            type="Boolean" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/RootLayout.WrapHeight"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:background="@color/surface">
+
+        <TextView
+            style="@style/TPLogistics.TextAppearance.Secondary"
+            android:fontFamily="@font/sfprodisplay_regular"
+            android:text="@{hint}"
+            tools:text="Hint" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout"
+            style="@style/TPLogistics.TextInput.Layout"
+            app:passwordToggleDrawable="@drawable/ic_password_small"
+            app:passwordToggleEnabled="@{passwordToggleEnabled ?? false}"
+            app:passwordToggleTint="@color/onSurface"
+            app:suffixText="@{suffixText ?? ``}"
+            app:suffixTextAppearance="@style/TPLogistics.TextAppearance.Secondary"
+            tools:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edittext"
+                style="@style/TPLogistics.TextInput.EditText"
+                android:enabled="@{enabled ?? true}"
+                android:inputType="@{inputType ?? 0x00000001}"
+                android:maxLength="@{maxLength ?? 9999999}"
+                android:padding="@dimen/_6sdp"
+                android:text="@={text}"
+                tools:text="0983 24 92 75" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+</layout>

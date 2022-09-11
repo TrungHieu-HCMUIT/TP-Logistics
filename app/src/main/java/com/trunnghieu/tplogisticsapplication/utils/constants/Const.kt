@@ -1,4 +1,4 @@
-package com.trunnghieu.tplogisticsapplication.utils.constant
+package com.trunnghieu.tplogisticsapplication.utils.constants
 
 object Const {
     const val DEBUG_MODE = true

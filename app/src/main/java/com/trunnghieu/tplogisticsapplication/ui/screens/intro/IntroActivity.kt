@@ -7,7 +7,9 @@ import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.trunnghieu.tplogisticsapplication.R
 import com.trunnghieu.tplogisticsapplication.databinding.ActivityIntroBinding
+import com.trunnghieu.tplogisticsapplication.extensions.navigateTo
 import com.trunnghieu.tplogisticsapplication.ui.base.activity.BaseActivity
+import com.trunnghieu.tplogisticsapplication.ui.screens.login.LoginActivity
 
 class IntroActivity : BaseActivity<ActivityIntroBinding, IntroVM>(), IntroUV {
     override fun layoutRes() = R.layout.activity_intro
@@ -38,9 +40,7 @@ class IntroActivity : BaseActivity<ActivityIntroBinding, IntroVM>(), IntroUV {
     }
 
     override fun checkPlayServices() {
-//        if (checkGooglePlayServices()) {
             startIntro()
-//        }
     }
 
     override fun stopIntro() {
@@ -53,25 +53,9 @@ class IntroActivity : BaseActivity<ActivityIntroBinding, IntroVM>(), IntroUV {
             addAnimatorUpdateListener { animator ->
                 stopIntro()
                 animator.doOnEnd {
-//                    navigateTo(LoginActivity::class.java, true)
-                    Log.d("DebugMode", "done animation")
+                    navigateTo(LoginActivity::class.java, true)
                 }
             }
         }
-    }
-
-    private fun checkGooglePlayServices(): Boolean {
-        val googleApiAvailability: GoogleApiAvailability = GoogleApiAvailability.getInstance()
-        val resultCode: Int = googleApiAvailability.isGooglePlayServicesAvailable(this)
-        if (resultCode != ConnectionResult.SUCCESS) {
-            if (googleApiAvailability.isUserResolvableError(resultCode)) {
-                if (errorDialog == null) {
-                    errorDialog = googleApiAvailability.getErrorDialog(this, resultCode, 2404)
-                    errorDialog?.setCancelable(false)
-                }
-                if (errorDialog?.isShowing == false) errorDialog?.show()
-            }
-        }
-        return resultCode == ConnectionResult.SUCCESS
     }
 }

@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">TPLogisticsApplication</string>
+    <string name="app_version">Version %s</string>
 
     <!-- Alert -->
     <string name="alert_msg_an_error_has_occurred">An error has occurred</string>
@@ -22,5 +23,40 @@
     <!-- Permission -->
     <string name="permission_msg">Please accept all permissions to continue using this app</string>
 
+    <!-- Login -->
+    <string name="login_title">Login</string>
+    <string name="login_country_code">Country Code</string>
+    <string name="login_phone_number">Phone Number</string>
+    <string name="login_password">Password</string>
+    <string name="login_remember_me">Remember me</string>
+    <string name="login_forgot_password">Forgot password?</string>
+    <string name="login_btn">Login</string>
+    <string name="login_err_phone_number_password_is_empty">
+        Login failed. Phone Number and Password are required and can not empty.
+    </string>
+    <string name="login_err_user_id_password_is_empty">
+        Login failed. User ID and Password are required and can not empty.
+    </string>
+    <string name="login_err_invalid_login_info">Invalid username or password. Please enter the correct username and password</string>
 
+    <!-- Menu -->
+    <string name="menu_open" translatable="false">OPEN</string>
+    <string name="menu_close" translatable="false">CLOSE</string>
+    <string name="menu_job_history">Job History</string>
+    <string name="menu_dr_history">History Overview</string>
+    <string name="menu_account_settings">Account Settings</string>
+    <string name="menu_language">Languages</string>
+    <string name="menu_lang_en">English</string>
+    <string name="menu_lang_vn">Vietnamese</string>
+    <string name="menu_btn_logout">Log Out</string>
+
+    <!-- Connectivity services -->
+    <string name="connectivity_services_msg_location_disabled">Please turn on Location Services!</string>
+    <string name="connectivity_services_msg_network_no_connected">Your device is not connected to the cellular network!</string>
+
+
+    <!-- ////// RECEIVER / DISPATCHER ////// -->
+    <!-- Login -->
+    <string name="login_switch">Login as Dispatcher/Receiver</string>
+    <string name="login_user_id">User ID</string>
 </resources>

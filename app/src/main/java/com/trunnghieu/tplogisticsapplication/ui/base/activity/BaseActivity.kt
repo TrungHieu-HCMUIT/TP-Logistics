@@ -27,7 +27,7 @@ import com.trunnghieu.tplogisticsapplication.ui.base.dialog.AppAlertDialog
 import com.trunnghieu.tplogisticsapplication.ui.base.dialog.AppLoadingDialog
 import com.trunnghieu.tplogisticsapplication.ui.base.viewmodel.BaseViewModel
 import com.trunnghieu.tplogisticsapplication.ui.base.viewmodel.ViewState
-import com.trunnghieu.tplogisticsapplication.utils.constant.TPLogisticsConst
+import com.trunnghieu.tplogisticsapplication.utils.constants.TPLogisticsConst
 import com.trunnghieu.tplogisticsapplication.utils.helper.AppPreferences
 import com.trunnghieu.tplogisticsapplication.utils.helper.LocaleHelper
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
