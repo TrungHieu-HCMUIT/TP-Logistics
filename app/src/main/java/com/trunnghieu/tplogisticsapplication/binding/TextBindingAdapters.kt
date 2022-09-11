@@ -28,15 +28,6 @@ fun showItalicBoldWithDefaultBold(textView: TextView, showItalicBold: Boolean) {
     textView.setTypeface(null, Typeface.BOLD)
 }
 
-@BindingAdapter("htmlText")
-fun setHtmlText(textView: TextView, htmlText: String) {
-    textView.text = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-        Html.fromHtml(htmlText, Html.FROM_HTML_MODE_COMPACT)
-    } else {
-        Html.fromHtml(htmlText)
-    }
-}
-
 @BindingAdapter("passwordToggleEnabled")
 fun setPasswordToggleEnabled(textInputLayout: TextInputLayout, passwordToggleEnabled: Boolean) {
     if (passwordToggleEnabled)

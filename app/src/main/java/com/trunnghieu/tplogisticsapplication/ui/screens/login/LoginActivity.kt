@@ -1,5 +1,6 @@
 package com.trunnghieu.tplogisticsapplication.ui.screens.login
 
+import android.text.method.PasswordTransformationMethod
 import com.trunnghieu.tplogisticsapplication.R
 import com.trunnghieu.tplogisticsapplication.databinding.ActivityLoginBinding
 import com.trunnghieu.tplogisticsapplication.extensions.navigateTo
@@ -23,7 +24,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginVM>(), LoginUV{
     }
 
     override fun initView() {
-        
+        binding.inputPassword.edittext.transformationMethod = PasswordTransformationMethod()
     }
 
     override fun initData() {

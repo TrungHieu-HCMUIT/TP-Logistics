@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/drawable-v24/ic_password.xml" value="0.146" />
         <entry key="app/src/main/res/drawable-v24/ic_password_small.xml" value="0.1765" />
         <entry key="app/src/main/res/drawable-v24/ic_radio.xml" value="0.146" />
+        <entry key="app/src/main/res/drawable-xxhdpi/ic_password.xml" value="0.239" />
         <entry key="app/src/main/res/drawable/bg_textview_bottom_line.xml" value="0.2765" />
         <entry key="app/src/main/res/drawable/bg_textview_bottom_line_primary.xml" value="0.2765" />
         <entry key="app/src/main/res/drawable/ic_switch.xml" value="0.1765" />

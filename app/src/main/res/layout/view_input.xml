@@ -49,7 +49,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_input_layout"
             style="@style/TPLogistics.TextInput.Layout"
-            app:passwordToggleDrawable="@drawable/ic_password_small"
+            app:passwordToggleDrawable="@drawable/ic_password"
             app:passwordToggleEnabled="@{passwordToggleEnabled ?? false}"
             app:passwordToggleTint="@color/onSurface"
             app:suffixText="@{suffixText ?? ``}"
