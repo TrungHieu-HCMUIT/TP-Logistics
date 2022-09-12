@@ -56,27 +56,13 @@ abstract class BaseActivity<T : ViewDataBinding, VM : BaseViewModel> : AppCompat
     private var needShowLoading = false
     private var showLoadingJob: Job? = null
 
-    // [VERSION 1.6]
     private lateinit var defaultAppLanguage: String
     open fun loadDefaultAppLanguage(language: TPLogisticsConst.AppLanguage) = Unit
 
     override fun attachBaseContext(newBase: Context) {
-        // If defined app language contains phone language
-        // -> Use phone language as default
-        // If not
-        // -> Use English as default
-        defaultAppLanguage = AppPreferences.get().getString(
-            LocaleHelper.SELECTED_LANGUAGE,
-            if (
-                TPLogisticsConst.AppLanguage.values().any {
-                    it.code == LocaleHelper.getLanguageFromLocale()
-                }
-            ) {
-                LocaleHelper.getLanguageFromLocale()
-            } else {
-                TPLogisticsConst.AppLanguage.ENGLISH.code
-            }
-        )
+        // Use English as default
+        defaultAppLanguage = TPLogisticsConst.AppLanguage.ENGLISH.code
+
         super.attachBaseContext(
             ViewPumpContextWrapper.wrap(
                 LocaleHelper.setLocale(
@@ -115,10 +101,9 @@ abstract class BaseActivity<T : ViewDataBinding, VM : BaseViewModel> : AppCompat
                 }
             }
 
-        // TODO: Load default language
-//        loadDefaultAppLanguage(
-//            TPLogisticsConst.AppLanguage.values().find { it.code == defaultAppLanguage }!!
-//        )
+        loadDefaultAppLanguage(
+            TPLogisticsConst.AppLanguage.values().find { it.code == defaultAppLanguage }!!
+        )
 
         // Init
         initView()

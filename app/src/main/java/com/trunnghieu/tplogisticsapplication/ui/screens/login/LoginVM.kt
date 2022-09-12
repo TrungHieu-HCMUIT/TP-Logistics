@@ -39,6 +39,36 @@ class LoginVM : BaseRepoViewModel<AccountRepo, LoginUV>() {
      * Request login when touch on Login button
      */
     fun login() {
+        requestLogin()
+    }
+
+    fun requestLogin(savedUserName: String? = null, savedPassword: String? = null) {
+        errorMessage.value = ""
+        uiCallback?.resetValidate()
+
+        val phoneNumber = (
+                if (savedUserName.isNullOrEmpty())
+                    phoneNumber.value
+                else
+                    savedUserName
+                )?.trim()
+        val password = if (savedPassword.isNullOrEmpty()) password.value else savedPassword
+
+        if (phoneNumber?.isEmpty() == true
+            && password?.isEmpty() == true
+        ) {
+            uiCallback?.phoneNumberAndPasswordIsEmpty()
+            return
+        }
+
+        if (phoneNumber?.isEmpty() == true) {
+            uiCallback?.phoneNumberIsEmpty()
+            return
+        }
+        if (password?.isEmpty() == true) {
+            uiCallback?.passwordIsEmpty()
+            return
+        }
     }
 
     /**

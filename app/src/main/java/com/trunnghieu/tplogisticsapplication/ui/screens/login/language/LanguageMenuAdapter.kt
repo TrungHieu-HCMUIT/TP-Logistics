@@ -23,7 +23,11 @@ class LanguageMenuAdapter(
                 context.getString(R.string.menu_lang_en),
                 ContextCompat.getDrawable(context, R.drawable.img_lang_en)!!
             ),
-            //TODO: Add Vietnamese
+            LanguageMenu(
+                TPLogisticsConst.AppLanguage.VIETNAMESE,
+                context.getString(R.string.menu_lang_vn),
+                ContextCompat.getDrawable(context, R.drawable.img_lang_vn)!!
+            ),
         )
         submitList(languages)
     }

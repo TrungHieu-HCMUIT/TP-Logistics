@@ -14,8 +14,7 @@ object TPLogisticsConst {
 
     enum class AppLanguage(val code: String) {
         ENGLISH("en"),
-        CHINESE("zh"),
-        MALAY("ms")
+        VIETNAMESE("vn"),
     }
 
     object AppDateTime {
