@@ -1,5 +1,6 @@
 package com.trunnghieu.tplogisticsapplication.ui.screens.reset_password
 
+import androidx.core.content.ContextCompat
 import com.trunnghieu.tplogisticsapplication.R
 import com.trunnghieu.tplogisticsapplication.databinding.ActivityResetPasswordBinding
 import com.trunnghieu.tplogisticsapplication.ui.base.activity.BaseActivity
@@ -29,5 +30,27 @@ class ResetPasswordActivity : BaseActivity<ActivityResetPasswordBinding, ResetPa
 
     override fun initAction() {
 
+    }
+
+    override fun resetValidate() {
+        viewModel.errorMessage.value = ""
+        binding.apply {
+            val normalStrokeColor =
+                ContextCompat.getColorStateList(context, R.color.til_stroke_color)!!
+            inputPhone.textInputLayout.setBoxStrokeColorStateList(normalStrokeColor)
+        }
+    }
+
+    override fun phoneNumberIsEmpty() {
+        viewModel.errorMessage.value = if (viewModel.isDriver.value == true)
+            context.getString(R.string.reset_pass_err_phone_number_is_empty)
+        else
+            context.getString(R.string.reset_pass_err_user_id_is_empty)
+        binding.apply {
+            val errorStrokeColor =
+                ContextCompat.getColorStateList(context, R.color.til_error_stroke_color)!!
+            inputPhone.textInputLayout.setBoxStrokeColorStateList(errorStrokeColor)
+            inputPhone.edittext.requestFocus()
+        }
     }
 }

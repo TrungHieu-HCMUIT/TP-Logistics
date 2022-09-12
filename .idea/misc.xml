@@ -19,6 +19,7 @@
         <entry key="app/src/main/res/drawable/ic_switch.xml" value="0.1765" />
         <entry key="app/src/main/res/drawable/ic_switch_small.xml" value="0.1765" />
         <entry key="app/src/main/res/drawable/sized_ic_switch.xml" value="0.1765" />
+        <entry key="app/src/main/res/font/values.xml" value="0.22447916666666667" />
         <entry key="app/src/main/res/layout/activity_intro.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2760208129882813" />
         <entry key="app/src/main/res/layout/activity_reset_password.xml" value="0.25" />

@@ -27,4 +27,31 @@ class ResetPasswordVM : BaseRepoViewModel<AccountRepo, ResetPasswordUV>() {
         }
         uiCallback?.onBackPressed()
     }
+
+    /**
+     * Validate password & make a request reset password api
+     */
+    fun validateAndRequestResetPassword() {
+        errorMessage.value = ""
+        uiCallback?.resetValidate()
+        val phoneNumber = userId.value
+        if (phoneNumber?.isEmpty() == true) {
+            uiCallback?.phoneNumberIsEmpty()
+            return
+        }
+
+        if (alreadyRequestResetPassword.value == false) {
+            requestResetPassword()
+        } else {
+            // Back to Login screen
+            uiCallback?.onBackPressed()
+        }
+    }
+
+    /**
+     * Request reset password
+     */
+    fun requestResetPassword() {
+
+    }
 }

@@ -34,9 +34,7 @@ class TPLogisticsApp : Application() {
                 .addInterceptor(
                     CalligraphyInterceptor(
                         CalligraphyConfig.Builder()
-                            // TODO: Set font attribute
-//                            .setDefaultFontPath("fonts/sfprodisplay_*.ttf")
-//                            .setFontAttrId(R.attr.fontPath)
+                            .setDefaultFontPath("fonts/sfprodisplay_*.ttf")
                             .build()
                     )
                 )
