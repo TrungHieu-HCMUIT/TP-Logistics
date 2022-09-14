@@ -43,7 +43,7 @@
 
                     <TextView
                         style="@style/TPLogistics.TextAppearance.Primary"
-                        android:text="Driver's Name"
+                        android:text="Trung Hieu"
                         android:textStyle="bold"
                         tools:text="Driver's Name" />
 

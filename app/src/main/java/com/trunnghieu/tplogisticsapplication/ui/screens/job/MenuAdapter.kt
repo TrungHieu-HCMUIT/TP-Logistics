@@ -19,16 +19,6 @@ class MenuAdapter(
 
     private val loginPermission = AppPreferences.get().getBoolean(AppPrefs.LOGIN.PERMISSION)
 
-    private class DiffCallback : DiffUtil.ItemCallback<HamburgerMenu>() {
-        override fun areItemsTheSame(oldItem: HamburgerMenu, newItem: HamburgerMenu): Boolean {
-            return oldItem.type_id == newItem.type_id
-        }
-
-        override fun areContentsTheSame(oldItem: HamburgerMenu, newItem: HamburgerMenu): Boolean {
-            return oldItem == newItem
-        }
-    }
-
     override fun getItemViewType(position: Int) = R.layout.item_menu
 
     override fun onBindViewHolder(holder: BaseBindingViewHolder<HamburgerMenu>, position: Int) {
@@ -62,6 +52,16 @@ class MenuAdapter(
                     }
                 }
             }
+        }
+    }
+
+    private class DiffCallback : DiffUtil.ItemCallback<HamburgerMenu>() {
+        override fun areItemsTheSame(oldItem: HamburgerMenu, newItem: HamburgerMenu): Boolean {
+            return oldItem.type_id == newItem.type_id
+        }
+
+        override fun areContentsTheSame(oldItem: HamburgerMenu, newItem: HamburgerMenu): Boolean {
+            return oldItem == newItem
         }
     }
 }

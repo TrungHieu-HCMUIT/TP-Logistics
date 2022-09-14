@@ -13,7 +13,8 @@ class VehiclePairingVM : BaseRepoViewModel<AccountRepo, VehiclePairingUV>() {
     }
 
     private val appPrefs = AppPreferences.get()
-    val isPaired = MutableLiveData(false)
+    // TODO: Fix here to false
+    val isPaired = MutableLiveData(true)
     val vehicleNumber = MutableLiveData("")
 
 
