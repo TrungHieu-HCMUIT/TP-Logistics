@@ -74,6 +74,21 @@
     <string name="connectivity_services_msg_location_disabled">Please turn on Location Services!</string>
     <string name="connectivity_services_msg_network_no_connected">Your device is not connected to the cellular network!</string>
 
+    <!-- Vehicle Pairing -->
+    <string name="vehicle_pairing_title">Vehicle Pairing</string>
+    <string name="vehicle_pairing_phone">Phone</string>
+    <string name="vehicle_pairing_vehicle_number">Vehicle Number</string>
+    <string name="vehicle_pairing_scan_msg">Please scan QR code to pair vehicle!</string>
+    <string name="vehicle_pairing_btn_confirm">Confirm</string>
+    <string name="vehicle_pairing_btn_pair_again">Pair Again</string>
+
+    <!-- Start Work -->
+    <string name="start_work_title">Start Work</string>
+    <string name="start_work_driver_phone">Phone</string>
+    <string name="start_work_vehicle_number">Vehicle Number</string>
+    <string name="start_work_button">Start Work</string>
+    <string name="start_work_msg_no_job_available">You don\'t have any other job for today.</string>
+    <string name="start_work_btn_end_work">End Work</string>
 
     <!-- ////// RECEIVER / DISPATCHER ////// -->
     <!-- Login -->

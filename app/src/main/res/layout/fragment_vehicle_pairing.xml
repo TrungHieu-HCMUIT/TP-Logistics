@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.vehicle_pairing.VehiclePairingVM" />
+
+        <variable
+            name="jobVM"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout style="@style/RootLayout">
+
+        <LinearLayout style="@style/RootLayout">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/view_toolbar"
+                app:leftIcon="@{@drawable/ic_hamburger}"
+                app:title="@{@string/vehicle_pairing_title}"
+                app:leftIconOnClick="@{() -> jobVM.openMenu()}"/>
+
+            <LinearLayout
+                style="@style/TPLogistics.Layout.BorderTop"
+                android:baselineAligned="false"
+                android:paddingBottom="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/driver_avatar_margin_top"
+                    android:gravity="top|center"
+                    android:orientation="vertical"
+                    tools:ignore="InefficientWeight,Suspicious0dp">
+
+                    <TextView
+                        style="@style/TPLogistics.TextAppearance.Primary"
+                        android:text="Driver's Name"
+                        android:textStyle="bold"
+                        tools:text="Driver's Name" />
+
+                    <TextView
+                        style="@style/TPLogistics.TextAppearance.Secondary"
+                        android:text="@string/vehicle_pairing_phone" />
+
+                    <TextView
+                        style="@style/TPLogistics.TextAppearance.Primary"
+                        android:text="0983 24 92 75"
+                        android:textStyle="bold"
+                        tools:text="0983 24 92 75" />
+
+                    <LinearLayout
+                        style="@style/RootLayout.WrapHeight"
+                        android:gravity="center"
+                        android:visibility="@{vm.isPaired() ? View.VISIBLE : View.GONE}">
+
+                        <TextView
+                            style="@style/TPLogistics.TextAppearance.Secondary"
+                            android:text="@string/vehicle_pairing_vehicle_number" />
+
+                        <TextView
+                            style="@style/TPLogistics.TextAppearance.Primary"
+                            android:text="51F-99.999"
+                            android:textStyle="bold"
+                            tools:text="51F-99.999" />
+
+                        <include layout="@layout/spacing_vertical" />
+
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/TPLogistics.MaterialButton.Accent"
+                            android:text="@string/start_work_button" />
+
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/TPLogistics.MaterialButton.Secondary"
+                            android:text="@string/vehicle_pairing_btn_pair_again" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RootLayout.WrapHeight"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginBottom="@dimen/_16sdp"
+                    android:gravity="center"
+                    android:visibility="@{vm.isPaired() ? View.GONE : View.VISIBLE}">
+
+                    <TextView
+                        style="@style/TPLogistics.TextAppearance.Primary"
+                        android:text="@string/vehicle_pairing_scan_msg" />
+
+                    <include layout="@layout/spacing_vertical" />
+
+<!--                    <com.budiyev.android.codescanner.CodeScannerView-->
+<!--                        android:id="@+id/code_scanner"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="@dimen/_250sdp"-->
+<!--                        app:autoFocusButtonVisible="false"-->
+<!--                        app:flashButtonVisible="false"-->
+<!--                        app:frameAspectRatioHeight="1"-->
+<!--                        app:frameColor="@color/primary"-->
+<!--                        app:frameCornersRadius="@dimen/_8sdp"-->
+<!--                        app:frameCornersSize="@dimen/_64sdp"-->
+<!--                        app:frameSize="0.98"-->
+<!--                        app:frameThickness="@dimen/_4sdp"-->
+<!--                        app:maskColor="@color/surface" />-->
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="@dimen/driver_avatar"
+            android:layout_height="@dimen/driver_avatar"
+            android:layout_marginTop="@dimen/driver_avatar_margin_top"
+            app:civ_border_color="@color/surface"
+            app:civ_border_width="@dimen/driver_avatar_border_width"
+            app:layout_anchor="@id/toolbar"
+            app:layout_anchorGravity="top|center" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

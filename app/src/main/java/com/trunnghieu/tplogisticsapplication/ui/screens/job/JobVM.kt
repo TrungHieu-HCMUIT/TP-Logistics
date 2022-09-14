@@ -90,6 +90,8 @@ class JobVM : BaseRepoViewModel<AccountRepo, JobUV>() {
                 )
             )
         )
+
+        uiCallback?.loadHamburgerMenu(hamburgerMenuList)
     }
 
     /**

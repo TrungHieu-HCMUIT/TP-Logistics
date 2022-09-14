@@ -6,5 +6,6 @@ import com.trunnghieu.tplogisticsapplication.ui.base.BaseUserView
 
 interface JobUV : BaseUserView {
     fun showMenu(show: Boolean)
+    fun loadHamburgerMenu(menuList: List<HamburgerMenu>)
     fun goToLogin()
 }
