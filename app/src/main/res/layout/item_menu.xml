@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.trunnghieu.tplogisticsapplication.utils.helper.LocaleHelper" />
+
+        <import type="com.trunnghieu.tplogisticsapplication.utils.constants.TPLogisticsConst.AppLanguage" />
+
+        <variable
+            name="item"
+            type="com.trunnghieu.tplogisticsapplication.data.repository.local.menu.HamburgerMenu" />
+
+        <variable
+            name="defaultLanguage"
+            type="String" />
+
+        <variable
+            name="showDivider"
+            type="Boolean" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Base.MaterialCardView"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:cardUseCompatPadding="false">
+
+        <LinearLayout style="@style/RootLayout.WrapHeight">
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:paddingStart="@dimen/layout_padding_default"
+                android:paddingTop="@dimen/_4sdp"
+                android:paddingEnd="@dimen/layout_padding_default"
+                android:paddingBottom="@dimen/_4sdp">
+
+                <TextView
+                    style="@style/TPLogistics.TextAppearance.Primary"
+                    android:layout_width="match_parent"
+                    android:gravity="start|center"
+                    android:padding="@dimen/_4sdp"
+                    android:text="@{item.title}"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    tools:text="Menu Item" />
+
+                <RadioGroup
+                    android:id="@+id/view_language"
+                    style="@style/RootLayout.WrapHeight"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:orientation="vertical"
+                    android:visibility="@{item.sub_menu.empty ? View.GONE : View.VISIBLE}">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rdo_lang_en"
+                        style="@style/TPLogistics.Radio.NoButton"
+                        android:checked="@{LocaleHelper.INSTANCE.languageFromLocale == AppLanguage.ENGLISH.code}"
+                        android:drawableStart="@drawable/img_lang_en"
+                        android:padding="@dimen/_4sdp"
+                        android:text="@string/menu_lang_en"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rdo_lang_vn"
+                        style="@style/TPLogistics.Radio.NoButton"
+                        android:checked="@{LocaleHelper.INSTANCE.languageFromLocale == AppLanguage.VIETNAMESE.code}"
+                        android:drawableStart="@drawable/img_lang_vn"
+                        android:padding="@dimen/_4sdp"
+                        android:text="@string/menu_lang_vn"
+                        android:textStyle="bold" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/primary"
+                android:visibility="@{(showDivider ?? false) ? View.VISIBLE : View.GONE}" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

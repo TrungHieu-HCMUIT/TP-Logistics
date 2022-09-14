@@ -3,8 +3,6 @@ package com.trunnghieu.tplogisticsapplication.ui.screens.intro
 import android.app.Dialog
 import android.util.Log
 import androidx.core.animation.doOnEnd
-import com.google.android.gms.common.ConnectionResult
-import com.google.android.gms.common.GoogleApiAvailability
 import com.trunnghieu.tplogisticsapplication.R
 import com.trunnghieu.tplogisticsapplication.databinding.ActivityIntroBinding
 import com.trunnghieu.tplogisticsapplication.extensions.navigateTo

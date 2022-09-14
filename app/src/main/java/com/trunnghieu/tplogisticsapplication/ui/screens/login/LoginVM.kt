@@ -69,6 +69,9 @@ class LoginVM : BaseRepoViewModel<AccountRepo, LoginUV>() {
             uiCallback?.passwordIsEmpty()
             return
         }
+
+        //TODO: Call api to login
+        uiCallback?.goToMain()
     }
 
     /**

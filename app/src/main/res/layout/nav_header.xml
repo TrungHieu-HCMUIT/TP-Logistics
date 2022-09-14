@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="closeMenuOnClick"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/RootLayout.WrapHeight"
+        android:background="@color/primary"
+        android:paddingStart="@dimen/_16sdp"
+        android:paddingTop="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_16sdp"
+        android:paddingBottom="@dimen/_16sdp">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/TPLogistics.MaterialButton.Icon"
+            android:onClick="@{closeMenuOnClick}"
+            app:icon="@drawable/ic_close" />
+
+    </LinearLayout>
+
+</layout>

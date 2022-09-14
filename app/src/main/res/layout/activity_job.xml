@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        style="@style/RootLayout"
+        tools:openDrawer="start">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/view_fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.trunnghieu.tplogisticsapplication.ui.widgets.MovableFloatingActionButton
+                android:id="@+id/btn_call_cso"
+                style="@style/Widget.MaterialComponents.FloatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/_16sdp"
+                android:padding="@dimen/_12sdp"
+                android:src="@drawable/ic_phone"
+                app:backgroundTint="@color/primary"
+                app:fabSize="normal" />
+
+        </FrameLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@android:color/transparent">
+
+            <LinearLayout
+                style="@style/RootLayout"
+                android:background="@android:color/transparent">
+
+                <include
+                    layout="@layout/nav_header"
+                    app:closeMenuOnClick="@{() -> vm.closeMenu()}" />
+
+                <LinearLayout
+                    style="@style/RootLayout"
+                    android:background="@color/surface">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:ignore="InefficientWeight"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/item_menu" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/TPLogistics.MaterialButton.Secondary"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:layout_marginBottom="@dimen/_16sdp"
+                        android:onClick="@{() -> vm.logOut()}"
+                        android:text="@string/menu_btn_logout" />
+
+                    <TextView
+                        style="@style/TPLogistics.TextAppearance.Secondary"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/_16sdp"
+                        android:text="@{@string/app_version(vm.appVersion)}"
+                        tools:text="Version 1.0" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.navigation.NavigationView>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</layout>

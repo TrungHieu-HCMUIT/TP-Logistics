@@ -8,7 +8,7 @@ interface LoginUV : BaseUserView {
 //    fun goToOverlaySetting()
     fun goToResetPassword()
 //    fun goToChangePassword()
-//    fun goToMain(termsConditionsAccepted: Boolean)
+    fun goToMain()
     fun resetValidate()
     fun phoneNumberAndPasswordIsEmpty()
     fun phoneNumberIsEmpty()

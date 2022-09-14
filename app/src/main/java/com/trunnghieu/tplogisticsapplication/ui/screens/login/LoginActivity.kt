@@ -7,6 +7,7 @@ import com.trunnghieu.tplogisticsapplication.R
 import com.trunnghieu.tplogisticsapplication.databinding.ActivityLoginBinding
 import com.trunnghieu.tplogisticsapplication.extensions.navigateTo
 import com.trunnghieu.tplogisticsapplication.ui.base.activity.BaseActivity
+import com.trunnghieu.tplogisticsapplication.ui.screens.job.JobActivity
 import com.trunnghieu.tplogisticsapplication.ui.screens.login.language.LanguagePopupMenu
 import com.trunnghieu.tplogisticsapplication.ui.screens.reset_password.ResetPasswordActivity
 import com.trunnghieu.tplogisticsapplication.utils.constants.TPLogisticsConst
@@ -49,6 +50,10 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginVM>(), LoginUV{
 
     override fun goToResetPassword() {
         navigateTo(ResetPasswordActivity::class.java)
+    }
+
+    override fun goToMain() {
+        navigateTo(JobActivity::class.java, true)
     }
 
     override fun resetValidate() {
