@@ -48,8 +48,14 @@
             android:name=".ui.screens.login.LoginActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
+
         <activity
             android:name=".ui.screens.reset_password.ResetPasswordActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+
+        <activity
+            android:name=".ui.screens.change_password.ChangePasswordActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
 

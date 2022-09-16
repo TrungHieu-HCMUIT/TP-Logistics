@@ -10,6 +10,7 @@ import com.trunnghieu.tplogisticsapplication.R
 import com.trunnghieu.tplogisticsapplication.databinding.FragmentAccountSettingsBinding
 import com.trunnghieu.tplogisticsapplication.ui.base.dialog.AppLoadingDialog
 import com.trunnghieu.tplogisticsapplication.ui.base.fragment.BaseFragment
+import com.trunnghieu.tplogisticsapplication.ui.screens.change_password.ChangePasswordActivity
 import com.trunnghieu.tplogisticsapplication.ui.screens.job.JobActivity
 import com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM
 import com.trunnghieu.tplogisticsapplication.utils.constants.TPLogisticsConst
@@ -68,7 +69,7 @@ class AccountSettingsFragment : BaseFragment<FragmentAccountSettingsBinding, Acc
     }
 
     override fun goToChangePassword() {
-//        startActivity(ChangePasswordActivity.newIntent(fragmentContext, true))
+        startActivity(ChangePasswordActivity.newIntent(fragmentContext, true))
     }
 
     override fun goToVerifyPhone(newPhoneNumber: String, expiresTimeInMinutes: Int) {

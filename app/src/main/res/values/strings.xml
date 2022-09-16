@@ -102,4 +102,17 @@
     <string name="account_settings_btn_save">Save</string>
     <string name="account_settings_msg_failed_to_upload_profile">Failed to upload Profile. Please try again</string>
 
+    <!-- Change Password -->
+    <string name="change_password_title">Change Password</string>
+    <string name="change_password_current_password">Current Password</string>
+    <string name="change_password_new_password">New Password</string>
+    <string name="change_password_confirm_password">Confirm Password</string>
+    <string name="change_password_btn_save">Save</string>
+    <string name="chang_password_err_new_password_not_match">The New Password do not match.</string>
+    <string name="change_password_err_current_password_incorrect">The Current Password is incorrect.</string>
+    <string name="change_password_err_new_password_must_different_current_password">
+        The New Password must be different from the Current Password.
+    </string>
+    <string name="change_password_msg_success">Password change successfully</string>
+
 </resources>
