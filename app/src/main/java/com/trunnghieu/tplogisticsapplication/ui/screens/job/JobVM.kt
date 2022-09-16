@@ -31,10 +31,6 @@ class JobVM : BaseRepoViewModel<AccountRepo, JobUV>() {
     private val appPrefs = AppPreferences.get()
     val appLanguage = LocaleHelper.getLanguageFromLocale()
 
-    val isDriverAccount = MutableLiveData(
-        appPrefs.getBoolean(AppPrefs.LOGIN.IS_DRIVER, false)
-    )
-
     /**
      * Show menu
      */
@@ -106,7 +102,7 @@ class JobVM : BaseRepoViewModel<AccountRepo, JobUV>() {
 
             }
             MenuType.ACCOUNT_SETTINGS.typeId -> {
-
+                uiCallback?.goToAccountSettings()
             }
             MenuType.DASHBOARD.typeId -> {
 

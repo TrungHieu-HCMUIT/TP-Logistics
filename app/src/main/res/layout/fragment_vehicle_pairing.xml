@@ -99,19 +99,19 @@
 
                     <include layout="@layout/spacing_vertical" />
 
-<!--                    <com.budiyev.android.codescanner.CodeScannerView-->
-<!--                        android:id="@+id/code_scanner"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="@dimen/_250sdp"-->
-<!--                        app:autoFocusButtonVisible="false"-->
-<!--                        app:flashButtonVisible="false"-->
-<!--                        app:frameAspectRatioHeight="1"-->
-<!--                        app:frameColor="@color/primary"-->
-<!--                        app:frameCornersRadius="@dimen/_8sdp"-->
-<!--                        app:frameCornersSize="@dimen/_64sdp"-->
-<!--                        app:frameSize="0.98"-->
-<!--                        app:frameThickness="@dimen/_4sdp"-->
-<!--                        app:maskColor="@color/surface" />-->
+                    <com.budiyev.android.codescanner.CodeScannerView
+                        android:id="@+id/code_scanner"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_250sdp"
+                        app:autoFocusButtonVisible="false"
+                        app:flashButtonVisible="false"
+                        app:frameAspectRatioHeight="1"
+                        app:frameColor="@color/primary"
+                        app:frameCornersRadius="@dimen/_8sdp"
+                        app:frameCornersSize="@dimen/_64sdp"
+                        app:frameSize="0.98"
+                        app:frameThickness="@dimen/_4sdp"
+                        app:maskColor="@color/surface" />
 
                 </LinearLayout>
 

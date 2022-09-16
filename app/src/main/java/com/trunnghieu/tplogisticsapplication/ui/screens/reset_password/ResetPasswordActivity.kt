@@ -42,10 +42,8 @@ class ResetPasswordActivity : BaseActivity<ActivityResetPasswordBinding, ResetPa
     }
 
     override fun phoneNumberIsEmpty() {
-        viewModel.errorMessage.value = if (viewModel.isDriver.value == true)
+        viewModel.errorMessage.value =
             context.getString(R.string.reset_pass_err_phone_number_is_empty)
-        else
-            context.getString(R.string.reset_pass_err_user_id_is_empty)
         binding.apply {
             val errorStrokeColor =
                 ContextCompat.getColorStateList(context, R.color.til_error_stroke_color)!!

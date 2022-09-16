@@ -9,7 +9,6 @@ object AppPrefs {
         const val PHONE_NUMBER = "LOGIN_PHONE_NUMBER"
         const val PASSWORD = "LOGIN_PASSWORD"
         const val DEVICE_ID = "LOGIN_DEVICE_ID"
-        const val IS_DRIVER = "LOGIN_IS_DRIVER"
         const val PERMISSION = "LOGIN_PERMISSION"
         const val ACCOUNT_PREFS = "ACCOUNT_PREFS"
         const val ALREADY_ACCEPT_TC = "ALREADY_ACCEPT_TC"

@@ -65,10 +65,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginVM>(), LoginUV{
     }
 
     override fun phoneNumberAndPasswordIsEmpty() {
-        viewModel.errorMessage.value = if (viewModel.isDriver.value == true)
+        viewModel.errorMessage.value =
             getString(R.string.login_err_phone_number_password_is_empty)
-        else
-            getString(R.string.login_err_user_id_password_is_empty)
         binding.apply {
             inputPhone.textInputLayout.setBoxStrokeColorStateList(errorStrokeColor)
             inputPassword.textInputLayout.setBoxStrokeColorStateList(errorStrokeColor)
@@ -77,10 +75,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginVM>(), LoginUV{
     }
 
     override fun phoneNumberIsEmpty() {
-        viewModel.errorMessage.value = if (viewModel.isDriver.value == true)
+        viewModel.errorMessage.value =
             getString(R.string.login_err_phone_number_password_is_empty)
-        else
-            getString(R.string.login_err_user_id_password_is_empty)
         binding.apply {
             inputPhone.textInputLayout.setBoxStrokeColorStateList(errorStrokeColor)
             inputPhone.edittext.requestFocus()
@@ -88,10 +84,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginVM>(), LoginUV{
     }
 
     override fun passwordIsEmpty() {
-        viewModel.errorMessage.value = if (viewModel.isDriver.value == true)
+        viewModel.errorMessage.value =
             getString(R.string.login_err_phone_number_password_is_empty)
-        else
-            getString(R.string.login_err_user_id_password_is_empty)
         binding.apply {
             inputPassword.textInputLayout.setBoxStrokeColorStateList(errorStrokeColor)
             inputPassword.edittext.requestFocus()

@@ -94,6 +94,8 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'id.zelory:compressor:3.0.1'
     api 'com.otaliastudios:cameraview:2.7.1'
+    // Image Picker
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
 
     // Location
     implementation 'com.yayandroid:LocationManager:2.4.1'

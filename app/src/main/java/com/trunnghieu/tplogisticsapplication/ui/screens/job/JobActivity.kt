@@ -12,6 +12,8 @@ import com.trunnghieu.tplogisticsapplication.extensions.navigateTo
 import com.trunnghieu.tplogisticsapplication.ui.base.activity.BaseConnectivityActivity
 import com.trunnghieu.tplogisticsapplication.ui.base.adapter.BaseItemClickListener
 import com.trunnghieu.tplogisticsapplication.ui.base.fragment.FragmentNavigator
+import com.trunnghieu.tplogisticsapplication.ui.screens.account_settings.AccountSettingsFragment
+import com.trunnghieu.tplogisticsapplication.ui.screens.job.adapter.MenuAdapter
 import com.trunnghieu.tplogisticsapplication.ui.screens.login.LoginActivity
 import com.trunnghieu.tplogisticsapplication.ui.screens.vehicle_pairing.VehiclePairingFragment
 import com.trunnghieu.tplogisticsapplication.utils.helper.DeviceHelper
@@ -60,7 +62,6 @@ class JobActivity : BaseConnectivityActivity<ActivityJobBinding, JobVM>(), JobUV
 
         // Menu
         menuAdapter = MenuAdapter(
-            viewModel.isDriverAccount.value ?: true,
             object : BaseItemClickListener<HamburgerMenu> {
                 override fun onItemClick(item: HamburgerMenu) {
                     viewModel.handleMenuItemClick(item)
@@ -116,6 +117,10 @@ class JobActivity : BaseConnectivityActivity<ActivityJobBinding, JobVM>(), JobUV
 
     override fun loadHamburgerMenu(menuList: List<HamburgerMenu>) {
         menuAdapter.submitList(menuList)
+    }
+
+    override fun goToAccountSettings() {
+        getNavigator().goTo(AccountSettingsFragment())
     }
 
     override fun goToLogin() {

@@ -18,10 +18,6 @@ class LoginVM : BaseRepoViewModel<AccountRepo, LoginUV>() {
         owner.lifecycle.addObserver(this)
     }
 
-    // Driver - D/R
-    val isDriver = MutableLiveData(true)
-
-    var alreadyRestoreLoginData = false
     private var isLoggedIn = false
     val phoneNumber = MutableLiveData("")
     val password = MutableLiveData("")
@@ -70,7 +66,6 @@ class LoginVM : BaseRepoViewModel<AccountRepo, LoginUV>() {
             return
         }
 
-        //TODO: Call api to login
         uiCallback?.goToMain()
     }
 

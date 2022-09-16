@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.account_settings.AccountSettingsVM" />
+
+        <variable
+            name="jobVM"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout style="@style/RootLayout">
+
+        <LinearLayout style="@style/RootLayout">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/view_toolbar"
+                app:leftIconOnClick="@{() -> vm.backPress()}"
+                app:title="@{@string/account_settings_title}" />
+
+            <ScrollView
+                android:id="@+id/scroll_view"
+                style="@style/TPLogistics.Layout.BorderTop"
+                android:paddingBottom="0dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    style="@style/RootLayout.WrapHeight"
+                    android:gravity="top|center"
+                    tools:ignore="Suspicious0dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/layout_avatar_margin_top" />
+
+                    <include
+                        layout="@layout/view_input"
+                        app:enabled="@{false}"
+                        app:hint="@{@string/account_settings_driver_name}" />
+
+                    <include
+                        android:id="@+id/input_phone"
+                        layout="@layout/view_input"
+                        app:enabled="@{false}"
+                        app:hint="@{@string/account_settings_phone_number}" />
+
+                    <include
+                        layout="@layout/view_input"
+                        app:enabled="@{false}"
+                        app:hint="@{@string/account_settings_company}" />
+
+                    <include
+                        layout="@layout/view_input"
+                        app:enabled="@{false}"
+                        app:hint="@{@string/account_settings_vehicle_number}" />
+
+                    <include layout="@layout/spacing_vertical" />
+
+                    <LinearLayout
+                        style="@style/RootLayout.WrapHeight"
+                        android:visibility="@{vm.isEditingProfile() ? View.GONE : View.VISIBLE}">
+
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/TPLogistics.MaterialButton.Secondary"
+                            android:onClick="@{() -> vm.editProfile()}"
+                            android:text="@string/account_settings_btn_edit_profile" />
+
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/TPLogistics.MaterialButton.Secondary"
+                            android:onClick="@{() -> vm.changePassword()}"
+                            android:text="@string/account_settings_btn_change_password" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/TPLogistics.MaterialButton.Accent"
+                        android:enabled="@{vm.phoneNumber.empty ? false : true}"
+                        android:onClick="@{() -> vm.saveProfile()}"
+                        android:text="@string/account_settings_btn_save"
+                        android:visibility="@{vm.isEditingProfile() ? View.VISIBLE : View.GONE}" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+        <FrameLayout
+            style="@style/RootLayout.WrapHeight"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/driver_avatar_margin_top"
+            app:layout_anchor="@id/scroll_view"
+            app:layout_anchorGravity="top|center">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                imageUrl="@{null}"
+                android:layout_width="@dimen/driver_avatar"
+                android:layout_height="@dimen/driver_avatar"
+                app:civ_border_color="@color/surface"
+                app:civ_border_width="@dimen/driver_avatar_border_width" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:onClick="@{() -> vm.selectAvatar()}"
+                android:src="@drawable/ic_camera"
+                android:visibility="@{vm.isEditingProfile() ? View.VISIBLE : View.GONE}"
+                app:backgroundTint="@color/background"
+                app:fabSize="mini"
+                app:tint="@color/textPrimary"
+                tools:ignore="ContentDescription" />
+
+        </FrameLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

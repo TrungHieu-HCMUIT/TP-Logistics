@@ -82,20 +82,6 @@
                 layout="@layout/spacing_vertical"
                 android:visibility="@{vm.errMessage.empty || vm.errMessage == null ? View.GONE : View.VISIBLE}" />
 
-            <com.google.android.material.checkbox.MaterialCheckBox
-                android:id="@+id/switch_login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:button="@null"
-                android:checked="@={!vm.isDriver()}"
-                android:drawableEnd="@drawable/ic_switch"
-                android:minWidth="0dp"
-                android:minHeight="0dp"
-                android:text="@string/login_switch"
-                android:textColor="@color/text_primary_state"
-                app:useMaterialThemeColors="false" />
-
             <LinearLayout
                 android:id="@+id/view_input_phone"
                 style="@style/RootLayout.WrapHeight"
@@ -109,8 +95,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
-                    app:hint="@{vm.isDriver() ? @string/login_phone_number : @string/login_user_id}"
-                    app:inputType="@{vm.isDriver() ? 0x00000003 : 0x00000001}"
+                    app:hint="@{@string/login_phone_number}"
+                    app:inputType="@{0x00000001}"
                     app:text="@={vm.phoneNumber}" />
 
             </LinearLayout>
@@ -121,6 +107,8 @@
                 app:hint="@{@string/login_password}"
                 app:passwordToggleEnabled="@{true}"
                 app:text="@={vm.password}" />
+
+            <include layout="@layout/spacing_vertical" />
 
             <LinearLayout
                 style="@style/RootLayout.WrapHeight"

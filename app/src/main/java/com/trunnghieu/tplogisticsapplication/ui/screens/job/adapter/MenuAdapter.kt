@@ -1,4 +1,4 @@
-package com.trunnghieu.tplogisticsapplication.ui.screens.job
+package com.trunnghieu.tplogisticsapplication.ui.screens.job.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import com.trunnghieu.tplogisticsapplication.R
@@ -12,7 +12,6 @@ import com.trunnghieu.tplogisticsapplication.ui.base.adapter.BaseItemClickListen
 import com.trunnghieu.tplogisticsapplication.utils.helper.AppPreferences
 
 class MenuAdapter(
-    private val isDriverAccount: Boolean,
     listener: BaseItemClickListener<HamburgerMenu>,
     private val subMenuListener: BaseItemClickListener<HamburgerMenu.SubMenu>
 ) : BaseBindingListAdapter<HamburgerMenu>(DiffCallback(), listener) {
@@ -28,15 +27,10 @@ class MenuAdapter(
         (holder.binding as ItemMenuBinding).run {
             // Divider
             showDivider = false
-            if (!isDriverAccount) {
-                if (loginPermission) {
-                    if (menuItem.type_id == MenuType.JOB_HISTORY.typeId) {
-                        showDivider = true
-                    }
-                } else {
-                    if (menuItem.type_id == MenuType.SCAN_QR.typeId) {
-                        showDivider = true
-                    }
+
+            if (loginPermission) {
+                if (menuItem.type_id == MenuType.JOB_HISTORY.typeId) {
+                    showDivider = true
                 }
             }
 

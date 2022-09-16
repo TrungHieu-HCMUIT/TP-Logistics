@@ -12,7 +12,6 @@ class ResetPasswordVM : BaseRepoViewModel<AccountRepo, ResetPasswordUV>() {
         return AccountRepo()
     }
 
-    val isDriver = MutableLiveData(true)
     val userId = MutableLiveData("")
     val errorMessage = MutableLiveData("")
     val alreadyRequestResetPassword = MutableLiveData(false)
