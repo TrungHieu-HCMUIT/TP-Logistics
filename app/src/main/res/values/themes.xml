@@ -186,10 +186,12 @@
 
     <style name="TPLogistics.TextAppearance.Primary" parent="Base.TextAppearance">
         <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:textSize">@dimen/text_bigger</item>
     </style>
 
     <style name="TPLogistics.TextAppearance.Secondary" parent="Base.TextAppearance">
         <item name="android:textColor">@color/textSecondary</item>
+        <item name="android:textSize">@dimen/text_bigger</item>
     </style>
 
     <!-- Text Input -->

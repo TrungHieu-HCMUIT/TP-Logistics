@@ -120,6 +120,7 @@
         </LinearLayout>
 
         <de.hdodenhof.circleimageview.CircleImageView
+            imageUrl="@{null}"
             android:layout_width="@dimen/driver_avatar"
             android:layout_height="@dimen/driver_avatar"
             android:layout_marginTop="@dimen/driver_avatar_margin_top"

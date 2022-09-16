@@ -104,6 +104,10 @@ dependencies {
     // Logger
     implementation 'com.orhanobut:logger:2.2.0'
 
+    // QR Code
+    implementation 'com.github.yuriy-budiyev:code-scanner:2.3.2'
+    implementation 'com.github.kenglxn.QRGen:android:2.6.0'
+
     // Lottie animation
     implementation 'com.airbnb.android:lottie:3.7.0'
 }
