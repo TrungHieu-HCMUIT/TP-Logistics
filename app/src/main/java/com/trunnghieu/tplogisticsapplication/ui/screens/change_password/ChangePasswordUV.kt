@@ -7,7 +7,7 @@ interface ChangePasswordUV : BaseUserView {
     fun onBackPressed()
     fun resetValidate()
     fun currentPasswordInCorrect()
-    fun newPasswordDonMatch()
+    fun newPasswordNotMatch()
     fun newPasswordMustDifferentFromCurrentPassword()
     fun changePasswordSuccess(message: String = "")
 }

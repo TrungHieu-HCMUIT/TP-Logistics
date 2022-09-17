@@ -76,6 +76,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             style="@style/TPLogistics.MaterialButton.Accent"
+                            android:onClick="@{() -> vm.startWork()}"
                             android:text="@string/start_work_button" />
 
                         <com.google.android.material.button.MaterialButton

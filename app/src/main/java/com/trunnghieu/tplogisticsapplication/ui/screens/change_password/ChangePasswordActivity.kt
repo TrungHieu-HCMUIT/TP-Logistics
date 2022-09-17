@@ -112,7 +112,7 @@ class ChangePasswordActivity :
         }
     }
 
-    override fun newPasswordDonMatch() {
+    override fun newPasswordNotMatch() {
         viewModel.errorMessage.value =
             getString(R.string.chang_password_err_new_password_not_match)
         binding.apply {

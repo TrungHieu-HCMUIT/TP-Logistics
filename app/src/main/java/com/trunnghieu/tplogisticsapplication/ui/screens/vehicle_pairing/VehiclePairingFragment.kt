@@ -7,6 +7,7 @@ import com.trunnghieu.tplogisticsapplication.R
 import com.trunnghieu.tplogisticsapplication.databinding.FragmentVehiclePairingBinding
 import com.trunnghieu.tplogisticsapplication.ui.base.fragment.BaseFragment
 import com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM
+import com.trunnghieu.tplogisticsapplication.ui.screens.upcoming_jobs.UpcomingJobsFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -52,6 +53,10 @@ class VehiclePairingFragment : BaseFragment<FragmentVehiclePairingBinding, Vehic
     }
 
     override fun initAction() {
+    }
+
+    override fun viewUpcomingJobs() {
+        navigator.goTo(UpcomingJobsFragment())
     }
 
 }

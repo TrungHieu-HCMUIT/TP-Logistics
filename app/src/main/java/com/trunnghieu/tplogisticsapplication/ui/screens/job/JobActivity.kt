@@ -127,6 +127,14 @@ class JobActivity : BaseConnectivityActivity<ActivityJobBinding, JobVM>(), JobUV
         navigateTo(LoginActivity::class.java, true)
     }
 
+    override fun backToVehiclePairing() {
+        // TODO: Fix value here
+        getNavigator().rootFragment = VehiclePairingFragment.newInstance(
+            false,
+            ""
+        )
+    }
+
     override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
     }
 

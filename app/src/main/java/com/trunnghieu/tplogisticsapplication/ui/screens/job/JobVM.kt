@@ -113,4 +113,11 @@ class JobVM : BaseRepoViewModel<AccountRepo, JobUV>() {
         }
     }
 
+    /**
+     * Set root fragment as Vehicle Pairing
+     */
+    fun backToVehiclePairing() {
+        uiCallback?.backToVehiclePairing()
+    }
+
 }

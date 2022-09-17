@@ -17,5 +17,12 @@ class VehiclePairingVM : BaseRepoViewModel<AccountRepo, VehiclePairingUV>() {
     val isPaired = MutableLiveData(true)
     val vehicleNumber = MutableLiveData("")
 
+    /**
+     * Get available job and start work
+     */
+    fun startWork() {
+        // TODO: Fix flow here, check view assigned job is yes or no
+        uiCallback?.viewUpcomingJobs()
+    }
 
 }

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.trunnghieu.tplogisticsapplication.data.repository.remote.delivery_workflow_service.Job" />
+
+        <variable
+            name="jobSelectionAllowed"
+            type="Boolean" />
+
+        <variable
+            name="selected"
+            type="Boolean" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView style="@style/Base.MaterialCardView">
+
+        <LinearLayout
+            style="@style/RootLayout.WrapHeight"
+            android:background="@{selected ? @drawable/bg_card_layout_sel : null}"
+            android:padding="@dimen/_12sdp"
+            tools:background="@drawable/bg_card_layout_sel">
+
+            <FrameLayout style="@style/RootLayout.WrapHeight">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@{selected ? @drawable/ic_rdo_sel : @drawable/ic_rdo_nor}"
+                    android:visibility="@{jobSelectionAllowed ? View.VISIBLE : View.GONE}"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/ic_rdo_nor" />
+
+                <LinearLayout
+                    style="@style/RootLayout.WrapHeight"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TPLogistics.TextAppearance.Primary"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:text="@string/history_job_id"
+                        android:textSize="@dimen/text_bigger"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/TPLogistics.TextAppearance.Primary"
+                        android:text="P0000021-1"
+                        android:textColor="@color/primary"
+                        android:textSize="@dimen/text_bigger"
+                        android:textStyle="bold"
+                        tools:text="P0000021-1" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:visibility="@{selected ? View.GONE : View.VISIBLE}">
+
+                <include layout="@layout/divider_vertical" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:visibility="@{selected ? View.VISIBLE : View.GONE}">
+
+                <include layout="@layout/divider_vertical_primary_color" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_pickup_location"
+                    tools:ignore="ContentDescription" />
+
+                <LinearLayout
+                    style="@style/RootLayout.WrapHeight"
+                    android:layout_width="0dp"
+                    android:layout_weight="4">
+
+                    <TextView
+                        style="@style/TPLogistics.TextAppearance.Secondary"
+                        android:text="@string/history_pickup_location" />
+
+                    <TextView
+                        android:id="@+id/tv_pickup_location"
+                        style="@style/TPLogistics.TextAppearance.Primary"
+                        android:text="Pick up location"
+                        android:textColor="@color/textPrimary"
+                        android:textStyle="bold"
+                        tools:text="Pick up location" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_delivery_location"
+                    tools:ignore="ContentDescription" />
+
+                <LinearLayout
+                    style="@style/RootLayout.WrapHeight"
+                    android:layout_width="0dp"
+                    android:layout_weight="4">
+
+                    <TextView
+                        style="@style/TPLogistics.TextAppearance.Secondary"
+                        android:text="@string/history_delivery_location" />
+
+                    <TextView
+                        android:id="@+id/tv_delivery_location"
+                        style="@style/TPLogistics.TextAppearance.Primary"
+                        android:text="Delivery location"
+                        android:textColor="@color/textPrimary"
+                        android:textStyle="bold"
+                        tools:text="Delivery location" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/RootLayout.WrapHeight">
+
+                <LinearLayout
+                    style="@style/RootLayout.WrapHeight"
+                    android:layout_marginStart="@dimen/_32sdp"
+                    android:layout_marginEnd="@dimen/_32sdp"
+                    android:visibility="@{selected ? View.GONE : View.VISIBLE}">
+
+                    <include layout="@layout/divider_dashed" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RootLayout.WrapHeight"
+                    android:layout_marginStart="@dimen/_32sdp"
+                    android:layout_marginEnd="@dimen/_32sdp"
+                    android:visibility="@{selected ? View.VISIBLE : View.GONE}">
+
+                    <include layout="@layout/divider_dashed_primary_color" />
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/RootLayout.WrapHeight">
+
+                    <LinearLayout
+                        style="@style/RootLayout.WrapHeight"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.5" />
+
+                        <LinearLayout
+                            style="@style/RootLayout.WrapHeight"
+                            android:layout_width="0dp"
+                            android:layout_weight="4">
+
+                            <TextView
+                                style="@style/TPLogistics.TextAppearance.Secondary"
+                                android:text="@string/history_customer_name" />
+
+                            <TextView
+                                android:id="@+id/tv_customer_name"
+                                style="@style/TPLogistics.TextAppearance.Primary"
+                                android:text="VDTH"
+                                android:textColor="@color/textPrimary"
+                                android:textStyle="bold"
+                                tools:text="VDTH" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1.5" />
+
+                        <LinearLayout
+                            style="@style/RootLayout.WrapHeight"
+                            android:layout_width="0dp"
+                            android:layout_weight="4">
+
+                            <TextView
+                                style="@style/TPLogistics.TextAppearance.Secondary"
+                                android:text="@string/history_product_type" />
+
+                            <TextView
+                                android:id="@+id/tv_product_type"
+                                style="@style/TPLogistics.TextAppearance.Primary"
+                                android:text="20MM"
+                                android:textColor="@color/textPrimary"
+                                android:textStyle="bold"
+                                tools:text="20MM" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

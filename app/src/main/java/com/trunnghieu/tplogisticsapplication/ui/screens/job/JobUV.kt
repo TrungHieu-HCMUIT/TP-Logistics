@@ -9,4 +9,5 @@ interface JobUV : BaseUserView {
     fun loadHamburgerMenu(menuList: List<HamburgerMenu>)
     fun goToAccountSettings()
     fun goToLogin()
+    fun backToVehiclePairing()
 }

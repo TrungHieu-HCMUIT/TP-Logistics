@@ -4,5 +4,5 @@ import com.trunnghieu.tplogisticsapplication.ui.base.BaseUserView
 
 
 interface VehiclePairingUV : BaseUserView {
-
+    fun viewUpcomingJobs()
 }

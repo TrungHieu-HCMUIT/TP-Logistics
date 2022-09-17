@@ -115,4 +115,65 @@
     </string>
     <string name="change_password_msg_success">Password change successfully</string>
 
+    <!-- Job History -->
+    <string name="history_title">Job History</string>
+    <string name="history_job_id">Job ID:</string>
+    <string name="history_pickup_location">Pickup Location</string>
+    <string name="history_delivery_location">Delivery Location</string>
+    <string name="history_signed_by">Signed by</string>
+    <string name="history_customer_name">Sender Name</string>
+    <string name="history_product_type">Product Type</string>
+    <string name="history_vehicle_no">Vehicle No.</string>
+    <string name="history_vehicle_weight">Vehicle Weight</string>
+    <string name="history_pickup_date">Pickup Date</string>
+    <string name="history_pickup_time">Pickup Time</string>
+    <string name="history_laden_weight">Laden Weight</string>
+    <string name="history_net_weight">Net Weight</string>
+    <string name="history_discharge_date">Discharge Date</string>
+    <string name="history_discharge_time">Discharge Time</string>
+    <string name="history_filter_date">Date</string>
+    <string name="history_btn_apply">Apply</string>
+    <string name="history_show_detail">Show detail</string>
+    <string name="history_hide_detail">Hide detail</string>
+    <string name="history_btn_download_all">Download All</string>
+
+    <!-- Phone Verification -->
+    <string name="otp_title">Phone Verification</string>
+    <string name="otp_mess">
+        <![CDATA[
+        <html>Please enter the verification code (<b>OTP</b>) sent to<br/>
+        <b>%s</b>
+        </html>
+        ]]>
+    </string>
+    <string name="otp_error_incorrect_otp">Incorrect OTP</string>
+    <string name="otp_resend">Resend OTP</string>
+    <string name="otp_time_remaining">Time remaining</string>
+    <string name="otp_btn_verify">Verify</string>
+    <string name="otp_update_phone_success_msg">
+        Successfully update phone number.\nApplication will logout automatically!
+    </string>
+
+    <!-- Next Job -->
+    <string name="next_job_title">Next Job</string>
+    <string name="next_job_btn_go">Go</string>
+
+    <!-- Upcoming Jobs -->
+    <string name="upcoming_jobs_title">Upcoming Jobs</string>
+    <string name="upcoming_jobs_message_select_a_job_to_start">Please select a job to start your work</string>
+    <string name="upcoming_jobs_message_start_next_job">Please start your next job</string>
+    <string name="upcoming_jobs_btn_wait">Wait</string>
+
+    <!-- Working Time -->
+    <string name="working_time_title">Working Time</string>
+    <string name="working_time_message">Check and update your working time here</string>
+    <string name="working_time_start_date">Start Date</string>
+    <string name="working_time_start_time">Start Time</string>
+    <string name="working_time_end_date">End Date</string>
+    <string name="working_time_end_time">End Time</string>
+
+    <!-- Pickup Location = Unload Location -->
+    <string name="working_title">Working</string>
+    <string name="working_message">Kindly confirm you have finished your work</string>
+
 </resources>

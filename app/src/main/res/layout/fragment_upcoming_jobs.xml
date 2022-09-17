@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.upcoming_jobs.UpcomingJobsVM" />
+
+    </data>
+
+    <LinearLayout style="@style/RootLayout">
+
+        <include
+            layout="@layout/view_toolbar"
+            app:leftIconOnClick="@{() -> vm.backPress()}"
+            app:refreshOnClick="@{() -> vm.listAssignedJob()}"
+            app:showRefresh="@{vm.showRefreshButton}"
+            app:title="@{@string/upcoming_jobs_title}" />
+
+        <LinearLayout
+            style="@style/RootLayout"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                style="@style/TPLogistics.Layout.BorderTop.JobDetail"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:paddingStart="0dp"
+                android:paddingTop="0dp"
+                android:paddingEnd="0dp"
+                android:paddingBottom="0dp"
+                tools:ignore="InefficientWeight,Suspicious0dp">
+
+                <include layout="@layout/spacing_vertical" />
+
+                <TextView
+                    style="@style/TPLogistics.TextAppearance.Primary"
+                    android:layout_gravity="center"
+                    android:text="@{vm.jobSelectionAllowed ? @string/upcoming_jobs_message_select_a_job_to_start : @string/upcoming_jobs_message_start_next_job}"
+                    tools:text="@string/upcoming_jobs_message_start_next_job" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_job"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_upcoming_job" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:background="@color/surface"
+                android:padding="@dimen/layout_margin_default">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/TPLogistics.MaterialButton.Accent"
+                    android:layout_gravity="bottom"
+                    android:enabled="@{vm.enableStartWork}"
+                    android:onClick="@{() -> vm.startWork()}"
+                    android:text="@string/start_work_button" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
