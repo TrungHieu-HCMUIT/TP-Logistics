@@ -29,6 +29,7 @@
         <entry key="app/src/main/res/layout/activity_job.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2760208129882813" />
         <entry key="app/src/main/res/layout/activity_reset_password.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/dialog_cso.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/dialog_message.xml" value="0.23052536231884058" />
         <entry key="app/src/main/res/layout/dialog_progress.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/divider_dashed.xml" value="0.2246376811594203" />
@@ -38,6 +39,7 @@
         <entry key="app/src/main/res/layout/fragment_account_settings.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/fragment_upcoming_jobs.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/fragment_vehicle_pairing.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/item_cso_phone.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/item_language_menu.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/item_menu.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/item_spinner.xml" value="0.2246376811594203" />

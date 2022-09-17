@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.trunnghieu.tplogisticsapplication.data.repository.remote.account.cso.CsoPhoneNumber" />
+
+        <variable
+            name="firstItem"
+            type="Boolean" />
+
+    </data>
+
+    <LinearLayout style="@style/RootLayout.WrapHeight">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/divider"
+            android:visibility="@{firstItem ? View.VISIBLE : View.GONE}" />
+
+        <LinearLayout
+            style="@style/RootLayout.WrapHeight"
+            android:orientation="horizontal"
+            android:padding="@dimen/_8sdp">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="@dimen/_32sdp"
+                    android:layout_height="@dimen/_32sdp"
+                    android:src="@drawable/ic_circle_orange"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    style="@style/TPLogistics.TextAppearance.Primary"
+                    android:layout_gravity="center"
+                    android:text="@{String.valueOf(item.supportName.charAt(0))}"
+                    android:textAllCaps="true"
+                    android:textColor="@color/onPrimary"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold"
+                    tools:text="A" />
+
+            </FrameLayout>
+
+            <View
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="0dp" />
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:layout_gravity="center">
+
+                <TextView
+                    style="@style/TPLogistics.TextAppearance.Primary"
+                    android:text="@{item.supportName}"
+                    android:textStyle="bold"
+                    tools:text="CSO Support" />
+
+                <TextView
+                    style="@style/TPLogistics.TextAppearance.Primary"
+                    android:text="@{item.phoneNo}"
+                    android:textColor="@color/secondary"
+                    android:textStyle="italic"
+                    tools:text="+65 123 45678" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/divider" />
+
+    </LinearLayout>
+
+</layout>

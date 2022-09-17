@@ -1,25 +1,45 @@
 package com.trunnghieu.tplogisticsapplication.ui.screens.job
 
+import android.content.Context
+import android.content.Intent
+import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
+import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import com.trunnghieu.tplogisticsapplication.R
 import com.trunnghieu.tplogisticsapplication.data.repository.local.menu.HamburgerMenu
+import com.trunnghieu.tplogisticsapplication.data.repository.remote.account.cso.CsoPhoneNumber
 import com.trunnghieu.tplogisticsapplication.databinding.ActivityJobBinding
+import com.trunnghieu.tplogisticsapplication.databinding.DialogCsoBinding
 import com.trunnghieu.tplogisticsapplication.extensions.navigateTo
 import com.trunnghieu.tplogisticsapplication.ui.base.activity.BaseConnectivityActivity
 import com.trunnghieu.tplogisticsapplication.ui.base.adapter.BaseItemClickListener
+import com.trunnghieu.tplogisticsapplication.ui.base.dialog.AppFunctionDialog
 import com.trunnghieu.tplogisticsapplication.ui.base.fragment.FragmentNavigator
 import com.trunnghieu.tplogisticsapplication.ui.screens.account_settings.AccountSettingsFragment
+import com.trunnghieu.tplogisticsapplication.ui.screens.cso.CsoPhoneAdapter
 import com.trunnghieu.tplogisticsapplication.ui.screens.job.adapter.MenuAdapter
 import com.trunnghieu.tplogisticsapplication.ui.screens.login.LoginActivity
 import com.trunnghieu.tplogisticsapplication.ui.screens.vehicle_pairing.VehiclePairingFragment
+import com.trunnghieu.tplogisticsapplication.ui.widgets.MovableFloatingActionButton
+import com.trunnghieu.tplogisticsapplication.utils.constants.Const
 import com.trunnghieu.tplogisticsapplication.utils.helper.DeviceHelper
+import com.trunnghieu.tplogisticsapplication.utils.helper.SystemHelper
 
 class JobActivity : BaseConnectivityActivity<ActivityJobBinding, JobVM>(), JobUV,
     DrawerLayout.DrawerListener {
+
+    // Static
+    companion object {
+        private val FRAGMENTS_NOT_SHOW_CALL_CSO = listOf(
+            // TODO: Add more fragment
+            AccountSettingsFragment::class.java.simpleName,
+        )
+    }
 
     override fun layoutRes() = R.layout.activity_job
 
@@ -44,6 +64,10 @@ class JobActivity : BaseConnectivityActivity<ActivityJobBinding, JobVM>(), JobUV
 
     // Adapter
     private lateinit var menuAdapter: MenuAdapter
+
+    // CSO
+    private var dialogCsoBinding: DialogCsoBinding? = null
+    private var csoViewIsShowing = false
 
     override fun initView() {
         drawer = binding.drawerLayout
@@ -89,6 +113,35 @@ class JobActivity : BaseConnectivityActivity<ActivityJobBinding, JobVM>(), JobUV
                 ""
             )
         }
+
+        binding.btnCallCso.setCustomClickListener(object :
+            MovableFloatingActionButton.CustomClickListener {
+            override fun onClick(view: View?) {
+                var functionDialog: AlertDialog? = null
+
+                dialogCsoBinding = DataBindingUtil.inflate(
+                    LayoutInflater.from(context),
+                    R.layout.dialog_cso,
+                    null, true
+                )
+                dialogCsoBinding!!.setCancelOnClick {
+                    functionDialog?.dismiss()
+                    csoViewIsShowing = false
+                    showCallCSO(true)
+                }
+                functionDialog = AppFunctionDialog.get().showCustomLayout(
+                    context,
+                    dialogCsoBinding!!,
+                    Const.DIALOG_CALL_CSO_PERCENT_WIDTH
+                )
+
+                // Get CSO phone number
+                viewModel.getCSOPhoneNumber()
+
+                csoViewIsShowing = true
+                showCallCSO(false)
+            }
+        })
     }
 
     override fun accountConflicted() {
@@ -127,6 +180,16 @@ class JobActivity : BaseConnectivityActivity<ActivityJobBinding, JobVM>(), JobUV
         navigateTo(LoginActivity::class.java, true)
     }
 
+    override fun gotCsoPhoneNumber(csoPhoneNumbers: List<CsoPhoneNumber>) {
+        val adapter = CsoPhoneAdapter(object : BaseItemClickListener<CsoPhoneNumber> {
+            override fun onItemClick(item: CsoPhoneNumber) {
+                SystemHelper.actionCall(context, item.phoneNo)
+            }
+        })
+        dialogCsoBinding?.rvCsoPhone?.adapter = adapter
+        adapter.submitList(csoPhoneNumbers)
+    }
+
     override fun backToVehiclePairing() {
         // TODO: Fix value here
         getNavigator().rootFragment = VehiclePairingFragment.newInstance(
@@ -145,5 +208,15 @@ class JobActivity : BaseConnectivityActivity<ActivityJobBinding, JobVM>(), JobUV
     }
 
     override fun onDrawerStateChanged(newState: Int) {
+    }
+
+    private fun showCallCSO(show: Boolean) {
+        binding.btnCallCso.visibility = if (show) {
+            if (getNavigator().activeFragment?.tag in FRAGMENTS_NOT_SHOW_CALL_CSO) return
+            if (csoViewIsShowing) return
+            View.VISIBLE
+        } else {
+            View.GONE
+        }
     }
 }

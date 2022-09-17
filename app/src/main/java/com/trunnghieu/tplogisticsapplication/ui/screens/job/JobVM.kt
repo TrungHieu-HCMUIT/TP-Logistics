@@ -8,6 +8,7 @@ import com.trunnghieu.tplogisticsapplication.data.repository.local.menu.Hamburge
 import com.trunnghieu.tplogisticsapplication.data.repository.local.menu.MenuType
 import com.trunnghieu.tplogisticsapplication.data.repository.local.menu.SubMenuType
 import com.trunnghieu.tplogisticsapplication.data.repository.remote.account.AccountRepo
+import com.trunnghieu.tplogisticsapplication.data.repository.remote.account.cso.CsoPhoneNumber
 import com.trunnghieu.tplogisticsapplication.ui.base.BaseRepoViewModel
 import com.trunnghieu.tplogisticsapplication.utils.helper.AppPreferences
 import com.trunnghieu.tplogisticsapplication.utils.helper.LocaleHelper
@@ -118,6 +119,18 @@ class JobVM : BaseRepoViewModel<AccountRepo, JobUV>() {
      */
     fun backToVehiclePairing() {
         uiCallback?.backToVehiclePairing()
+    }
+
+    /**
+     * Get CSO Phone number
+     */
+    fun getCSOPhoneNumber() {
+        val data = mutableListOf(
+            CsoPhoneNumber(phoneNo = "0983 24 92 75", supportName = "TH"),
+            CsoPhoneNumber(phoneNo = "0983 24 92 75", supportName = "HT"),
+            CsoPhoneNumber(phoneNo = "0983 24 92 75", supportName = "NN"),
+        )
+        uiCallback?.gotCsoPhoneNumber(data)
     }
 
 }

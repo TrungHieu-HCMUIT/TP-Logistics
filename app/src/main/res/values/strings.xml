@@ -74,6 +74,10 @@
     <string name="connectivity_services_msg_location_disabled">Please turn on Location Services!</string>
     <string name="connectivity_services_msg_network_no_connected">Your device is not connected to the cellular network!</string>
 
+    <!-- Call CSO -->
+    <string name="cso_title">Call us now</string>
+    <string name="cso_description">We\'re here to help</string>
+
     <!-- Vehicle Pairing -->
     <string name="vehicle_pairing_title">Vehicle Pairing</string>
     <string name="vehicle_pairing_phone">Phone</string>

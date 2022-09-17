@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="cancelOnClick"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Base.MaterialCardView"
+        app:cardCornerRadius="@dimen/_10sdp">
+
+        <LinearLayout
+            style="@style/RootLayout.WrapHeight"
+            android:background="@color/surface"
+            android:gravity="center"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_8sdp" />
+
+            <ImageView
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                android:src="@drawable/ic_call_cso"
+                tools:ignore="ContentDescription" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_8sdp" />
+
+            <TextView
+                style="@style/TPLogistics.TextAppearance.Primary"
+                android:text="@string/cso_title"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/TPLogistics.TextAppearance.Secondary"
+                android:text="@string/cso_description" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_8sdp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_cso_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_cso_phone" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/TPLogistics.MaterialButton.Text"
+                android:layout_width="match_parent"
+                android:onClick="@{cancelOnClick}"
+                android:text="@string/alert_btn_negative"
+                android:textAllCaps="true"
+                android:textColor="@color/primary"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
