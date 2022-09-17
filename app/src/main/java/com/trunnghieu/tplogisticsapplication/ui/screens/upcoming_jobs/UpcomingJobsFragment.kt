@@ -34,6 +34,7 @@ class UpcomingJobsFragment : BaseFragment<FragmentUpcomingJobsBinding, UpcomingJ
     private val upcomingJobsAdapter = UpcomingJobsAdapter(this)
 
     override fun initView() {
+        binding.rvJob.itemAnimator = null
         binding.rvJob.adapter = upcomingJobsAdapter
     }
 

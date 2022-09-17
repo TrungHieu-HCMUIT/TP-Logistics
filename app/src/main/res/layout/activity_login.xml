@@ -96,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
                     app:hint="@{@string/login_phone_number}"
-                    app:inputType="@{0x00000001}"
+                    app:inputType="@{0x00000003}"
                     app:text="@={vm.phoneNumber}" />
 
             </LinearLayout>
