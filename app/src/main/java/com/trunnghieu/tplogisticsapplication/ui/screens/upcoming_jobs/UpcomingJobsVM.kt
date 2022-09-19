@@ -33,7 +33,7 @@ class UpcomingJobsVM : BaseRepoViewModel<DeliveryDriverReportRepo, UpcomingJobsU
      * List assigned job
      */
     fun listAssignedJob() {
-        val jobs = mutableListOf<Job>(
+        val jobs = mutableListOf(
             Job(bookingNo = ""),
             Job(bookingNo = ""),
             Job(bookingNo = ""),

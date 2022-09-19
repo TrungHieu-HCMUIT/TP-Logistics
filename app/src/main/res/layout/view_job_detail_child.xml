@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="titleLeft"
+            type="String" />
+
+        <variable
+            name="valueLeft"
+            type="String" />
+
+        <variable
+            name="titleRight"
+            type="String" />
+
+        <variable
+            name="valueRight"
+            type="String" />
+
+        <variable
+            name="showDrawableStartLeft"
+            type="Boolean" />
+
+        <variable
+            name="drawableStartLeft"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="showDrawableStartRight"
+            type="Boolean" />
+
+        <variable
+            name="drawableStartRight"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="highlightLeft"
+            type="Boolean" />
+
+        <variable
+            name="highlightRight"
+            type="Boolean" />
+
+    </data>
+
+    <LinearLayout style="@style/RootLayout.WrapHeight">
+
+        <LinearLayout
+            style="@style/RootLayout.WrapHeight"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/job_detail_drawable_start"
+                    android:layout_height="@dimen/job_detail_drawable_start"
+                    android:scaleType="center"
+                    android:src="@{drawableStartLeft}"
+                    android:visibility="@{(showDrawableStartLeft ?? false) ? View.VISIBLE : View.INVISIBLE}"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/ic_pickup_location" />
+
+                <TextView
+                    style="@style/TPLogistics.TextAppearance.Secondary"
+                    android:text="@{titleLeft}"
+                    tools:text="@string/history_pickup_location" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="@dimen/job_detail_spacing_btw_2_col"
+                android:layout_height="0dp" />
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/job_detail_drawable_start"
+                    android:layout_height="@dimen/job_detail_drawable_start"
+                    android:scaleType="center"
+                    android:src="@{drawableStartRight}"
+                    android:visibility="@{(showDrawableStartRight ?? false) ? View.VISIBLE : View.INVISIBLE}"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/ic_delivery_location" />
+
+                <TextView
+                    style="@style/TPLogistics.TextAppearance.Secondary"
+                    android:text="@{titleRight}"
+                    tools:text="@string/history_delivery_location" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/RootLayout.WrapHeight"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="@dimen/job_detail_drawable_start"
+                    android:layout_height="0dp" />
+
+                <TextView
+                    android:id="@+id/tv_pickup_location"
+                    style="@style/TPLogistics.TextAppearance.Primary"
+                    showItalicBoldDefBold="@{highlightLeft}"
+                    android:text="@{valueLeft}"
+                    android:textColor="@{highlightLeft ? @color/primary : @color/textPrimary}"
+                    android:textStyle="bold"
+                    tools:text="TAT Plot 3" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="@dimen/job_detail_spacing_btw_2_col"
+                android:layout_height="0dp" />
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="@dimen/job_detail_drawable_start"
+                    android:layout_height="0dp" />
+
+                <TextView
+                    android:id="@+id/tv_delivery_location"
+                    style="@style/TPLogistics.TextAppearance.Primary"
+                    showItalicBoldDefBold="@{highlightRight}"
+                    android:text="@{valueRight}"
+                    android:textColor="@{highlightRight ? @color/primary : @color/textPrimary}"
+                    android:textStyle="bold"
+                    tools:text="East Coast" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

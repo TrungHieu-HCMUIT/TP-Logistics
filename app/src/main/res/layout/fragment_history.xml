@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.job_history.HistoryVM" />
+
+    </data>
+
+    <LinearLayout style="@style/RootLayout">
+
+        <include
+            layout="@layout/view_toolbar"
+            app:leftIconOnClick="@{() -> vm.backPress()}"
+            app:title="@{@string/history_title}" />
+
+        <LinearLayout style="@style/TPLogistics.Layout.BorderTop.NoPadding">
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/_24sdp"
+                android:paddingTop="@dimen/_4sdp"
+                android:paddingEnd="@dimen/_24sdp">
+
+                <TextView
+                    style="@style/TPLogistics.TextAppearance.Secondary"
+                    android:text="@string/history_filter_date"
+                    android:visibility="@{vm.showFilter ? View.VISIBLE : View.INVISIBLE}" />
+
+                <include layout="@layout/spacing_vertical" />
+
+                <TextView
+                    style="@style/TPLogistics.TextAppearance.Primary"
+                    android:background="@{vm.showFilter ? @drawable/bg_textview_bottom_line : null}"
+                    android:onClick="@{() -> vm.showDatePicker()}"
+                    android:padding="@dimen/_8sdp"
+                    android:text="@={vm.filterDate}"
+                    android:textStyle="bold"
+                    tools:background="@drawable/bg_textview_bottom_line"
+                    tools:text="20 Mar 2021" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> vm.showFilter()}"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@{vm.showFilter ? @drawable/ic_filter_date_sel : @drawable/ic_filter_date_nor}"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/ic_filter_date_nor" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                style="@style/RootLayout"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                tools:ignore="InefficientWeight">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="@{vm.historyList.empty ? View.GONE : View.VISIBLE}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_history" />
+
+                <include
+                    layout="@layout/view_no_data"
+                    android:visibility="@{vm.historyList.empty ? View.VISIBLE : View.GONE}" />
+
+            </FrameLayout>
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/TPLogistics.MaterialButton.Accent.Margin"
+                android:layout_gravity="center|bottom"
+                android:onClick="@{() -> vm.downloadAllEdo()}"
+                android:text="@string/history_btn_download_all"
+                android:visibility="@{vm.historyList.empty ? View.GONE : View.VISIBLE}" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

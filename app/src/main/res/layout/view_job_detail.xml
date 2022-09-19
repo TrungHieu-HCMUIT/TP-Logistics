@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="jobData"
+            type="com.trunnghieu.tplogisticsapplication.data.repository.remote.delivery_workflow_service.Job" />
+
+        <variable
+            name="showDetail"
+            type="Boolean" />
+
+        <variable
+            name="showESign"
+            type="Boolean" />
+
+        <variable
+            name="showVehicleData"
+            type="Boolean" />
+
+        <variable
+            name="showPickupData"
+            type="Boolean" />
+
+        <variable
+            name="showWeightData"
+            type="Boolean" />
+
+        <variable
+            name="showDischargeData"
+            type="Boolean" />
+
+        <variable
+            name="netWeight"
+            type="String" />
+
+        <variable
+            name="showEst"
+            type="Boolean" />
+
+        <variable
+            name="showEndDivider"
+            type="Boolean" />
+
+        <variable
+            name="showNoteForDriver"
+            type="Boolean" />
+
+        <variable
+            name="highlightDataChanged"
+            type="Boolean" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            style="@style/RootLayout.WrapHeight"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp">
+
+            <include layout="@layout/divider_vertical" />
+
+            <include
+                layout="@layout/view_job_detail_child"
+                app:drawableStartLeft="@{@drawable/ic_pickup_location}"
+                app:drawableStartRight="@{@drawable/ic_delivery_location}"
+                app:highlightLeft="@{true}"
+                app:highlightRight="@{true}"
+                app:showDrawableStartLeft="@{true}"
+                app:showDrawableStartRight="@{true}"
+                app:titleLeft="@{@string/history_pickup_location}"
+                app:titleRight="@{@string/history_delivery_location}"
+                app:valueLeft="@{`Pick up location`}"
+                app:valueRight="@{`Delivery location`}" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginVertical="@dimen/_4sdp"
+                android:visibility="@{(showESign ?? false) ? View.VISIBLE : View.GONE}" />
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:visibility="@{(showESign ?? false) ? View.VISIBLE : View.GONE}">
+
+                <include
+                    layout="@layout/view_job_detail_child"
+                    app:highlightLeft="@{true}"
+                    app:highlightRight="@{true}"
+                    app:titleLeft="@{@string/history_signed_by}"
+                    app:titleRight="@{@string/history_signed_by}"
+                    app:valueLeft="@{`VDTH`}"
+                    app:valueRight="@{`VDTH`}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:visibility="@{(showDetail ?? true) ? View.VISIBLE : View.GONE}">
+
+                <LinearLayout
+                    style="@style/RootLayout.WrapHeight"
+                    android:layout_marginStart="@dimen/_32sdp"
+                    android:layout_marginEnd="@dimen/_32sdp">
+
+                    <include layout="@layout/divider_dashed" />
+
+                </LinearLayout>
+
+                <include
+                    layout="@layout/view_job_detail_child"
+                    app:highlightLeft="@{true}"
+                    app:highlightRight="@{true}"
+                    app:titleLeft="@{@string/history_customer_name}"
+                    app:titleRight="@{@string/history_product_type}"
+                    app:valueLeft="@{`VDTH`}"
+                    app:valueRight="@{`VDTH`}" />
+
+                <LinearLayout style="@style/RootLayout.WrapHeight">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginVertical="@dimen/_4sdp"
+                        android:visibility="@{(showVehicleData ?? true) ? View.VISIBLE : View.GONE}" />
+
+                    <LinearLayout
+                        style="@style/RootLayout.WrapHeight"
+                        android:orientation="horizontal"
+                        android:visibility="@{(showVehicleData ?? true) ? View.VISIBLE : View.GONE}">
+
+                        <include
+                            layout="@layout/view_job_detail_child"
+                            app:highlightLeft="@{true}"
+                            app:highlightRight="@{true}"
+                            app:titleLeft="@{@string/history_vehicle_no}"
+                            app:titleRight="@{@string/history_vehicle_weight}"
+                            app:valueLeft="@{`59A-999.99`}"
+                            app:valueRight="@{`2 tons`}" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RootLayout.WrapHeight"
+                        android:layout_marginStart="@dimen/_32sdp"
+                        android:layout_marginEnd="@dimen/_32sdp"
+                        android:visibility="@{((showWeightData ?? true) == false &amp;&amp; (showPickupData ?? true) == false) ? View.GONE : View.VISIBLE}">
+
+                        <include layout="@layout/divider_dashed" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RootLayout.WrapHeight"
+                        android:orientation="horizontal"
+                        android:visibility="@{(showWeightData ?? true) ? View.VISIBLE : View.GONE}">
+
+                        <include
+                            layout="@layout/view_job_detail_child"
+                            app:highlightLeft="@{true}"
+                            app:highlightRight="@{true}"
+                            app:titleLeft="@{@string/history_laden_weight}"
+                            app:titleRight="@{@string/history_net_weight}"
+                            app:valueLeft="@{`2 tons`}"
+                            app:valueRight="@{`2 tons`}" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginVertical="@dimen/_4sdp"
+                        android:visibility="@{(showWeightData ?? true) ? View.VISIBLE : View.GONE}" />
+
+                    <LinearLayout
+                        style="@style/RootLayout.WrapHeight"
+                        android:orientation="horizontal"
+                        android:visibility="@{(showPickupData ?? true) ? View.VISIBLE : View.GONE}">
+
+                        <include
+                            layout="@layout/view_job_detail_child"
+                            app:highlightLeft="@{false}"
+                            app:highlightRight="@{false}"
+                            app:titleLeft="@{@string/history_pickup_date}"
+                            app:titleRight="@{@string/history_pickup_time}"
+                            app:valueLeft="@{`19/09/2022`}"
+                            app:valueRight="@{`19/09/2022`}" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RootLayout.WrapHeight"
+                        android:layout_marginStart="@dimen/_32sdp"
+                        android:layout_marginEnd="@dimen/_32sdp"
+                        android:visibility="@{(showDischargeData ?? true) ? View.VISIBLE : View.GONE}">
+
+                        <include layout="@layout/divider_dashed" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RootLayout.WrapHeight"
+                        android:orientation="horizontal"
+                        android:visibility="@{(showDischargeData ?? true) ? View.VISIBLE : View.GONE}">
+
+                        <include
+                            layout="@layout/view_job_detail_child"
+                            app:highlightLeft="@{false}"
+                            app:highlightRight="@{false}"
+                            app:titleLeft="@{@string/history_discharge_date}"
+                            app:titleRight="@{@string/history_discharge_time}"
+                            app:valueLeft="@{`19/09/2022`}"
+                            app:valueRight="@{`19/09/2022`}" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RootLayout.WrapHeight"
+                        android:visibility="@{(showNoteForDriver ?? true) ? View.VISIBLE : View.GONE}">
+
+                        <LinearLayout
+                            style="@style/RootLayout.WrapHeight"
+                            android:layout_marginStart="@dimen/_32sdp"
+                            android:layout_marginEnd="@dimen/_32sdp">
+
+                            <include layout="@layout/divider_dashed" />
+
+                        </LinearLayout>
+
+                        <include
+                            layout="@layout/view_job_detail_extra_data"
+                            app:highlightDataChanged="@{highlightDataChanged}"
+                            app:jobData="@{jobData}" />
+
+                        <!--                        <LinearLayout-->
+                        <!--                            style="@style/RootLayout.WrapHeight"-->
+                        <!--                            android:orientation="horizontal">-->
+
+                        <!--                            <Space-->
+                        <!--                                android:layout_width="@dimen/job_detail_drawable_start"-->
+                        <!--                                android:layout_height="0dp" />-->
+
+                        <!--                            <LinearLayout-->
+                        <!--                                style="@style/RootLayout.WrapHeight"-->
+                        <!--                                android:layout_width="0dp"-->
+                        <!--                                android:layout_gravity="start"-->
+                        <!--                                android:layout_weight="9">-->
+
+                        <!--                                <TextView-->
+                        <!--                                    style="@style/goTruck.TextAppearance.Secondary"-->
+                        <!--                                    android:text="@string/job_detail_remarks" />-->
+
+                        <!--                                <TextView-->
+                        <!--                                    android:id="@+id/tv_remarks"-->
+                        <!--                                    style="@style/goTruck.TextAppearance.Primary"-->
+                        <!--                                    showItalicBoldDefBold="@{highlightDataChanged ? (jobData.isRemarksChanged() ? true : false) : false}"-->
+                        <!--                                    android:text="@{jobData.remarks.empty ? `-&#45;&#45;` : jobData.remarks}"-->
+                        <!--                                    android:textColor="@{highlightDataChanged ? (jobData.isRemarksChanged() ? @color/primary : @color/textPrimary) : @color/textPrimary}"-->
+                        <!--                                    android:textStyle="bold"-->
+                        <!--                                    tools:text="-&#45;&#45;" />-->
+
+                        <!--                            </LinearLayout>-->
+
+                        <!--                            <Space-->
+                        <!--                                android:layout_width="@dimen/job_detail_drawable_start"-->
+                        <!--                                android:layout_height="0dp" />-->
+
+                        <!--                        </LinearLayout>-->
+
+                        <!--                        <View-->
+                        <!--                            android:layout_width="0dp"-->
+                        <!--                            android:layout_height="0dp"-->
+                        <!--                            android:layout_marginVertical="@dimen/_4sdp" />-->
+
+                        <!--                        <LinearLayout-->
+                        <!--                            style="@style/RootLayout.WrapHeight"-->
+                        <!--                            android:orientation="horizontal">-->
+
+                        <!--                            <Space-->
+                        <!--                                android:layout_width="@dimen/job_detail_drawable_start"-->
+                        <!--                                android:layout_height="0dp" />-->
+
+                        <!--                            <LinearLayout-->
+                        <!--                                style="@style/RootLayout.WrapHeight"-->
+                        <!--                                android:layout_width="0dp"-->
+                        <!--                                android:layout_gravity="start"-->
+                        <!--                                android:layout_weight="9">-->
+
+                        <!--                                <TextView-->
+                        <!--                                    style="@style/goTruck.TextAppearance.Secondary"-->
+                        <!--                                    android:text="@string/job_detail_notes_to_driver" />-->
+
+                        <!--                                <TextView-->
+                        <!--                                    android:id="@+id/tv_notes_to_driver"-->
+                        <!--                                    style="@style/goTruck.TextAppearance.Primary"-->
+                        <!--                                    showItalicBoldDefBold="@{highlightDataChanged ? (jobData.isNotesChanged() ? true : false) : false}"-->
+                        <!--                                    android:text="@{jobData.noteToDriver.empty ? `-&#45;&#45;` : jobData.noteToDriver}"-->
+                        <!--                                    android:textColor="@{highlightDataChanged ? (jobData.isNotesChanged() ? @color/primary : @color/textPrimary) : @color/textPrimary}"-->
+                        <!--                                    android:textStyle="bold"-->
+                        <!--                                    tools:text="-&#45;&#45;" />-->
+
+                        <!--                            </LinearLayout>-->
+
+                        <!--                            <Space-->
+                        <!--                                android:layout_width="@dimen/job_detail_drawable_start"-->
+                        <!--                                android:layout_height="0dp" />-->
+
+                        <!--                        </LinearLayout>-->
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/divider_vertical" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

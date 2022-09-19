@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        style="@style/RootLayout.Padding"
+        android:gravity="center">
+
+        <TextView
+            style="@style/TPLogistics.TextAppearance.Primary"
+            android:layout_gravity="center"
+            android:text="@string/alert_msg_no_data"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</layout>

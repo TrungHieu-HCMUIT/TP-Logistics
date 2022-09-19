@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.trunnghieu.tplogisticsapplication.data.repository.remote.delivery_workflow_service.Job" />
+
+        <variable
+            name="showDetailOnClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="downloadEdoOnClick"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView style="@style/Base.MaterialCardView">
+
+        <LinearLayout style="@style/RootLayout.WrapHeight">
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_12sdp">
+
+                <TextView
+                    style="@style/TPLogistics.TextAppearance.Primary"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:text="@string/history_job_id"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/TPLogistics.TextAppearance.Primary"
+                    android:text="P0000021-1"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    tools:text="P0000021-1" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/TPLogistics.MaterialButton.Icon"
+                    android:onClick="@{downloadEdoOnClick}"
+                    app:icon="@drawable/ic_download" />
+
+            </LinearLayout>
+
+            <include
+                layout="@layout/view_job_detail"
+                app:jobData="@{item}"
+                app:showDetail="@{false}"
+                app:showNoteForDriver="@{false}"
+                app:showWeightData="@{false}" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/TPLogistics.MaterialButton.Text"
+                android:layout_gravity="center"
+                android:onClick="@{showDetailOnClick}"
+                android:text="@{item.showDetail ? @string/history_hide_detail : @string/history_show_detail}"
+                android:textColor="@color/primary"
+                app:icon="@{item.showDetail ? @drawable/ic_arrow_up : @drawable/ic_arrow_down}"
+                app:iconSize="@dimen/_6sdp"
+                app:iconTint="@color/primary"
+                tools:icon="@drawable/ic_arrow_down"
+                tools:text="@string/history_show_detail" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

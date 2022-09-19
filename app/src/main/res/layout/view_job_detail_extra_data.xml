@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="jobData"
+            type="com.trunnghieu.tplogisticsapplication.data.repository.remote.delivery_workflow_service.Job" />
+
+        <variable
+            name="highlightDataChanged"
+            type="Boolean" />
+
+    </data>
+
+    <LinearLayout style="@style/RootLayout.WrapHeight">
+
+        <LinearLayout
+            style="@style/RootLayout.WrapHeight"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="@dimen/job_detail_drawable_start"
+                android:layout_height="0dp" />
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:layout_width="0dp"
+                android:layout_gravity="start"
+                android:layout_weight="9">
+
+                <TextView
+                    style="@style/TPLogistics.TextAppearance.Secondary"
+                    android:text="@string/job_detail_remarks" />
+
+                <TextView
+                    android:id="@+id/tv_remarks"
+                    style="@style/TPLogistics.TextAppearance.Primary"
+                    showItalicBoldDefBold="true"
+                    android:text="---"
+                    android:textColor="@color/textPrimary"
+                    android:textStyle="bold"
+                    tools:text="---" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="@dimen/job_detail_drawable_start"
+                android:layout_height="0dp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/_4sdp" />
+
+        <LinearLayout
+            style="@style/RootLayout.WrapHeight"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="@dimen/job_detail_drawable_start"
+                android:layout_height="0dp" />
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:layout_width="0dp"
+                android:layout_gravity="start"
+                android:layout_weight="9">
+
+                <TextView
+                    style="@style/TPLogistics.TextAppearance.Secondary"
+                    android:text="@string/job_detail_notes_to_driver" />
+
+                <TextView
+                    android:id="@+id/tv_notes_to_driver"
+                    style="@style/TPLogistics.TextAppearance.Primary"
+                    showItalicBoldDefBold="true"
+                    android:text="---"
+                    android:textColor="@color/textPrimary"
+                    android:textStyle="bold"
+                    tools:text="---" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="@dimen/job_detail_drawable_start"
+                android:layout_height="0dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</layout>
