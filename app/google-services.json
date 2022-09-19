@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "184887656838",
+    "project_id": "tplogistic-bb1d0",
+    "storage_bucket": "tplogistic-bb1d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184887656838:android:6922a5641bc5273b712c07",
+        "android_client_info": {
+          "package_name": "com.trunnghieu.tplogisticsapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "184887656838-ttqor21eu998b1u2jid3h6dboq3043d0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYHNFAJGuaW0xZIOEqOwhWHlu84FffgK4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "184887656838-ttqor21eu998b1u2jid3h6dboq3043d0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
