@@ -23,6 +23,7 @@ import com.trunnghieu.tplogisticsapplication.ui.base.fragment.FragmentNavigator
 import com.trunnghieu.tplogisticsapplication.ui.screens.account_settings.AccountSettingsFragment
 import com.trunnghieu.tplogisticsapplication.ui.screens.cso.CsoPhoneAdapter
 import com.trunnghieu.tplogisticsapplication.ui.screens.job.adapter.MenuAdapter
+import com.trunnghieu.tplogisticsapplication.ui.screens.job_history.HistoryFragment
 import com.trunnghieu.tplogisticsapplication.ui.screens.login.LoginActivity
 import com.trunnghieu.tplogisticsapplication.ui.screens.vehicle_pairing.VehiclePairingFragment
 import com.trunnghieu.tplogisticsapplication.ui.widgets.MovableFloatingActionButton
@@ -170,6 +171,10 @@ class JobActivity : BaseConnectivityActivity<ActivityJobBinding, JobVM>(), JobUV
 
     override fun loadHamburgerMenu(menuList: List<HamburgerMenu>) {
         menuAdapter.submitList(menuList)
+    }
+
+    override fun goToJobHistory() {
+        getNavigator().goTo(HistoryFragment())
     }
 
     override fun goToAccountSettings() {

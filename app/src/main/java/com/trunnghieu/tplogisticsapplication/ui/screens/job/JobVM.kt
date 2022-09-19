@@ -100,7 +100,7 @@ class JobVM : BaseRepoViewModel<AccountRepo, JobUV>() {
         }
         when (item.type_id) {
             MenuType.JOB_HISTORY.typeId -> {
-
+                uiCallback?.goToJobHistory()
             }
             MenuType.ACCOUNT_SETTINGS.typeId -> {
                 uiCallback?.goToAccountSettings()

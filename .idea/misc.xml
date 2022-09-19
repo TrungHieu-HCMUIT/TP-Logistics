@@ -42,6 +42,7 @@
         <entry key="app/src/main/res/layout/fragment_upcoming_jobs.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/fragment_vehicle_pairing.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/item_cso_phone.xml" value="0.2246376811594203" />
+        <entry key="app/src/main/res/layout/item_history.xml" value="0.21218487394957983" />
         <entry key="app/src/main/res/layout/item_language_menu.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/item_menu.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/item_spinner.xml" value="0.2246376811594203" />
@@ -53,6 +54,7 @@
         <entry key="app/src/main/res/layout/view_app_name.xml" value="0.259963768115942" />
         <entry key="app/src/main/res/layout/view_error_message.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/view_input.xml" value="0.2246376811594203" />
+        <entry key="app/src/main/res/layout/view_job_detail.xml" value="0.31189083820662766" />
         <entry key="app/src/main/res/layout/view_job_detail_child.xml" value="0.23777173913043478" />
         <entry key="app/src/main/res/layout/view_job_detail_extra_data.xml" value="0.23777173913043478" />
         <entry key="app/src/main/res/layout/view_maps.xml" value="0.2246376811594203" />
