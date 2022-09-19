@@ -4,14 +4,21 @@ import android.content.Context
 import androidx.lifecycle.*
 import com.trunnghieu.tplogisticsapplication.R
 import com.trunnghieu.tplogisticsapplication.data.preferences.AppPrefs
+import com.trunnghieu.tplogisticsapplication.data.repository.local.job.LocalJob
 import com.trunnghieu.tplogisticsapplication.data.repository.local.menu.HamburgerMenu
 import com.trunnghieu.tplogisticsapplication.data.repository.local.menu.MenuType
 import com.trunnghieu.tplogisticsapplication.data.repository.local.menu.SubMenuType
 import com.trunnghieu.tplogisticsapplication.data.repository.remote.account.AccountRepo
 import com.trunnghieu.tplogisticsapplication.data.repository.remote.account.cso.CsoPhoneNumber
+import com.trunnghieu.tplogisticsapplication.data.repository.remote.delivery_workflow_service.Job
 import com.trunnghieu.tplogisticsapplication.ui.base.BaseRepoViewModel
+import com.trunnghieu.tplogisticsapplication.utils.constants.TPLogisticsConst
 import com.trunnghieu.tplogisticsapplication.utils.helper.AppPreferences
 import com.trunnghieu.tplogisticsapplication.utils.helper.LocaleHelper
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class JobVM : BaseRepoViewModel<AccountRepo, JobUV>() {
 
@@ -31,6 +38,16 @@ class JobVM : BaseRepoViewModel<AccountRepo, JobUV>() {
     // Preferences
     private val appPrefs = AppPreferences.get()
     val appLanguage = LocaleHelper.getLanguageFromLocale()
+
+    // Job data
+    var isRefreshingJobData = false
+    var jobWasCancelled = false
+    var jobUnAssigned = false
+    val showRefreshButton = MutableLiveData(false)
+    val latestJob = MutableLiveData<Job>(LocalJob.get().getLatestJob())
+    val highlightDataChanged = MutableLiveData(false)
+    var alreadyRunResetHighlightUI = false
+    val viewJobAssigned = appPrefs.getBoolean(AppPrefs.LOGIN.VIEW_JOB_ASSIGNED)
 
     /**
      * Show menu
@@ -131,6 +148,37 @@ class JobVM : BaseRepoViewModel<AccountRepo, JobUV>() {
             CsoPhoneNumber(phoneNo = "0983 24 92 75", supportName = "NN"),
         )
         uiCallback?.gotCsoPhoneNumber(data)
+    }
+
+    /**
+     * Refresh job data
+     */
+    fun refreshJobData() {
+
+    }
+
+    /**
+     * Highlight data changed by display text color is primary color
+     * Reset highlight UI after 30s when user first interaction
+     */
+    fun showHighlightDataChanged(show: Boolean, disableImmediately: Boolean? = false) {
+        isRefreshingJobData = false
+        if (show) {
+            alreadyRunResetHighlightUI = false
+            highlightDataChanged.value = true
+        } else {
+            if (disableImmediately == true) {
+                highlightDataChanged.value = false
+                return
+            }
+            if (!alreadyRunResetHighlightUI) {
+                alreadyRunResetHighlightUI = true
+                CoroutineScope(Dispatchers.IO).launch {
+                    delay(TPLogisticsConst.SHOW_HIGHLIGHT_INTERVAL)
+                    highlightDataChanged.postValue(false)
+                }
+            }
+        }
     }
 
 }

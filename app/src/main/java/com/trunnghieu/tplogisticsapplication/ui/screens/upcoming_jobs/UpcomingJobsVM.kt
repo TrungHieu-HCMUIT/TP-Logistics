@@ -46,6 +46,13 @@ class UpcomingJobsVM : BaseRepoViewModel<DeliveryDriverReportRepo, UpcomingJobsU
      * Start work with selected job
      */
     fun startWork() {
+        if (selectedJob == null) return
 
+        selectedJob!!.showDetail = true
+        if (jobSelectionAllowed.value == false) {
+            // Driver cannot select the job they want
+            uiCallback?.goToNextJob(selectedJob!!)
+            return
+        }
     }
 }

@@ -7,6 +7,7 @@ import com.trunnghieu.tplogisticsapplication.data.repository.remote.delivery_wor
 import com.trunnghieu.tplogisticsapplication.databinding.FragmentUpcomingJobsBinding
 import com.trunnghieu.tplogisticsapplication.ui.base.fragment.BaseFragment
 import com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM
+import com.trunnghieu.tplogisticsapplication.ui.screens.next_job.NextJobFragment
 import com.trunnghieu.tplogisticsapplication.ui.screens.upcoming_jobs.adapter.UpcomingJobsAdapter
 
 class UpcomingJobsFragment : BaseFragment<FragmentUpcomingJobsBinding, UpcomingJobsVM>(),
@@ -67,7 +68,13 @@ class UpcomingJobsFragment : BaseFragment<FragmentUpcomingJobsBinding, UpcomingJ
     }
 
     override fun goToNextJob(selectedJob: Job) {
-
+        jobVM.showHighlightDataChanged(show = false, disableImmediately = true)
+        setFragmentResultListener(KEY_REFRESH_JOBS) { requestKey, _ ->
+            if (requestKey == KEY_REFRESH_JOBS) {
+                refreshAssignedJobs()
+            }
+        }
+        navigator.goTo(NextJobFragment.newInstance(selectedJob))
     }
 
     override fun selectedJob(job: Job?) {

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.next_job.NextJobVM" />
+
+        <variable
+            name="jobVM"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+
+        <variable
+            name="locationVM"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.maps.LocationVM" />
+
+    </data>
+
+    <LinearLayout style="@style/RootLayout">
+
+        <include
+            layout="@layout/view_toolbar"
+            app:leftIconOnClick="@{() -> vm.backPress()}"
+            app:refreshOnClick="@{() -> jobVM.refreshJobData()}"
+            app:showRefresh="@{false}"
+            app:title="@{@string/next_job_title}" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                style="@style/TPLogistics.Layout.BorderTop.JobDetail"
+                android:paddingStart="0dp"
+                android:paddingTop="0dp"
+                android:paddingEnd="0dp"
+                android:paddingBottom="0dp">
+
+                <androidx.coordinatorlayout.widget.CoordinatorLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/view_job_data"
+                        style="@style/RootLayout.WrapHeight"
+                        android:layout_marginStart="@dimen/layout_detail_padding_default"
+                        android:layout_marginEnd="@dimen/layout_detail_padding_default"
+                        android:background="@android:color/transparent"
+                        android:paddingTop="@dimen/layout_detail_padding_default">
+
+                        <include
+                            layout="@layout/view_job_title"
+                            app:bookingNo="@{vm.newJob.bookingNo}"
+                            app:loadNo="@{17}" />
+
+                        <include
+                            layout="@layout/view_job_detail"
+                            app:highlightDataChanged="@{jobVM.highlightDataChanged}"
+                            app:jobData="@{vm.newJob}"
+                            app:showDischargeData="@{false}"
+                            app:showEndDivider="@{false}"
+                            app:showPickupData="@{false}"
+                            app:showVehicleData="@{false}"
+                            app:showWeightData="@{false}" />
+
+                    </LinearLayout>
+
+                    <include
+                        android:id="@+id/viewMaps"
+                        layout="@layout/view_maps"
+                        app:isPickupLocation="@{true}"
+                        app:locationName="@{`Delivery location`}"
+                        app:locationVM="@{locationVM}" />
+
+                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/TPLogistics.MaterialButton.Accent.Margin"
+                android:layout_gravity="bottom"
+                android:onClick="@{() -> vm.submitAcceptJob()}"
+                android:text="@string/next_job_btn_go" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</layout>

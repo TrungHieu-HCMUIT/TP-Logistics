@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bookingNo"
+            type="String" />
+
+        <variable
+            name="loadNo"
+            type="Integer" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/RootLayout.WrapHeight"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/TPLogistics.TextAppearance.Primary"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:text="@string/history_job_id"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/TPLogistics.TextAppearance.Primary"
+            android:text="P0000021-1"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            tools:text="P0000021-1" />
+
+    </LinearLayout>
+
+</layout>
