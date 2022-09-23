@@ -36,7 +36,7 @@
                 <ImageView
                     android:layout_width="@dimen/_32sdp"
                     android:layout_height="@dimen/_32sdp"
-                    android:src="@drawable/ic_circle_orange"
+                    android:src="@drawable/ic_circle_teal"
                     tools:ignore="ContentDescription" />
 
                 <TextView

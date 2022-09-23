@@ -16,7 +16,10 @@
         <entry key="app/src/main/res/drawable-xxhdpi/bg_maps_address.xml" value="0.182" />
         <entry key="app/src/main/res/drawable-xxhdpi/bg_textview_bottom_line.xml" value="0.182" />
         <entry key="app/src/main/res/drawable-xxhdpi/bg_textview_bottom_line_primary.xml" value="0.182" />
+        <entry key="app/src/main/res/drawable-xxhdpi/ic_checkbox.xml" value="0.169" />
+        <entry key="app/src/main/res/drawable-xxhdpi/ic_launcher_foreground.xml" value="0.169" />
         <entry key="app/src/main/res/drawable-xxhdpi/ic_password.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable-xxhdpi/ic_radio.xml" value="0.167" />
         <entry key="app/src/main/res/drawable/bg_card_layout_sel.xml" value="0.176" />
         <entry key="app/src/main/res/drawable/bg_divider_dash.xml" value="0.176" />
         <entry key="app/src/main/res/drawable/bg_divider_dash_primary_color.xml" value="0.176" />
@@ -40,7 +43,7 @@
         <entry key="app/src/main/res/layout/divider_vertical.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/divider_vertical_primary_color.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/fragment_account_settings.xml" value="0.37604166666666666" />
-        <entry key="app/src/main/res/layout/fragment_history.xml" value="0.13728470111448834" />
+        <entry key="app/src/main/res/layout/fragment_history.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_next_job.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_upcoming_jobs.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/fragment_vehicle_pairing.xml" value="0.37604166666666666" />

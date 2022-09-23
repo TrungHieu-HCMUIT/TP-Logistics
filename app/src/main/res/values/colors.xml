@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Primary brand color. -->
-    <color name="primary">#FC672E</color>
-    <color name="primaryNew">#083A75</color>
-    <color name="primaryVariant">#FC672E</color>
-    <color name="primaryLight">#FFF7F1</color>
+<!--    <color name="primary">#FC672E</color>-->
+<!--    <color name="primaryNew">#083A75</color>-->
+<!--    <color name="primaryVariant">#FC672E</color>-->
+<!--    <color name="primaryLight">#FFF7F1</color>-->
+<!--    <color name="onPrimary">#FFFFFF</color>-->
+
+    <color name="primary">#00ADB5</color>
+    <color name="primaryNew">#222831</color>
+    <color name="primaryVariant">#00ADB5</color>
+    <color name="primaryLight">#EEEEEE</color>
     <color name="onPrimary">#FFFFFF</color>
 
     <!-- Secondary brand color. -->
-    <color name="secondary">#31B053</color>
-    <color name="secondaryVariant">#31B053</color>
+    <color name="secondary">#393E46</color>
+    <color name="secondaryVariant">#393E46</color>
     <color name="onSecondary">#FFFFFF</color>
 
     <!-- Others -->

@@ -48,7 +48,7 @@
                     tools:text="20 Mar 2021" />
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/_32sdp"
                     android:layout_height="wrap_content"
                     android:onClick="@{() -> vm.showFilter()}"
                     android:padding="@dimen/_4sdp"
