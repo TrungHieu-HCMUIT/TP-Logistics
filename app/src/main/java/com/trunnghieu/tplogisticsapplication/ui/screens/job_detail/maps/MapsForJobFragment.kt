@@ -5,6 +5,7 @@ import android.content.res.Resources
 import android.location.Location
 import android.location.LocationManager
 import android.net.Uri
+import android.util.Log
 import android.view.View
 import androidx.core.view.doOnLayout
 import androidx.databinding.ViewDataBinding

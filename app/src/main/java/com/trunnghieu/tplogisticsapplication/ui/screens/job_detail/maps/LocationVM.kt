@@ -37,8 +37,8 @@ class LocationVM : BaseUiViewModel<LocationUV>() {
      * Show Google Maps with data
      */
     fun showDataOnMap(job: Job? = null) {
-        job ?: return
         // TODO: Init data
+//        job ?: return
         isPickupLocation = true
 //        isPickupLocation = job.jobStatus == ApiConst.JobStatus.DRIVER_JOB_STARTED.name
 
@@ -67,9 +67,10 @@ class LocationVM : BaseUiViewModel<LocationUV>() {
     @SuppressLint("MissingPermission")
     fun showMyLocation() {
         locationManager ?: return
-        val lastKnownLocation =
-            locationManager!!.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)
+
+        val lastKnownLocation: Location? = getLastKnownLocation()
         lastKnownLocation ?: return
+
         uiCallback?.zoomCameraToLastKnownLocation(
             LatLng(
                 lastKnownLocation.latitude,
@@ -84,8 +85,8 @@ class LocationVM : BaseUiViewModel<LocationUV>() {
     @SuppressLint("MissingPermission")
     fun openAndStartNavigationOnMap() {
         locationManager ?: return
-        val lastKnownLocation =
-            locationManager!!.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)
+
+        val lastKnownLocation: Location? = getLastKnownLocation()
         lastKnownLocation ?: return
 
         val uriBuilder = Uri.Builder()
@@ -114,5 +115,24 @@ class LocationVM : BaseUiViewModel<LocationUV>() {
         }
         val mapUrl = uriBuilder.toString()
         uiCallback?.openMap(mapUrl)
+    }
+
+    /**
+    * Get last know location of the device
+    */
+    @SuppressLint("MissingPermission")
+    private fun getLastKnownLocation(): Location? {
+        locationManager ?: return null
+
+        var lastKnownLocation: Location? = null
+
+        val providers: List<String> = locationManager!!.getProviders(true)
+        for (provider in providers) {
+            val l: Location = locationManager!!.getLastKnownLocation(provider) ?: continue
+            if (lastKnownLocation == null || l.accuracy < lastKnownLocation.accuracy) {
+                lastKnownLocation = l
+            }
+        }
+        return lastKnownLocation
     }
 }
