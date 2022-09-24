@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.trunnghieu.tplogisticsapplication.data.api.ApiConst.JobStatus" />
+
+        <variable
+            name="jobStatus"
+            type="com.trunnghieu.tplogisticsapplication.data.api.ApiConst.JobStatus" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/RootLayout.WrapHeight"
+        android:background="@color/primary">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingStart="@dimen/_32sdp"
+            android:paddingEnd="@dimen/_32sdp">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.15"
+                android:button="@drawable/ic_job_to_pickup"
+                android:checked="@{jobStatus == JobStatus.DRIVER_JOB_STARTED}"
+                android:enabled="false"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                app:useMaterialThemeColors="false" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.05" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.11"
+                android:button="@drawable/ic_job_pickup_material"
+                android:checked="@{jobStatus == JobStatus.DRIVER_PICKUP_ARRIVED}"
+                android:enabled="false"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                app:useMaterialThemeColors="false" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.05" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.14"
+                android:button="@drawable/ic_job_to_delivery"
+                android:checked="@{jobStatus == JobStatus.DRIVER_PICKUP_DONE}"
+                android:enabled="false"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                app:useMaterialThemeColors="false" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.05" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:button="@drawable/ic_job_discharge_material"
+                android:checked="@{(jobStatus == JobStatus.DRIVER_DELIVERY_ARRIVED || jobStatus == JobStatus.DRIVER_DISCHARGED_DONE)}"
+                android:enabled="false"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                app:useMaterialThemeColors="false" />
+
+        </RadioGroup>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_job_status"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+
+</layout>

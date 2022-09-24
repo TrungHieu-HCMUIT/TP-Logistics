@@ -25,6 +25,10 @@
         <entry key="app/src/main/res/drawable/bg_divider_dash_primary_color.xml" value="0.176" />
         <entry key="app/src/main/res/drawable/bg_textview_bottom_line.xml" value="0.2765" />
         <entry key="app/src/main/res/drawable/bg_textview_bottom_line_primary.xml" value="0.2765" />
+        <entry key="app/src/main/res/drawable/ic_job_discharge_material.xml" value="0.169" />
+        <entry key="app/src/main/res/drawable/ic_job_pickup_material.xml" value="0.169" />
+        <entry key="app/src/main/res/drawable/ic_job_to_delivery.xml" value="0.169" />
+        <entry key="app/src/main/res/drawable/ic_job_to_pickup.xml" value="0.169" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2325" />
         <entry key="app/src/main/res/drawable/ic_switch.xml" value="0.1765" />
         <entry key="app/src/main/res/drawable/ic_switch_small.xml" value="0.1765" />
@@ -44,6 +48,7 @@
         <entry key="app/src/main/res/layout/divider_vertical_primary_color.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/fragment_account_settings.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_job_detail.xml" value="0.20923913043478262" />
         <entry key="app/src/main/res/layout/fragment_next_job.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_upcoming_jobs.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/fragment_vehicle_pairing.xml" value="0.37604166666666666" />
@@ -63,6 +68,7 @@
         <entry key="app/src/main/res/layout/view_job_detail.xml" value="0.31189083820662766" />
         <entry key="app/src/main/res/layout/view_job_detail_child.xml" value="0.23777173913043478" />
         <entry key="app/src/main/res/layout/view_job_detail_extra_data.xml" value="0.23777173913043478" />
+        <entry key="app/src/main/res/layout/view_job_status.xml" value="0.25" />
         <entry key="app/src/main/res/layout/view_job_title.xml" value="0.23777173913043478" />
         <entry key="app/src/main/res/layout/view_maps.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/view_no_data.xml" value="0.23777173913043478" />

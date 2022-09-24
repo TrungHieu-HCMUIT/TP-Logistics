@@ -71,7 +71,7 @@
                 layout="@layout/view_job_detail_child"
                 app:drawableStartLeft="@{@drawable/ic_pickup_location}"
                 app:drawableStartRight="@{@drawable/ic_delivery_location}"
-                app:highlightLeft="@{true}"
+                app:highlightLeft="@{false}"
                 app:highlightRight="@{true}"
                 app:showDrawableStartLeft="@{true}"
                 app:showDrawableStartRight="@{true}"
@@ -92,8 +92,8 @@
 
                 <include
                     layout="@layout/view_job_detail_child"
-                    app:highlightLeft="@{true}"
-                    app:highlightRight="@{true}"
+                    app:highlightLeft="@{false}"
+                    app:highlightRight="@{false}"
                     app:titleLeft="@{@string/history_signed_by}"
                     app:titleRight="@{@string/history_signed_by}"
                     app:valueLeft="@{`VDTH`}"
@@ -116,8 +116,8 @@
 
                 <include
                     layout="@layout/view_job_detail_child"
-                    app:highlightLeft="@{true}"
-                    app:highlightRight="@{true}"
+                    app:highlightLeft="@{false}"
+                    app:highlightRight="@{false}"
                     app:titleLeft="@{@string/history_customer_name}"
                     app:titleRight="@{@string/history_product_type}"
                     app:valueLeft="@{`VDTH`}"
@@ -138,8 +138,8 @@
 
                         <include
                             layout="@layout/view_job_detail_child"
-                            app:highlightLeft="@{true}"
-                            app:highlightRight="@{true}"
+                            app:highlightLeft="@{false}"
+                            app:highlightRight="@{false}"
                             app:titleLeft="@{@string/history_vehicle_no}"
                             app:titleRight="@{@string/history_vehicle_weight}"
                             app:valueLeft="@{`59A-999.99`}"
@@ -164,8 +164,8 @@
 
                         <include
                             layout="@layout/view_job_detail_child"
-                            app:highlightLeft="@{true}"
-                            app:highlightRight="@{true}"
+                            app:highlightLeft="@{false}"
+                            app:highlightRight="@{false}"
                             app:titleLeft="@{@string/history_laden_weight}"
                             app:titleRight="@{@string/history_net_weight}"
                             app:valueLeft="@{`2 tons`}"

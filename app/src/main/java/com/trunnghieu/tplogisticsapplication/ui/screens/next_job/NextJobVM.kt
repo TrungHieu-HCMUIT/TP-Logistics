@@ -34,6 +34,7 @@ class NextJobVM : BaseRepoViewModel<WorkFlowRepo, NextJobUV>() {
      * Submit accept job
      */
     fun submitAcceptJob() {
-
+        //TODO: Update data of job
+        uiCallback?.acceptJobSuccess(Job(bookingNo = ""))
     }
 }

@@ -30,17 +30,34 @@ object ApiConst {
     const val PUSH_NOTIFICATION_TYPE = "2" // 1: iOS - 2: Android
 
     // Job Status
-    enum class JobStatus {
-        OPEN, // Go to Vehicle Pairing - With scan QR
-        ASSIGNED, // Go to Vehicle Pairing - With Start Work button
-        DRIVER_JOB_STARTED, // Go To Pickup Location
-        DRIVER_PICKUP_ARRIVED, // Go To Pickup Material
-        DRIVER_PICKUP_DONE, // Go To Delivery Location (TRIP BASED)
-        DRIVER_PICKUP_TONNAGE_SUBMITTED, // Go To Delivery Location (TON BASED)
-        DRIVER_DELIVERY_ARRIVED, // Go To Discharge Material (show Job Complete button) (TRIP BASED)
-        DRIVER_DISCHARGE_TONNAGE_SUBMITTED, // Go To Discharge Material (TON BASED)
-        DRIVER_DISCHARGED, // Go To Discharge Material (show Scan DO button)
-        DRIVER_JOB_COMPLETED, // Go To Job Summary (DO scanned)
+    enum class JobStatus(code: Int) {
+        OPEN(1),
+        ASSIGNED(2),
+        DRIVER_JOB_STARTED(3),
+        DRIVER_PICKUP_ARRIVED(4),
+        DRIVER_PICKUP_DONE(5),
+        DRIVER_DELIVERY_STARTED(6),
+        DRIVER_DELIVERY_ARRIVED(7),
+        DRIVER_DISCHARGED_DONE(8),
+        DRIVER_JOB_COMPLETED(9),
+        CUSTOMER_CANCELLED(10);
+
+        val statusCode: Int
+
+        companion object {
+            fun fromInt(value: Int): JobStatus? {
+                values().forEach {
+                    if (it.statusCode == value) {
+                        return it
+                    }
+                }
+                return null
+            }
+        }
+
+        init {
+            statusCode = code
+        }
     }
 
     // For TON BASED

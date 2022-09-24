@@ -10,6 +10,7 @@ import com.trunnghieu.tplogisticsapplication.data.repository.local.job.LocalJob
 import com.trunnghieu.tplogisticsapplication.data.repository.remote.delivery_workflow_service.Job
 import com.trunnghieu.tplogisticsapplication.databinding.FragmentNextJobBinding
 import com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM
+import com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.JobDetailFragment
 import com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.maps.MapsForJobFragment
 import com.trunnghieu.tplogisticsapplication.ui.screens.upcoming_jobs.UpcomingJobsFragment
 
@@ -85,7 +86,7 @@ class NextJobFragment : MapsForJobFragment<FragmentNextJobBinding, NextJobVM>(),
     override fun acceptJobSuccess(job: Job) {
 //        job.showDetail = true
 //        jobVM.latestJob.value = job
-//        navigator.rootFragment = JobDetailFragment()
+        navigator.rootFragment = JobDetailFragment()
     }
 
     fun getViewModel() = viewModel
