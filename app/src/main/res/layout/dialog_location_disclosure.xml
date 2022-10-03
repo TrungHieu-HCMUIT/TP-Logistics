@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="nextOnClick"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView style="@style/Base.MaterialCardView">
+
+        <LinearLayout
+            style="@style/RootLayout.WrapHeight"
+            android:background="@color/surface"
+            android:gravity="center"
+            android:paddingTop="@dimen/_8sdp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_8sdp" />
+
+            <TextView
+                style="@style/TPLogistics.TextAppearance.Primary"
+                htmlText="@{@string/disclosure_location_permission_title}"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_8sdp"
+                tools:text="@string/disclosure_location_permission_title" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_8sdp" />
+
+            <TextView
+                style="@style/TPLogistics.TextAppearance.Secondary"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:text="@string/disclosure_location_permission_content" />
+
+            <include layout="@layout/divider_vertical" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/TPLogistics.MaterialButton.Text"
+                android:layout_width="match_parent"
+                android:onClick="@{nextOnClick}"
+                android:text="@string/alert_btn_next"
+                android:textAllCaps="true"
+                android:textColor="@color/secondary"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

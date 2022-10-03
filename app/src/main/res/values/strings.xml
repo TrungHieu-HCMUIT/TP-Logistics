@@ -23,6 +23,18 @@
     <!-- Permission -->
     <string name="permission_msg">Please accept all permissions to continue using this app</string>
 
+    <!-- Permission disclosure -->
+    <string name="disclosure_location_permission_title">
+        <![CDATA[
+        <html>
+        <b>TPLogistics</b> will access your location even when you are not using the app.
+        </html>
+        ]]>
+    </string>
+    <string name="disclosure_location_permission_content">
+        TPLogistics collects location data to enable pickups and deliveries, even when the app is closed or not in use.
+    </string>
+
     <!-- Login -->
     <string name="login_title">Login</string>
     <string name="login_country_code">Country Code</string>

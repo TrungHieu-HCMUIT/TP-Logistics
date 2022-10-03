@@ -1,12 +1,18 @@
 package com.trunnghieu.tplogisticsapplication.ui.screens.login
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.text.method.PasswordTransformationMethod
+import android.view.LayoutInflater
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.trunnghieu.tplogisticsapplication.R
 import com.trunnghieu.tplogisticsapplication.databinding.ActivityLoginBinding
+import com.trunnghieu.tplogisticsapplication.databinding.DialogLocationDisclosureBinding
 import com.trunnghieu.tplogisticsapplication.extensions.navigateTo
 import com.trunnghieu.tplogisticsapplication.ui.base.activity.BaseActivity
+import com.trunnghieu.tplogisticsapplication.ui.base.dialog.AppFunctionDialog
 import com.trunnghieu.tplogisticsapplication.ui.screens.job.JobActivity
 import com.trunnghieu.tplogisticsapplication.ui.screens.login.language.LanguagePopupMenu
 import com.trunnghieu.tplogisticsapplication.ui.screens.reset_password.ResetPasswordActivity
@@ -14,7 +20,7 @@ import com.trunnghieu.tplogisticsapplication.utils.constants.TPLogisticsConst
 import com.trunnghieu.tplogisticsapplication.utils.helper.AppPreferences
 import com.trunnghieu.tplogisticsapplication.utils.helper.LocaleHelper
 
-class LoginActivity : BaseActivity<ActivityLoginBinding, LoginVM>(), LoginUV{
+class LoginActivity : BaseActivity<ActivityLoginBinding, LoginVM>(), LoginUV {
 
     override fun layoutRes() = R.layout.activity_login
 
@@ -46,9 +52,81 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginVM>(), LoginUV{
 
     override fun initAction() {
         //TODO: Delete here
-        viewModel.phoneNumber.value = "2"
-        viewModel.password.value = "2"
-        viewModel.login()
+//        viewModel.phoneNumber.value = "2"
+//        viewModel.password.value = "2"
+//        viewModel.login()
+
+        viewModel.run {
+            phoneNumber.observe(this@LoginActivity) {
+                if (it.isNotEmpty()) {
+                    binding.inputPhone.textInputLayout.setBoxStrokeColorStateList(normalStrokeColor)
+                }
+            }
+
+            password.observe(this@LoginActivity) {
+                if (it.isNotEmpty()) {
+                    binding.inputPassword.textInputLayout.setBoxStrokeColorStateList(
+                        normalStrokeColor
+                    )
+                }
+            }
+        }
+    }
+
+    override fun askPermissions(permissions: List<String>) {
+        requestPermission(
+            getString(R.string.permission_msg),
+            permissions,
+            object : RequestPermissionCallback {
+                override fun onPermissionGranted() {
+                    viewModel.requestLocationPermission()
+                }
+
+                override fun onPermissionDenied() {
+                    finish()
+                }
+            }
+        )
+    }
+
+    override fun askLocationPermissions(locationPermissions: List<String>) {
+        if (ActivityCompat.checkSelfPermission(
+                context,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) == PackageManager.PERMISSION_GRANTED &&
+            ActivityCompat.checkSelfPermission(
+                context,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
+            viewModel.continueLoginFlow()
+            return
+        }
+
+        val locationDisclosureBinding = DialogLocationDisclosureBinding.inflate(
+            LayoutInflater.from(context), null, true
+        )
+        val disclosureDialog = AppFunctionDialog.get().showCustomLayout(
+            context, locationDisclosureBinding, 0.9
+        )
+
+        locationDisclosureBinding.setNextOnClick {
+            disclosureDialog.dismiss()
+
+            requestPermission(
+                getString(R.string.permission_msg),
+                locationPermissions,
+                object : RequestPermissionCallback {
+                    override fun onPermissionGranted() {
+                        viewModel.continueLoginFlow()
+                    }
+
+                    override fun onPermissionDenied() {
+                        finish()
+                    }
+                }
+            )
+        }
     }
 
     override fun goToResetPassword() {

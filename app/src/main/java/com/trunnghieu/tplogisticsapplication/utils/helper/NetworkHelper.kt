@@ -55,7 +55,6 @@ object NetworkHelper {
 
                 if (autoRefresh) {
                     // Check connection again
-                    CustomLogger.e("Check connection again")
                     delay(5000)
                     isOnline(appContext, true, listener)
                 }
