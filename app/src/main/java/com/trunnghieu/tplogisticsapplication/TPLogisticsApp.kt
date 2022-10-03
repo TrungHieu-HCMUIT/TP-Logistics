@@ -7,6 +7,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ProcessLifecycleOwner
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
+import com.trunnghieu.tplogisticsapplication.utils.NotificationUtils
 import com.trunnghieu.tplogisticsapplication.utils.helper.AppPreferences
 import io.github.inflationx.calligraphy3.CalligraphyConfig
 import io.github.inflationx.calligraphy3.CalligraphyInterceptor
@@ -27,7 +28,7 @@ class TPLogisticsApp : Application() {
         // Preferences
         AppPreferences.get().init(this)
         // TODO: Notification
-//        NotificationUtils.createNotificationChannel(this, CHANNEL_ID, CHANNEL_NAME)
+        NotificationUtils.createNotificationChannel(this, CHANNEL_ID, CHANNEL_NAME)
         // Custom Font
         ViewPump.init(
             ViewPump.builder()

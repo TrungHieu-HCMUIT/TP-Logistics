@@ -45,13 +45,14 @@ object ApiConst {
         val statusCode: Int
 
         companion object {
-            fun fromInt(value: Int): JobStatus? {
+            fun fromInt(value: Int): JobStatus {
                 values().forEach {
                     if (it.statusCode == value) {
                         return it
                     }
                 }
-                return null
+                //TODO: Update appropriate status
+                return DRIVER_JOB_STARTED
             }
         }
 

@@ -23,6 +23,10 @@
     <!-- Permission -->
     <string name="permission_msg">Please accept all permissions to continue using this app</string>
 
+    <!-- Foreground Notification -->
+    <string name="foreground_notification_title">TPLogistics is tracking your location</string>
+    <string name="foreground_notification_content">We track your location in the background to ensure accurate deliveries.</string>
+
     <!-- Permission disclosure -->
     <string name="disclosure_location_permission_title">
         <![CDATA[

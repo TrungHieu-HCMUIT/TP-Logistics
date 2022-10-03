@@ -52,8 +52,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginVM>(), LoginUV {
 
     override fun initAction() {
         //TODO: Delete here
-//        viewModel.phoneNumber.value = "2"
-//        viewModel.password.value = "2"
+        viewModel.phoneNumber.value = "0983249275"
+        viewModel.password.value = "0983249275"
 //        viewModel.login()
 
         viewModel.run {

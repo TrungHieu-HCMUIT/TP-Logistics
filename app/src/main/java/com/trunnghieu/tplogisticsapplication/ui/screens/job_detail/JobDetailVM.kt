@@ -4,8 +4,12 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
+import com.trunnghieu.tplogisticsapplication.R
+import com.trunnghieu.tplogisticsapplication.data.api.ApiConst
+import com.trunnghieu.tplogisticsapplication.data.repository.local.driver.DriverRepo
 import com.trunnghieu.tplogisticsapplication.data.repository.remote.delivery_workflow_service.DeliveryWorkFlowRepo
 import com.trunnghieu.tplogisticsapplication.ui.base.BaseRepoViewModel
+import com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.pickup_location.PickupLocationFragment
 
 class JobDetailVM : BaseRepoViewModel<DeliveryWorkFlowRepo, JobDetailUV>() {
 
@@ -20,7 +24,31 @@ class JobDetailVM : BaseRepoViewModel<DeliveryWorkFlowRepo, JobDetailUV>() {
      * Display job detail based on job status
      */
     fun observerJobStatus(context: Context, lifecycleOwner: LifecycleOwner) {
-
+        DriverRepo.get().latestJobStatus.observe(lifecycleOwner) { jobStatus ->
+            if (jobStatus == ApiConst.JobStatus.DRIVER_JOB_STARTED) {
+                jobTitle.value = context.getString(R.string.job_detail_title_to_pickup)
+                replaceRootFragment(PickupLocationFragment())
+            }
+//            if (jobStatus == ApiConst.JobStatus.DRIVER_PICKUP_ARRIVED
+//                || jobStatus == ApiConst.JobStatus.DRIVER_PICKUP_TONNAGE_SUBMITTED
+//            ) {
+//                jobTitle.value = context.getString(R.string.job_detail_title_pickup_material)
+//                replaceRootFragment(PickupMaterialFragment(this))
+//            }
+//            if (jobStatus == ApiConst.JobStatus.DRIVER_PICKUP_DONE) {
+//                uiCallback?.showDeliveryLocation()
+//            }
+//            if (jobStatus == ApiConst.JobStatus.DRIVER_DELIVERY_ARRIVED
+//                || jobStatus == ApiConst.JobStatus.DRIVER_DISCHARGE_TONNAGE_SUBMITTED
+//            ) {
+//                jobTitle.value = context.getString(R.string.job_detail_title_discharge_material)
+//                uiCallback?.showDischargeMaterial(true)
+//            }
+//            if (jobStatus == ApiConst.JobStatus.DRIVER_DISCHARGED) {
+//                jobTitle.value = context.getString(R.string.job_detail_title_discharge_material)
+//                uiCallback?.showDischargeMaterial(false)
+//            }
+        }
     }
 
     /**

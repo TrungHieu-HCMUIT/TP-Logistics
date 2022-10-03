@@ -1,16 +1,19 @@
 package com.trunnghieu.tplogisticsapplication.utils.constants
 
+import android.os.Build
+import com.trunnghieu.tplogisticsapplication.R
+
 object TPLogisticsConst {
 
     const val TIMER_INTERVAL: Long = 1000
 
     const val SHOW_HIGHLIGHT_INTERVAL: Long = 30_000 // 30s
 
-//    val NOTIFICATION_ICON =
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
-//            R.drawable.ic_notification_from_android12
-//        else
-//            R.drawable.ic_notification_below_android12
+    val NOTIFICATION_ICON =
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
+            R.drawable.ic_notification_from_android12
+        else
+            R.drawable.ic_notification_below_android12
 
     enum class AppLanguage(val code: String) {
         ENGLISH("en"),
