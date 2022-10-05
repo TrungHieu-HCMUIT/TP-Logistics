@@ -47,6 +47,7 @@ abstract class MapsForJobFragment<T : ViewDataBinding, VM : BaseViewModel> :
 
     override fun onMapReady(googleMap: GoogleMap) {
         gMaps = googleMap
+        gMaps!!.setMapStyle(MapStyleOptions.loadRawResourceStyle(requireContext(), R.raw.style_json))
     }
 
     override fun initLocationManager(locationManager: LocationManager) {
