@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.phone_verify.PhoneVerifyVM" />
+
+        <variable
+            name="jobVM"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout style="@style/RootLayout">
+
+        <LinearLayout style="@style/RootLayout">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/view_toolbar"
+                app:leftIconOnClick="@{() -> vm.backPress()}"
+                app:title="@{@string/otp_title}" />
+
+            <ScrollView
+                android:id="@+id/scroll_view"
+                style="@style/TPLogistics.Layout.BorderTop"
+                android:paddingBottom="0dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    style="@style/RootLayout.WrapHeight"
+                    android:layout_marginTop="@dimen/layout_avatar_margin_top"
+                    android:gravity="center">
+
+                    <TextView
+                        style="@style/TPLogistics.TextAppearance.Primary"
+                        htmlText="@{@string/otp_mess(vm.newPhoneNumber)}"
+                        android:gravity="center"
+                        tools:text="@string/otp_mess" />
+
+                    <include layout="@layout/spacing_vertical" />
+
+                    <TextView
+                        style="@style/TPLogistics.TextAppearance.Primary"
+                        android:text="@string/otp_error_incorrect_otp"
+                        android:textColor="@color/verify_error"
+                        android:visibility="@{vm.otpIncorrect ? View.VISIBLE : View.INVISIBLE}"
+                        app:drawableStartCompat="@drawable/ic_verify_fail" />
+
+                    <include layout="@layout/spacing_vertical" />
+
+                    <com.trunnghieu.tplogisticsapplication.ui.widgets.VerifyCode
+                        android:id="@+id/view_verify_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/TPLogistics.MaterialButton.Text"
+                        android:enabled="@{vm.otpTimeOut}"
+                        android:onClick="@{() -> vm.requestOtp()}"
+                        android:text="@string/otp_resend" />
+
+                    <TextView
+                        style="@style/TPLogistics.TextAppearance.Primary"
+                        android:text="@string/otp_time_remaining" />
+
+                    <TextView
+                        style="@style/TPLogistics.TextAppearance.Primary"
+                        android:text="@{vm.timeRemaining}"
+                        android:textSize="@dimen/text_title"
+                        tools:text="01:00" />
+
+                    <include layout="@layout/spacing_vertical" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/TPLogistics.MaterialButton.Accent"
+                        android:enabled="@{vm.otpCode.length() == 6}"
+                        android:onClick="@{() -> vm.verifyOtp()}"
+                        android:text="@string/otp_btn_verify" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            imageUrl="@{null}"
+            android:layout_width="@dimen/driver_avatar"
+            android:layout_height="@dimen/driver_avatar"
+            android:layout_marginTop="@dimen/driver_avatar_margin_top"
+            app:civ_border_color="@color/surface"
+            app:civ_border_width="@dimen/driver_avatar_border_width"
+            app:layout_anchor="@id/scroll_view"
+            app:layout_anchorGravity="top|center" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
