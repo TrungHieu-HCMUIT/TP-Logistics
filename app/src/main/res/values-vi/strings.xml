@@ -61,17 +61,17 @@
     <string name="reset_pass_switch">Reset Password by User ID</string>
     <string name="reset_pass_msg_for_driver">Please enter your Phone Number to receive a temporary password.</string>
     <string name="reset_pass_msg_for_dr">Please enter your User ID to receive a temporary password.</string>
-    <string name="reset_pass_btn_send">Send</string>
+    <string name="reset_pass_btn_send">Gửi</string>
     <string name="reset_pass_msg_2">
         Thank you! We have sent a temporary password via SMS to your registered phone number. Please use the temporary password to log in and change it to a new password.
     </string>
-    <string name="reset_pass_btn_login">Login</string>
-    <string name="reset_pass_err_phone_number_is_empty">Phone Number are required and can not empty.</string>
+    <string name="reset_pass_btn_login">Đăng nhập</string>
+    <string name="reset_pass_err_phone_number_is_empty">Số điện thại không được để trống.</string>
     <string name="reset_pass_err_user_id_is_empty">User ID are required and can not empty.</string>
-    <string name="reset_pass_resend_sms">Haven\'t received an SMS?</string>
+    <string name="reset_pass_resend_sms">Bạn chưa nhận được SMS?</string>
     <string name="reset_pass_tap_to_resend">
         <p>
-        Tap here to <b>Resend SMS</b>
+        Nhấn để <b>Gửi lại SMS</b>
         </p>
     </string>
     <string name="reset_pass_err_invalid_phone_number">Invalid username or user is not active</string>
@@ -88,20 +88,20 @@
     <string name="menu_btn_logout">Đăng xuất</string>
 
     <!-- Connectivity services -->
-    <string name="connectivity_services_msg_location_disabled">Please turn on Location Services!</string>
-    <string name="connectivity_services_msg_network_no_connected">Your device is not connected to the cellular network!</string>
+    <string name="connectivity_services_msg_location_disabled">Vui lòng mở dịch vụ định vị!</string>
+    <string name="connectivity_services_msg_network_no_connected">Thiết bị của bạn hiện không kết nối mạng!</string>
 
     <!-- Call CSO -->
-    <string name="cso_title">Call us now</string>
-    <string name="cso_description">We\'re here to help</string>
+    <string name="cso_title">Gọi chúng tôi</string>
+    <string name="cso_description">Hãy để chúng tôi giúp đỡ bạn</string>
 
     <!-- Vehicle Pairing -->
-    <string name="vehicle_pairing_title">Vehicle Pairing</string>
-    <string name="vehicle_pairing_phone">Phone</string>
-    <string name="vehicle_pairing_vehicle_number">Vehicle Number</string>
-    <string name="vehicle_pairing_scan_msg">Please scan QR code to pair vehicle!</string>
-    <string name="vehicle_pairing_btn_confirm">Confirm</string>
-    <string name="vehicle_pairing_btn_pair_again">Pair Again</string>
+    <string name="vehicle_pairing_title">Ghép phương tiện</string>
+    <string name="vehicle_pairing_phone">Số điện thoại</string>
+    <string name="vehicle_pairing_vehicle_number">Biển số xe</string>
+    <string name="vehicle_pairing_scan_msg">Vui lòng quét mã QR để ghép đôi phương tiện!</string>
+    <string name="vehicle_pairing_btn_confirm">Xác nhận</string>
+    <string name="vehicle_pairing_btn_pair_again">Ghép lại</string>
 
     <!-- Start Work -->
     <string name="start_work_title">Start Work</string>
@@ -206,14 +206,14 @@
     <string name="history_net_weight">Net Weight</string>
     <string name="history_discharge_date">Discharge Date</string>
     <string name="history_discharge_time">Discharge Time</string>
-    <string name="history_filter_date">Date</string>
-    <string name="history_btn_apply">Apply</string>
-    <string name="history_show_detail">Show detail</string>
-    <string name="history_hide_detail">Hide detail</string>
-    <string name="history_btn_download_all">Download All</string>
+    <string name="history_filter_date">Ngày</string>
+    <string name="history_btn_apply">Áp dụng</string>
+    <string name="history_show_detail">Hiện chi tiết</string>
+    <string name="history_hide_detail">ẨN chi tiết</string>
+    <string name="history_btn_download_all">Tải xuống tất cả</string>
 
     <!-- Phone Verification -->
-    <string name="otp_title">Phone Verification</string>
+    <string name="otp_title">Xác thực điện thoại</string>
     <string name="otp_mess">
         <![CDATA[
         <html>Please enter the verification code (<b>OTP</b>) sent to<br/>
@@ -221,10 +221,10 @@
         </html>
         ]]>
     </string>
-    <string name="otp_error_incorrect_otp">Incorrect OTP</string>
-    <string name="otp_resend">Resend OTP</string>
-    <string name="otp_time_remaining">Time remaining</string>
-    <string name="otp_btn_verify">Verify</string>
+    <string name="otp_error_incorrect_otp">Sai mã OTP</string>
+    <string name="otp_resend">Gửi lại OTP</string>
+    <string name="otp_time_remaining">Thời gian còn lại</string>
+    <string name="otp_btn_verify">Xác thực</string>
     <string name="otp_update_phone_success_msg">
         Successfully update phone number.\nApplication will logout automatically!
     </string>
