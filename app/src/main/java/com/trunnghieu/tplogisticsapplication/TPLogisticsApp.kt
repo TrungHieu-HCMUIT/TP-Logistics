@@ -2,11 +2,13 @@ package com.trunnghieu.tplogisticsapplication
 
 import android.app.Application
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ProcessLifecycleOwner
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
+import com.trunnghieu.tplogisticsapplication.utils.CustomLogger
 import com.trunnghieu.tplogisticsapplication.utils.NotificationUtils
 import com.trunnghieu.tplogisticsapplication.utils.helper.AppPreferences
 import io.github.inflationx.calligraphy3.CalligraphyConfig
@@ -27,7 +29,7 @@ class TPLogisticsApp : Application() {
         Logger.addLogAdapter(AndroidLogAdapter())
         // Preferences
         AppPreferences.get().init(this)
-        // TODO: Notification
+        // Notification
         NotificationUtils.createNotificationChannel(this, CHANNEL_ID, CHANNEL_NAME)
         // Custom Font
         ViewPump.init(
@@ -49,7 +51,7 @@ class TPLogisticsApp : Application() {
 
         override fun onStart(owner: LifecycleOwner) {
             super.onStart(owner)
-//            CustomLogger.e("[LIFE_CYCLE] App moved to foreground")
+            CustomLogger.e("[LIFE_CYCLE] App moved to foreground")
 //            FAnalytics.logEvent(
 //                FAnalytics.EVENT_APP_RUNNING_AT_BACKGROUND,
 //                FAnalytics.Analytic(
@@ -60,7 +62,7 @@ class TPLogisticsApp : Application() {
 
         override fun onStop(owner: LifecycleOwner) {
             super.onStop(owner)
-//            CustomLogger.e("[LIFE_CYCLE] App move to background")
+            CustomLogger.e("[LIFE_CYCLE] App move to background")
 //            FAnalytics.logEvent(
 //                FAnalytics.EVENT_APP_RUNNING_AT_BACKGROUND,
 //                FAnalytics.Analytic(

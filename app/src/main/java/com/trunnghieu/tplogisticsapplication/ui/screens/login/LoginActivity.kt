@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.text.method.PasswordTransformationMethod
+import android.util.Log
 import android.view.LayoutInflater
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -171,6 +172,17 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginVM>(), LoginUV {
             inputPassword.textInputLayout.setBoxStrokeColorStateList(errorStrokeColor)
             inputPassword.edittext.requestFocus()
         }
+    }
+
+    override fun loadDefaultAppLanguage(language: TPLogisticsConst.AppLanguage) {
+        val imgLanguage = ContextCompat.getDrawable(
+            context,
+            when (language) {
+                TPLogisticsConst.AppLanguage.ENGLISH -> R.drawable.img_lang_en
+                TPLogisticsConst.AppLanguage.VIETNAMESE -> R.drawable.img_lang_vn
+            }
+        )
+        binding.imgLanguage.setImageDrawable(imgLanguage)
     }
 
     override fun showLanguagePopup() {

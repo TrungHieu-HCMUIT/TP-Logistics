@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TPLogisticsApplication</string>
+    <string name="app_version">Phiên bản %s</string>
+
+    <!-- Alert -->
+    <string name="alert_msg_an_error_has_occurred">Đã có lỗi xảy ra</string>
+    <string name="alert_msg_no_data">No Data</string>
+    <string name="alert_msg_download_successful">Download successful!</string>
+    <string name="alert_msg_upload_successful">Upload successful!</string>
+    <string name="alert_msg_account_conflict">
+        Your account is logged in on another device.\nThis account will be logged out on current device.
+    </string>
+    <string name="alert_msg_connection_error">No internet connection. Please try again.</string>
+    <string name="alert_btn_positive">OK</string>
+    <string name="alert_btn_negative">Cancel</string>
+    <string name="alert_btn_go_to_settings">Settings</string>
+    <string name="alert_btn_yes">Yes</string>
+    <string name="alert_btn_no">No</string>
+    <string name="alert_btn_next">Next</string>
+    <string name="alert_btn_continue">Continue</string>
+    <string name="alert_btn_reset">Reset</string>
+
+    <!-- Permission -->
+    <string name="permission_msg">Please accept all permissions to continue using this app</string>
+
+    <!-- Foreground Notification -->
+    <string name="foreground_notification_title">TPLogistics is tracking your location</string>
+    <string name="foreground_notification_content">We track your location in the background to ensure accurate deliveries.</string>
+
+    <!-- Permission disclosure -->
+    <string name="disclosure_location_permission_title">
+        <![CDATA[
+        <html>
+        <b>TPLogistics</b> will access your location even when you are not using the app.
+        </html>
+        ]]>
+    </string>
+    <string name="disclosure_location_permission_content">
+        TPLogistics collects location data to enable pickups and deliveries, even when the app is closed or not in use.
+    </string>
+
+    <!-- Login -->
+    <string name="login_title">Đăng nhập</string>
+    <string name="login_country_code">Country Code</string>
+    <string name="login_phone_number">Số điện thoại</string>
+    <string name="login_password">Mật khẩu</string>
+    <string name="login_remember_me">Nhớ tài khoản</string>
+    <string name="login_forgot_password">Quên mật khẩu?</string>
+    <string name="login_btn">Đăng nhập</string>
+    <string name="login_err_phone_number_password_is_empty">
+        Đăng nhập thất bại. Số điện thoại và Mật khẩu không được để trống.
+    </string>
+    <string name="login_err_user_id_password_is_empty">
+        Login failed. User ID and Password are required and can not empty.
+    </string>
+    <string name="login_err_invalid_login_info">Số điện thoại hoặc Mật khẩu không hợp lệ. Vui lòng nhập đúng thông tin.</string>
+
+    <!-- Reset Password -->
+    <string name="reset_pass_title">Đổi mật khẩu</string>
+    <string name="reset_pass_switch">Reset Password by User ID</string>
+    <string name="reset_pass_msg_for_driver">Please enter your Phone Number to receive a temporary password.</string>
+    <string name="reset_pass_msg_for_dr">Please enter your User ID to receive a temporary password.</string>
+    <string name="reset_pass_btn_send">Send</string>
+    <string name="reset_pass_msg_2">
+        Thank you! We have sent a temporary password via SMS to your registered phone number. Please use the temporary password to log in and change it to a new password.
+    </string>
+    <string name="reset_pass_btn_login">Login</string>
+    <string name="reset_pass_err_phone_number_is_empty">Phone Number are required and can not empty.</string>
+    <string name="reset_pass_err_user_id_is_empty">User ID are required and can not empty.</string>
+    <string name="reset_pass_resend_sms">Haven\'t received an SMS?</string>
+    <string name="reset_pass_tap_to_resend">
+        <p>
+        Tap here to <b>Resend SMS</b>
+        </p>
+    </string>
+    <string name="reset_pass_err_invalid_phone_number">Invalid username or user is not active</string>
+
+    <!-- Menu -->
+    <string name="menu_open" translatable="false">OPEN</string>
+    <string name="menu_close" translatable="false">CLOSE</string>
+    <string name="menu_job_history">Job History</string>
+    <string name="menu_dr_history">History Overview</string>
+    <string name="menu_account_settings">Account Settings</string>
+    <string name="menu_language">Ngôn ngữ</string>
+    <string name="menu_lang_en">Tiếng Anh</string>
+    <string name="menu_lang_vn">Tiếng Việt</string>
+    <string name="menu_btn_logout">Đăng xuất</string>
+
+    <!-- Connectivity services -->
+    <string name="connectivity_services_msg_location_disabled">Please turn on Location Services!</string>
+    <string name="connectivity_services_msg_network_no_connected">Your device is not connected to the cellular network!</string>
+
+    <!-- Call CSO -->
+    <string name="cso_title">Call us now</string>
+    <string name="cso_description">We\'re here to help</string>
+
+    <!-- Vehicle Pairing -->
+    <string name="vehicle_pairing_title">Vehicle Pairing</string>
+    <string name="vehicle_pairing_phone">Phone</string>
+    <string name="vehicle_pairing_vehicle_number">Vehicle Number</string>
+    <string name="vehicle_pairing_scan_msg">Please scan QR code to pair vehicle!</string>
+    <string name="vehicle_pairing_btn_confirm">Confirm</string>
+    <string name="vehicle_pairing_btn_pair_again">Pair Again</string>
+
+    <!-- Start Work -->
+    <string name="start_work_title">Start Work</string>
+    <string name="start_work_driver_phone">Phone</string>
+    <string name="start_work_vehicle_number">Vehicle Number</string>
+    <string name="start_work_button">Start Work</string>
+    <string name="start_work_msg_no_job_available">You don\'t have any other job for today.</string>
+    <string name="start_work_btn_end_work">End Work</string>
+
+    <!-- Account Settings -->
+    <string name="account_settings_title">Account Settings</string>
+    <string name="account_settings_driver_name">Tên tài xế</string>
+    <string name="account_settings_phone_number">Số điện thoại</string>
+    <string name="account_settings_full_name">Tên đầy đủ</string>
+    <string name="account_settings_company">Công ty</string>
+    <string name="account_settings_vehicle_number">Biển số xe</string>
+    <string name="account_settings_btn_edit_profile">Sửa hồ sơ</string>
+    <string name="account_settings_btn_change_password">Đổi mật khẩu</string>
+    <string name="account_settings_btn_save">Lưu</string>
+    <string name="account_settings_msg_failed_to_upload_profile">Failed to upload Profile. Please try again</string>
+
+    <!-- Change Password -->
+    <string name="change_password_title">Đổi mật khẩu</string>
+    <string name="change_password_current_password">Mật khẩu hiện tại</string>
+    <string name="change_password_new_password">Mật khẩu mới</string>
+    <string name="change_password_confirm_password">Xác nhận mật khẩu mới</string>
+    <string name="change_password_btn_save">Lưu</string>
+    <string name="chang_password_err_new_password_not_match">Mật khẩu mới không khớp.</string>
+    <string name="change_password_err_current_password_incorrect">Mật khẩu hiện tại không đúng.</string>
+    <string name="change_password_err_new_password_must_different_current_password">
+        Mật khẩu mới phải khác mật khẩu hiện tại.
+    </string>
+    <string name="change_password_msg_success">Đổi mật khẩu thành công</string>
+
+    <!-- Job Detail -->
+    <string name="job_detail_title_to_pickup">To Pickup Location</string>
+    <string name="job_detail_title_pickup_material">Pickup Material</string>
+    <string name="job_detail_title_to_delivery">To Delivery Location</string>
+    <string name="job_detail_title_discharge_material">Discharge Material</string>
+    <string name="job_detail_title_do_scanning">DO Scanning</string>
+    <string name="job_detail_title_job_summary">Job Summary</string>
+    <string name="job_detail_msg_not_arrive_at_pickup">You have not arrived at the Pickup Location yet!</string>
+    <string name="job_detail_msg_issue_or_collect_do">Please issue or collect DO!</string>
+    <string name="job_detail_msg_hold_to_rescan">Hold to re-scan</string>
+    <string name="job_detail_msg_hold_to_display">Hold to display</string>
+    <string name="job_detail_text_qr_code">QR code</string>
+    <string name="job_detail_text_for_scanning_again">for scanning again</string>
+    <string name="job_detail_msg_confirm_pickup_done_at_pickup_material">
+        Please confirm you have loaded the material and collected the DO!
+    </string>
+    <string name="job_detail_msg_confirm_pickup_done_at_pickup_material_with_esign">
+        Please confirm you have loaded the material
+    </string>
+    <string name="job_detail_msg_not_arrive_at_delivery">You have not arrived at the Delivery Location yet!</string>
+    <string name="job_detail_msg_please_scan_do">Please scan DO to complete the job!</string>
+    <string name="job_detail_msg_confirm_complete_at_discharge_material_trip_based">
+        Please confirm you have completed the job and collected the DO!
+    </string>
+    <string name="job_detail_msg_confirm_complete_at_discharge_material_ton_based">
+        Please confirm you have completed the job and the DO has been signed!
+    </string>
+    <string name="job_detail_msg_confirm_complete_at_discharge_material_with_esign">
+        Please confirm you have completed the job
+    </string>
+    <string name="job_detail_msg_confirm_scan_do">
+        Please confirm you have finished your work before uploading the DO!
+    </string>
+    <string name="job_detail_btn_arrived_for_pickup">Arrived For Pickup</string>
+    <string name="job_detail_btn_arrived_for_delivery">Arrived For Delivery</string>
+    <string name="job_detail_btn_arrived">Arrived</string>
+    <string name="job_detail_btn_continue">Continue</string>
+    <string name="job_detail_btn_pickup_done">Pickup Done</string>
+    <string name="job_detail_btn_scan_do">Scan DO</string>
+    <string name="job_detail_btn_submit">Submit</string>
+    <string name="job_detail_btn_complete_job">Complete Job</string>
+    <string name="job_detail_btn_discharge">Discharge</string>
+    <string name="job_detail_msg_tonnage_report">What should the tonnage be reported as?</string>
+    <string name="job_detail_msg_tonnage_key_in">Please key in</string>
+    <string name="job_detail_text_net_weight">Net Weight</string>
+    <string name="job_detail_msg_confirm_net_weight">Please confirm your Net Weight!</string>
+    <string name="job_detail_est_net_weight" translatable="false">est. </string>
+    <string name="job_detail_net_weight">Net Weight</string>
+    <string name="job_detail_msg_collect_do">Please collect the DO!</string>
+    <string name="job_detail_msg_get_the_do_signed">Please get the DO signed!</string>
+    <string name="job_detail_msg_failed_to_upload_do">Failed to upload DO. Please try again</string>
+    <string name="job_detail_remarks">Remarks</string>
+    <string name="job_detail_notes_to_driver">Notes To Driver</string>
+
+    <!-- Job History -->
+    <string name="history_title">Job History</string>
+    <string name="history_job_id">Job ID:</string>
+    <string name="history_pickup_location">Pickup Location</string>
+    <string name="history_delivery_location">Delivery Location</string>
+    <string name="history_signed_by">Signed by</string>
+    <string name="history_customer_name">Sender Name</string>
+    <string name="history_product_type">Product Type</string>
+    <string name="history_vehicle_no">Vehicle No.</string>
+    <string name="history_vehicle_weight">Vehicle Weight</string>
+    <string name="history_pickup_date">Pickup Date</string>
+    <string name="history_pickup_time">Pickup Time</string>
+    <string name="history_laden_weight">Laden Weight</string>
+    <string name="history_net_weight">Net Weight</string>
+    <string name="history_discharge_date">Discharge Date</string>
+    <string name="history_discharge_time">Discharge Time</string>
+    <string name="history_filter_date">Date</string>
+    <string name="history_btn_apply">Apply</string>
+    <string name="history_show_detail">Show detail</string>
+    <string name="history_hide_detail">Hide detail</string>
+    <string name="history_btn_download_all">Download All</string>
+
+    <!-- Phone Verification -->
+    <string name="otp_title">Phone Verification</string>
+    <string name="otp_mess">
+        <![CDATA[
+        <html>Please enter the verification code (<b>OTP</b>) sent to<br/>
+        <b>%s</b>
+        </html>
+        ]]>
+    </string>
+    <string name="otp_error_incorrect_otp">Incorrect OTP</string>
+    <string name="otp_resend">Resend OTP</string>
+    <string name="otp_time_remaining">Time remaining</string>
+    <string name="otp_btn_verify">Verify</string>
+    <string name="otp_update_phone_success_msg">
+        Successfully update phone number.\nApplication will logout automatically!
+    </string>
+
+    <!-- Next Job -->
+    <string name="next_job_title">Next Job</string>
+    <string name="next_job_btn_go">Go</string>
+
+    <!-- Upcoming Jobs -->
+    <string name="upcoming_jobs_title">Upcoming Jobs</string>
+    <string name="upcoming_jobs_message_select_a_job_to_start">Please select a job to start your work</string>
+    <string name="upcoming_jobs_message_start_next_job">Please start your next job</string>
+    <string name="upcoming_jobs_btn_wait">Wait</string>
+
+    <!-- Working Time -->
+    <string name="working_time_title">Working Time</string>
+    <string name="working_time_message">Check and update your working time here</string>
+    <string name="working_time_start_date">Start Date</string>
+    <string name="working_time_start_time">Start Time</string>
+    <string name="working_time_end_date">End Date</string>
+    <string name="working_time_end_time">End Time</string>
+
+    <!-- Pickup Location = Unload Location -->
+    <string name="working_title">Working</string>
+    <string name="working_message">Kindly confirm you have finished your work</string>
+</resources>

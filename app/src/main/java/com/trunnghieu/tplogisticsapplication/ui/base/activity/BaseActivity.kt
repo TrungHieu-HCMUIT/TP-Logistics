@@ -60,8 +60,18 @@ abstract class BaseActivity<T : ViewDataBinding, VM : BaseViewModel> : AppCompat
     open fun loadDefaultAppLanguage(language: TPLogisticsConst.AppLanguage) = Unit
 
     override fun attachBaseContext(newBase: Context) {
-        // Use English as default
-        defaultAppLanguage = TPLogisticsConst.AppLanguage.ENGLISH.code
+        defaultAppLanguage = AppPreferences.get().getString(
+            LocaleHelper.SELECTED_LANGUAGE,
+            if (
+                TPLogisticsConst.AppLanguage.values().any {
+                    it.code == LocaleHelper.getLanguageFromLocale()
+                }
+            ) {
+                LocaleHelper.getLanguageFromLocale()
+            } else {
+                TPLogisticsConst.AppLanguage.ENGLISH.code
+            }
+        )
 
         super.attachBaseContext(
             ViewPumpContextWrapper.wrap(

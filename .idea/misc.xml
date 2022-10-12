@@ -48,6 +48,7 @@
         <entry key="app/src/main/res/layout/divider_vertical.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/divider_vertical_primary_color.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/fragment_account_settings.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/fragment_delivery_location.xml" value="0.20516304347826086" />
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_job_detail.xml" value="0.20923913043478262" />
         <entry key="app/src/main/res/layout/fragment_next_job.xml" value="0.335" />

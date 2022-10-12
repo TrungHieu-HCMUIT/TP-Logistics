@@ -1,5 +1,6 @@
 package com.trunnghieu.tplogisticsapplication.ui.screens.job.adapter
 
+import android.util.Log
 import androidx.recyclerview.widget.DiffUtil
 import com.trunnghieu.tplogisticsapplication.R
 import com.trunnghieu.tplogisticsapplication.data.preferences.AppPrefs
@@ -9,7 +10,9 @@ import com.trunnghieu.tplogisticsapplication.databinding.ItemMenuBinding
 import com.trunnghieu.tplogisticsapplication.ui.base.adapter.BaseBindingListAdapter
 import com.trunnghieu.tplogisticsapplication.ui.base.adapter.BaseBindingViewHolder
 import com.trunnghieu.tplogisticsapplication.ui.base.adapter.BaseItemClickListener
+import com.trunnghieu.tplogisticsapplication.utils.constants.TPLogisticsConst
 import com.trunnghieu.tplogisticsapplication.utils.helper.AppPreferences
+import com.trunnghieu.tplogisticsapplication.utils.helper.LocaleHelper
 
 class MenuAdapter(
     listener: BaseItemClickListener<HamburgerMenu>,
@@ -35,6 +38,9 @@ class MenuAdapter(
             }
 
             if (menuItem.sub_menu?.isNotEmpty() == true) {
+                rdoLangEn.isChecked = LocaleHelper.getLanguageFromLocale() == TPLogisticsConst.AppLanguage.ENGLISH.code
+                rdoLangVn.isChecked = LocaleHelper.getLanguageFromLocale() == TPLogisticsConst.AppLanguage.VIETNAMESE.code
+
                 rdoLangEn.setOnCheckedChangeListener { _, isChecked ->
                     if (isChecked) {
                         subMenuListener.onItemClick(menuItem.sub_menu?.first()!!)

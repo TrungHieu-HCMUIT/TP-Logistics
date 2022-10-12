@@ -109,6 +109,20 @@ class JobVM : BaseRepoViewModel<AccountRepo, JobUV>() {
     }
 
     /**
+     * Change app language
+     */
+    fun changeAppLanguage(context: Context, typeId: Int) {
+        closeMenu()
+        val languageCode = when (typeId) {
+            SubMenuType.ENGLISH.typeId -> TPLogisticsConst.AppLanguage.ENGLISH
+            SubMenuType.VIETNAMESE.typeId -> TPLogisticsConst.AppLanguage.VIETNAMESE
+            else -> TPLogisticsConst.AppLanguage.ENGLISH
+        }.code
+        LocaleHelper.setLocale(context, languageCode)
+        uiCallback?.updateLanguage()
+    }
+
+    /**
      * Handle onClick of menu
      */
     fun handleMenuItemClick(item: HamburgerMenu) {

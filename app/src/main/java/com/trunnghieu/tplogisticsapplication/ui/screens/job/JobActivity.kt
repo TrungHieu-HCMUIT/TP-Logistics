@@ -94,7 +94,7 @@ class JobActivity : BaseConnectivityActivity<ActivityJobBinding, JobVM>(), JobUV
             },
             object : BaseItemClickListener<HamburgerMenu.SubMenu> {
                 override fun onItemClick(item: HamburgerMenu.SubMenu) {
-
+                    viewModel.changeAppLanguage(context, item.type_id)
                 }
             }
         )
@@ -171,6 +171,11 @@ class JobActivity : BaseConnectivityActivity<ActivityJobBinding, JobVM>(), JobUV
 
     override fun loadHamburgerMenu(menuList: List<HamburgerMenu>) {
         menuAdapter.submitList(menuList)
+    }
+
+    override fun updateLanguage() {
+        showCallCSO(false)
+        recreate()
     }
 
     override fun goToJobHistory() {
