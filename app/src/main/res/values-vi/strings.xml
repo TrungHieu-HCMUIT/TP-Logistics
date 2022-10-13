@@ -137,17 +137,17 @@
     <string name="change_password_msg_success">Đổi mật khẩu thành công</string>
 
     <!-- Job Detail -->
-    <string name="job_detail_title_to_pickup">To Pickup Location</string>
-    <string name="job_detail_title_pickup_material">Pickup Material</string>
-    <string name="job_detail_title_to_delivery">To Delivery Location</string>
-    <string name="job_detail_title_discharge_material">Discharge Material</string>
+    <string name="job_detail_title_to_pickup">Đến địa điểm nhận hàng</string>
+    <string name="job_detail_title_pickup_material">Nhận hàng</string>
+    <string name="job_detail_title_to_delivery">Đến địa điểm giao hàng</string>
+    <string name="job_detail_title_discharge_material">Dỡ hàng</string>
     <string name="job_detail_title_do_scanning">DO Scanning</string>
     <string name="job_detail_title_job_summary">Job Summary</string>
-    <string name="job_detail_msg_not_arrive_at_pickup">You have not arrived at the Pickup Location yet!</string>
+    <string name="job_detail_msg_not_arrive_at_pickup">Bạn chưa đến địa điểm nhận hàng!</string>
     <string name="job_detail_msg_issue_or_collect_do">Please issue or collect DO!</string>
     <string name="job_detail_msg_hold_to_rescan">Hold to re-scan</string>
     <string name="job_detail_msg_hold_to_display">Hold to display</string>
-    <string name="job_detail_text_qr_code">QR code</string>
+    <string name="job_detail_text_qr_code">Mã QR</string>
     <string name="job_detail_text_for_scanning_again">for scanning again</string>
     <string name="job_detail_msg_confirm_pickup_done_at_pickup_material">
         Please confirm you have loaded the material and collected the DO!
@@ -155,7 +155,7 @@
     <string name="job_detail_msg_confirm_pickup_done_at_pickup_material_with_esign">
         Please confirm you have loaded the material
     </string>
-    <string name="job_detail_msg_not_arrive_at_delivery">You have not arrived at the Delivery Location yet!</string>
+    <string name="job_detail_msg_not_arrive_at_delivery">Bạn chưa đến địa điểm giao hàng!</string>
     <string name="job_detail_msg_please_scan_do">Please scan DO to complete the job!</string>
     <string name="job_detail_msg_confirm_complete_at_discharge_material_trip_based">
         Please confirm you have completed the job and collected the DO!
@@ -164,7 +164,7 @@
         Please confirm you have completed the job and the DO has been signed!
     </string>
     <string name="job_detail_msg_confirm_complete_at_discharge_material_with_esign">
-        Please confirm you have completed the job
+        Vui lòng xác nhận bạn đã giao hàng thành công
     </string>
     <string name="job_detail_msg_confirm_scan_do">
         Please confirm you have finished your work before uploading the DO!
