@@ -49,12 +49,7 @@ class HistoryVM : BaseRepoViewModel<DeliveryDriverReportRepo, HistoryUV>() {
      * Request get all history
      */
     fun getAllHistoryJobs() {
-        val jobs = mutableListOf(
-            Job(bookingNo = ""),
-            Job(bookingNo = ""),
-            Job(bookingNo = ""),
-            Job(bookingNo = ""),
-        )
+        val jobs = mutableListOf<Job>()
         historyList.value = jobs
     }
 

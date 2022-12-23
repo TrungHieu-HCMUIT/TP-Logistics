@@ -1,11 +1,13 @@
 package com.trunnghieu.tplogisticsapplication.ui.screens.next_job
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.setFragmentResult
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.trunnghieu.tplogisticsapplication.R
+import com.trunnghieu.tplogisticsapplication.data.repository.local.driver.DriverRepo
 import com.trunnghieu.tplogisticsapplication.data.repository.local.job.LocalJob
 import com.trunnghieu.tplogisticsapplication.data.repository.remote.delivery_workflow_service.Job
 import com.trunnghieu.tplogisticsapplication.databinding.FragmentNextJobBinding
@@ -84,8 +86,12 @@ class NextJobFragment : MapsForJobFragment<FragmentNextJobBinding, NextJobVM>(),
     }
 
     override fun acceptJobSuccess(job: Job) {
-//        job.showDetail = true
-//        jobVM.latestJob.value = job
+        job.showDetail = true
+        jobVM.latestJob.value = job
+
+        // TODO: Delete here
+        LocalJob.get().saveLatestJob(job)
+
         navigator.rootFragment = JobDetailFragment()
     }
 

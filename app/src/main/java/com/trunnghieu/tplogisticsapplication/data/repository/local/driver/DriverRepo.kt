@@ -1,5 +1,6 @@
 package com.trunnghieu.tplogisticsapplication.data.repository.local.driver
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.trunnghieu.tplogisticsapplication.data.api.ApiConst
 import com.trunnghieu.tplogisticsapplication.data.preferences.AppPrefs
@@ -28,7 +29,6 @@ class DriverRepo {
     val latestJobStatus = MutableLiveData(
         ApiConst.JobStatus.valueOf(
             appPrefs.getString(AppPrefs.DRIVER.JOB_STATUS).ifEmpty {
-                // TODO: Update to another job status
                 ApiConst.JobStatus.DRIVER_JOB_STARTED.name
             }
         )

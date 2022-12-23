@@ -1,6 +1,7 @@
 package com.trunnghieu.tplogisticsapplication.ui.screens.job_detail
 
 import android.content.Context
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
@@ -29,15 +30,14 @@ class JobDetailVM : BaseRepoViewModel<DeliveryWorkFlowRepo, JobDetailUV>() {
                 jobTitle.value = context.getString(R.string.job_detail_title_to_pickup)
                 replaceRootFragment(PickupLocationFragment())
             }
-//            if (jobStatus == ApiConst.JobStatus.DRIVER_PICKUP_ARRIVED
-//                || jobStatus == ApiConst.JobStatus.DRIVER_PICKUP_TONNAGE_SUBMITTED
-//            ) {
-//                jobTitle.value = context.getString(R.string.job_detail_title_pickup_material)
+            if (jobStatus == ApiConst.JobStatus.DRIVER_PICKUP_ARRIVED
+            ) {
+                jobTitle.value = context.getString(R.string.job_detail_title_pickup_material)
 //                replaceRootFragment(PickupMaterialFragment(this))
-//            }
-//            if (jobStatus == ApiConst.JobStatus.DRIVER_PICKUP_DONE) {
-//                uiCallback?.showDeliveryLocation()
-//            }
+            }
+            if (jobStatus == ApiConst.JobStatus.DRIVER_PICKUP_DONE) {
+                uiCallback?.showDeliveryLocation()
+            }
 //            if (jobStatus == ApiConst.JobStatus.DRIVER_DELIVERY_ARRIVED
 //                || jobStatus == ApiConst.JobStatus.DRIVER_DISCHARGE_TONNAGE_SUBMITTED
 //            ) {

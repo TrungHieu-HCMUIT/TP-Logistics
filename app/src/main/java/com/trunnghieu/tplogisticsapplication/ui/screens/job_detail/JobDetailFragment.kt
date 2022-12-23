@@ -1,11 +1,14 @@
 package com.trunnghieu.tplogisticsapplication.ui.screens.job_detail
 
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.trunnghieu.tplogisticsapplication.R
+import com.trunnghieu.tplogisticsapplication.data.repository.local.driver.DriverRepo
 import com.trunnghieu.tplogisticsapplication.databinding.FragmentJobDetailBinding
 import com.trunnghieu.tplogisticsapplication.ui.base.fragment.BaseFragment
 import com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM
+import com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.delivery_location.DeliveryLocationFragment
 
 class JobDetailFragment : BaseFragment<FragmentJobDetailBinding, JobDetailVM>(), JobDetailUV {
 
@@ -28,8 +31,7 @@ class JobDetailFragment : BaseFragment<FragmentJobDetailBinding, JobDetailVM>(),
     private var childRootFragment: Fragment? = null
 
     override fun initView() {
-        //TODO: Delete here
-        viewModel.jobTitle.value = fragmentContext.getString(R.string.job_detail_title_to_pickup)
+
     }
 
     override fun initData() {
@@ -61,9 +63,9 @@ class JobDetailFragment : BaseFragment<FragmentJobDetailBinding, JobDetailVM>(),
 //                )
 //            )
 //        } else {
-//            viewModel.jobTitle.value =
-//                fragmentContext.getString(R.string.job_detail_title_to_delivery)
-//            viewModel.replaceRootFragment(DeliveryLocationFragment())
+            viewModel.jobTitle.value =
+                fragmentContext.getString(R.string.job_detail_title_to_delivery)
+            viewModel.replaceRootFragment(DeliveryLocationFragment())
 //        }
     }
 

@@ -1,6 +1,7 @@
 package com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.pickup_location
 
 import android.location.Location
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.activityViewModels
 import com.google.android.gms.maps.model.LatLng
@@ -95,9 +96,7 @@ class PickupLocationFragment :
         val lastKnownLatLng = LatLng(location.latitude, location.longitude)
         userMarker?.position = lastKnownLatLng
         val latestJob = jobVM.latestJob.value ?: return
-//        val pickupLatLng = LatLng(latestJob.pickUpLatitude, latestJob.pickUpLongitude)
-        // TODO: Update data
-        val pickupLatLng = LatLng(10.7898189, 106.6414713)
+        val pickupLatLng = LatLng(latestJob.pickUpLatitude, latestJob.pickUpLongitude)
         val markerBearing = SphericalUtil.computeHeading(lastKnownLatLng, pickupLatLng).toFloat()
         zoomCameraBetweenTwoLocations(markerBearing, lastKnownLatLng, pickupLatLng)
 
@@ -106,8 +105,7 @@ class PickupLocationFragment :
             location,
             pickupLatLng.latitude,
             pickupLatLng.longitude,
-            5.0
-//            latestJob.radius
+            latestJob.radius
         )
     }
 
@@ -133,11 +131,11 @@ class PickupLocationFragment :
     }
 
     override fun pickupArriveDone(jobStatus: ApiConst.JobStatus) {
-//        jobVM.run {
-//            changeJobStatus(jobStatus)
-//
-//            // [GOT-450] Disable highlight job when change other job screen
-//            showHighlightDataChanged(show = false, disableImmediately = true)
-//        }
+        jobVM.run {
+            changeJobStatus(jobStatus)
+
+            // [GOT-450] Disable highlight job when change other job screen
+            showHighlightDataChanged(show = false, disableImmediately = true)
+        }
     }
 }

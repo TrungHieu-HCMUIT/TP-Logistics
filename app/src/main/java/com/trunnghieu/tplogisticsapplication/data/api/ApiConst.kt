@@ -14,7 +14,7 @@ object ApiConst {
                 BASE_DEV_URL
             else
                 BASE_PROD_URL
-            ) + "api/mobile/v$API_VERSION/"
+            ) + "api/"
     val BASE_WEB_URL = (
             if (Const.DEBUG_MODE)
                 BASE_DEV_URL

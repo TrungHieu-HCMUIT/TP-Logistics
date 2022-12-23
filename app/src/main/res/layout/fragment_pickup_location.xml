@@ -70,8 +70,8 @@
             style="@style/TPLogistics.MaterialButton.Accent.Margin"
             android:layout_gravity="bottom"
             android:onClick="@{() -> vm.confirmArriveAtPickup()}"
-            android:text="@string/job_detail_btn_arrived_for_pickup"
-            android:visibility="gone" />
+            android:text="@string/job_detail_btn_arrived_for_pickup" />
+<!--        TODO: Handle logic of visibility -->
 
     </FrameLayout>
 

@@ -3,7 +3,9 @@ package com.trunnghieu.tplogisticsapplication.ui.screens.job
 import android.content.Context
 import androidx.lifecycle.*
 import com.trunnghieu.tplogisticsapplication.R
+import com.trunnghieu.tplogisticsapplication.data.api.ApiConst
 import com.trunnghieu.tplogisticsapplication.data.preferences.AppPrefs
+import com.trunnghieu.tplogisticsapplication.data.repository.local.driver.DriverRepo
 import com.trunnghieu.tplogisticsapplication.data.repository.local.job.LocalJob
 import com.trunnghieu.tplogisticsapplication.data.repository.local.menu.HamburgerMenu
 import com.trunnghieu.tplogisticsapplication.data.repository.local.menu.MenuType
@@ -38,6 +40,7 @@ class JobVM : BaseRepoViewModel<AccountRepo, JobUV>() {
     // Preferences
     private val appPrefs = AppPreferences.get()
     val appLanguage = LocaleHelper.getLanguageFromLocale()
+    private val driverRepo = DriverRepo.get()
 
     // Job data
     var isRefreshingJobData = false
@@ -143,6 +146,13 @@ class JobVM : BaseRepoViewModel<AccountRepo, JobUV>() {
 
             }
         }
+    }
+
+    /**
+     * Change job status
+     */
+    fun changeJobStatus(newJobStatus: ApiConst.JobStatus) {
+        driverRepo.updateLatestJobStatus(newJobStatus.name)
     }
 
     /**

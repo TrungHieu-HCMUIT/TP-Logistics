@@ -20,7 +20,12 @@ class NextJobVM : BaseRepoViewModel<WorkFlowRepo, NextJobUV>() {
      * Get extras data from bundle
      */
     fun getExtras(argument: Bundle?) {
-
+        argument?.let {
+            newJob.value = it.getParcelable(NextJobFragment.ARG_NEW_JOB)
+        }
+        jobNo = newJob.value?.run {
+            bookingNo
+        } ?: ""
     }
 
     /**
@@ -34,7 +39,9 @@ class NextJobVM : BaseRepoViewModel<WorkFlowRepo, NextJobUV>() {
      * Submit accept job
      */
     fun submitAcceptJob() {
+        val latestJob = newJob.value!!
+
         //TODO: Update data of job
-        uiCallback?.acceptJobSuccess(Job(bookingNo = ""))
+        uiCallback?.acceptJobSuccess(latestJob)
     }
 }

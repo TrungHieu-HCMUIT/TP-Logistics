@@ -1,6 +1,7 @@
 package com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.pickup_location
 
 import android.location.Location
+import android.util.Log
 import com.trunnghieu.tplogisticsapplication.data.api.ApiConst
 import com.trunnghieu.tplogisticsapplication.data.repository.local.job.LocalJob
 import com.trunnghieu.tplogisticsapplication.data.repository.remote.delivery_workflow_service.Job
@@ -81,13 +82,13 @@ class PickupLocationVM : BaseRepoViewModel<WorkFlowRepo, PickupLocationUV>() {
      * Submit pickup arrive status
      */
     fun submitPickupArrive() {
-        if (!isConnected) {
-            // No-Connectivity Mode
-            latestJob = LocalJob.get().getLatestJob() ?: return
-            latestJob.jobStatus = ApiConst.JobStatus.DRIVER_PICKUP_ARRIVED.statusCode
-            uiCallback?.pickupArriveDone(ApiConst.JobStatus.DRIVER_PICKUP_ARRIVED)
-            return
-        }
+//        if (!isConnected) {
+        // No-Connectivity Mode
+        latestJob = LocalJob.get().getLatestJob() ?: return
+//        latestJob.jobStatus = ApiConst.JobStatus.DRIVER_PICKUP_ARRIVED.statusCode
+//        uiCallback?.pickupArriveDone(ApiConst.JobStatus.DRIVER_PICKUP_ARRIVED)
+//            return
+//        }
 
 //        repo?.submitPickupArrive(callback = object : BaseRepoCallback<Job> {
 //            override fun apiRequesting(showLoading: Boolean) {

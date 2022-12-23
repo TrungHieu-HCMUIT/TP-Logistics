@@ -1,9 +1,12 @@
 package com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.delivery_location
 
 import android.location.Location
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.activityViewModels
+import com.google.android.gms.maps.model.LatLng
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.maps.android.SphericalUtil
 import com.trunnghieu.tplogisticsapplication.R
 import com.trunnghieu.tplogisticsapplication.data.api.ApiConst
 import com.trunnghieu.tplogisticsapplication.data.repository.remote.delivery_workflow_service.Job
@@ -92,12 +95,12 @@ class DeliveryLocationFragment :
     override fun locationChanged(location: Location) {
         super.locationChanged(location)
         // Update user marker
-//        val lastKnownLatLng = LatLng(location.latitude, location.longitude)
-//        userMarker?.position = lastKnownLatLng
-//        val latestJob = jobVM.latestJob.value ?: return
-//        val deliveryLatLng = LatLng(latestJob.dischargeLatitude, latestJob.dischargeLongitude)
-//        val markerBearing = SphericalUtil.computeHeading(lastKnownLatLng, deliveryLatLng).toFloat()
-//        zoomCameraBetweenTwoLocations(markerBearing, lastKnownLatLng, deliveryLatLng)
+        val lastKnownLatLng = LatLng(location.latitude, location.longitude)
+        userMarker?.position = lastKnownLatLng
+        val latestJob = jobVM.latestJob.value ?: return
+        val deliveryLatLng = LatLng(latestJob.dischargeLatitude, latestJob.dischargeLongitude)
+        val markerBearing = SphericalUtil.computeHeading(lastKnownLatLng, deliveryLatLng).toFloat()
+        zoomCameraBetweenTwoLocations(markerBearing, lastKnownLatLng, deliveryLatLng)
 //
 //        // Calculate last known location with pickup location
 //        viewModel.calculateLocationWithRadius(
@@ -135,7 +138,7 @@ class DeliveryLocationFragment :
 
     override fun deliveryArriveDone(jobStatus: ApiConst.JobStatus) {
         jobVM.run {
-//            changeJobStatus(jobStatus)
+            changeJobStatus(jobStatus)
 
             // [GOT-450] Disable highlight job when change other job screen
             showHighlightDataChanged(show = false, disableImmediately = true)
