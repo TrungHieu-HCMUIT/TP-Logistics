@@ -36,6 +36,7 @@ class UpcomingJobsVM : BaseRepoViewModel<DeliveryDriverReportRepo, UpcomingJobsU
             //TODO: Fake data
             Job(
                 bookingNo = "",
+                loadNo = 1,
                 showDetail = false,
                 tripBase = false,
                 jobStatus = ApiConst.JobStatus.DRIVER_JOB_STARTED.statusCode,

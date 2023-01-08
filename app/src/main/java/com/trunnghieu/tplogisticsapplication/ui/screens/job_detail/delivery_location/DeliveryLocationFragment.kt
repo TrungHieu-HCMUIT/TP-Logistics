@@ -102,13 +102,13 @@ class DeliveryLocationFragment :
         val markerBearing = SphericalUtil.computeHeading(lastKnownLatLng, deliveryLatLng).toFloat()
         zoomCameraBetweenTwoLocations(markerBearing, lastKnownLatLng, deliveryLatLng)
 //
-//        // Calculate last known location with pickup location
-//        viewModel.calculateLocationWithRadius(
-//            location,
-//            deliveryLatLng.latitude,
-//            deliveryLatLng.longitude,
-//            latestJob.radius
-//        )
+        // Calculate last known location with pickup location
+        viewModel.calculateLocationWithRadius(
+            location,
+            deliveryLatLng.latitude,
+            deliveryLatLng.longitude,
+            latestJob.radius
+        )
     }
 
     override fun updateLatestJob(latestJob: Job) {

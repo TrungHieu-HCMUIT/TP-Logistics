@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <import type="com.trunnghieu.tplogisticsapplication.utils.constants.TPLogisticsConst" />
+
+        <variable
+            name="showValidate"
+            type="Boolean" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/RootLayout.WrapHeight"
+        android:padding="@dimen/_8sdp"
+        android:gravity="center">
+
+        <TextView
+            style="@style/TPLogistics.TextAppearance.Secondary"
+            android:text="@string/job_detail_msg_tonnage_report" />
+
+        <LinearLayout
+            style="@style/RootLayout.WrapHeight"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/TPLogistics.TextAppearance.Secondary"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:text="@string/job_detail_msg_tonnage_key_in" />
+
+            <TextView
+                style="@style/TPLogistics.TextAppearance.Primary"
+                android:text="@string/job_detail_text_net_weight"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/RootLayout.WrapHeight"
+            android:layout_marginStart="@dimen/_80sdp"
+            android:layout_marginEnd="@dimen/_80sdp"
+            android:gravity="center|bottom"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_net_weight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_weight="1"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_net_weight"
+                    style="@style/TPLogistics.TextInput.EditText"
+                    android:background="@android:color/transparent"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:padding="@dimen/_4sdp"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:paddingEnd="@dimen/_8sdp"
+                    tools:text="99000" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <include layout="@layout/spacing_horizontal" />
+
+            <TextView
+                style="@style/TPLogistics.TextAppearance.Secondary"
+                android:text="@{TPLogisticsConst.AppUnit.WEIGHT}"
+                tools:text="kg" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/RootLayout.WrapHeight"
+            android:visibility="@{showValidate ? View.VISIBLE : View.GONE}">
+
+            <TextView
+                style="@style/TPLogistics.TextAppearance.Primary"
+                android:text="@string/net_weight_must"
+                android:textColor="@color/error"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/TPLogistics.TextAppearance.Primary"
+                android:text="@string/valid_weight_greater_than_zero"
+                android:textColor="@color/error"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_warning" />
+
+            <TextView
+                style="@style/TPLogistics.TextAppearance.Primary"
+                android:text="@string/valid_weight_not_contain_comma_or_dot"
+                android:textColor="@color/error"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_warning" />
+
+            <TextView
+                style="@style/TPLogistics.TextAppearance.Primary"
+                android:text="@string/valid_weight_less_or_equal_5_digits"
+                android:textColor="@color/error"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_warning" />
+
+            <TextView
+                style="@style/TPLogistics.TextAppearance.Primary"
+                android:text="@string/valid_weight_last_digit_must_be_zero"
+                android:textColor="@color/error"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_warning" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -85,8 +85,8 @@ class PickupLocationVM : BaseRepoViewModel<WorkFlowRepo, PickupLocationUV>() {
 //        if (!isConnected) {
         // No-Connectivity Mode
         latestJob = LocalJob.get().getLatestJob() ?: return
-//        latestJob.jobStatus = ApiConst.JobStatus.DRIVER_PICKUP_ARRIVED.statusCode
-//        uiCallback?.pickupArriveDone(ApiConst.JobStatus.DRIVER_PICKUP_ARRIVED)
+        latestJob.jobStatus = ApiConst.JobStatus.DRIVER_PICKUP_ARRIVED.statusCode
+        uiCallback?.pickupArriveDone(ApiConst.JobStatus.DRIVER_PICKUP_ARRIVED)
 //            return
 //        }
 

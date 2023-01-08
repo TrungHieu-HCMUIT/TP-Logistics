@@ -4,7 +4,7 @@
 
     <data>
 
-        <import type="com.trunnghieu.tplogisticsapplication.data.api.ApiConst.JobStatus" />
+        <import type="com.trunnghieu.tplogisticsapplication.data.repository.local.driver.DriverRepo" />
 
         <variable
             name="vm"
@@ -31,7 +31,7 @@
 
             <include
                 layout="@layout/view_job_status"
-                app:jobStatus="@{JobStatus.DRIVER_JOB_STARTED}" />
+                app:jobStatus="@{DriverRepo.get().latestJobStatus}" />
 
             <LinearLayout
                 style="@style/TPLogistics.Layout.BorderTop.JobDetail"

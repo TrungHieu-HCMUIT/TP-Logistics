@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.trunnghieu.tplogisticsapplication.utils.constants.TPLogisticsConst" />
+
+        <variable
+            name="netWeight"
+            type="String" />
+
+        <variable
+            name="showEst"
+            type="Boolean" />
+
+        <variable
+            name="showEdit"
+            type="Boolean" />
+
+        <variable
+            name="editNetWeightOnClick"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/RootLayout.WrapHeight"
+        android:gravity="center"
+        android:padding="@dimen/_8sdp">
+
+        <TextView
+            style="@style/TPLogistics.TextAppearance.Primary"
+            android:text="@string/job_detail_net_weight" />
+
+        <LinearLayout
+            style="@style/RootLayout.WrapHeight"
+            android:gravity="center|bottom"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_24sdp"
+            android:paddingEnd="0dp">
+
+            <TextView
+                style="@style/TPLogistics.TextAppearance.Primary"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:text="@string/job_detail_est_net_weight"
+                android:textColor="@color/secondary"
+                android:textStyle="bold"
+                android:visibility="@{(showEst ?? false) ? View.VISIBLE : View.GONE}" />
+
+            <TextView
+                style="@style/TPLogistics.TextAppearance.Primary"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:text="@{netWeight}"
+                android:textColor="@color/secondary"
+                android:textSize="@dimen/text_net_weight"
+                android:textStyle="bold"
+                tools:text="28,500" />
+
+            <TextView
+                style="@style/TPLogistics.TextAppearance.Primary"
+                android:text="@{TPLogisticsConst.AppUnit.WEIGHT}"
+                android:textColor="@color/secondary"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold"
+                tools:text="kg" />
+
+            <include layout="@layout/spacing_horizontal" />
+
+            <ImageView
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_gravity="center"
+                android:onClick="@{editNetWeightOnClick}"
+                android:src="@drawable/ic_btn_edit"
+                android:visibility="@{showEdit ? View.VISIBLE : View.GONE}"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

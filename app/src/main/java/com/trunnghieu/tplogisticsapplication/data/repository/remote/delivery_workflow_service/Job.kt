@@ -8,6 +8,7 @@ import kotlinx.parcelize.Parcelize
 data class Job(
     val bookingNo: String,
     var showDetail: Boolean,
+    val loadNo: Int,
     var tripBase: Boolean,
     @SerializedName("jobStatus")
     var jobStatus: Int,

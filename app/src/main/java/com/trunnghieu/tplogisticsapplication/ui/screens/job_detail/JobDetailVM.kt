@@ -11,6 +11,7 @@ import com.trunnghieu.tplogisticsapplication.data.repository.local.driver.Driver
 import com.trunnghieu.tplogisticsapplication.data.repository.remote.delivery_workflow_service.DeliveryWorkFlowRepo
 import com.trunnghieu.tplogisticsapplication.ui.base.BaseRepoViewModel
 import com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.pickup_location.PickupLocationFragment
+import com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.pickup_material.PickupMaterialFragment
 
 class JobDetailVM : BaseRepoViewModel<DeliveryWorkFlowRepo, JobDetailUV>() {
 
@@ -33,7 +34,7 @@ class JobDetailVM : BaseRepoViewModel<DeliveryWorkFlowRepo, JobDetailUV>() {
             if (jobStatus == ApiConst.JobStatus.DRIVER_PICKUP_ARRIVED
             ) {
                 jobTitle.value = context.getString(R.string.job_detail_title_pickup_material)
-//                replaceRootFragment(PickupMaterialFragment(this))
+                replaceRootFragment(PickupMaterialFragment(this))
             }
             if (jobStatus == ApiConst.JobStatus.DRIVER_PICKUP_DONE) {
                 uiCallback?.showDeliveryLocation()

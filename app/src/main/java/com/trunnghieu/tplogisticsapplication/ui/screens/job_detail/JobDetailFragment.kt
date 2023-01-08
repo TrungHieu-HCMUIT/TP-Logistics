@@ -40,9 +40,9 @@ class JobDetailFragment : BaseFragment<FragmentJobDetailBinding, JobDetailVM>(),
             observerJobStatus(fragmentContext, this@JobDetailFragment)
 
             // Store current job no
-//            jobNo = jobVM.latestJob.value?.run {
-//                "$bookingNo-$loadNo"
-//            } ?: ""
+            jobNo = jobVM.latestJob.value?.run {
+                "$bookingNo-$loadNo"
+            } ?: ""
         }
     }
 
