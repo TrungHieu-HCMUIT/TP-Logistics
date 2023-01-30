@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.esign.ESignVM" />
+
+        <variable
+            name="jobVM"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@color/backgroundDim">
+
+        <LinearLayout
+            android:id="@+id/bottom_sheet"
+            style="@style/RootLayout.WrapHeight"
+            android:background="@drawable/bg_bottom_sheet"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:src="@drawable/bg_bottom_sheet_top_line"
+                tools:ignore="ContentDescription" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:paddingStart="@dimen/layout_detail_padding_default"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/layout_detail_padding_default"
+                android:scrollbars="none"
+                tools:ignore="InefficientWeight,Suspicious0dp">
+
+                <LinearLayout style="@style/RootLayout.WrapHeight">
+
+                    <TextView
+                        style="@style/TPLogistics.TextAppearance.Primary"
+                        android:layout_gravity="center"
+                        android:text="@{vm.forPickup ? @string/e_sign_title_dispatcher : @string/e_sign_title_receiver}"
+                        android:textSize="@dimen/text_bigger"
+                        android:textStyle="bold"
+                        tools:text="@string/e_sign_title_dispatcher" />
+
+                    <include
+                        android:id="@+id/input_name"
+                        layout="@layout/view_input"
+                        app:hint="@{@string/e_sign_name}" />
+
+                    <LinearLayout
+                        style="@style/RootLayout.WrapHeight"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TPLogistics.TextAppearance.Secondary"
+                            android:fontFamily="@font/sfprodisplay_regular"
+                            android:text="@string/e_sign_signature" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_clear_signature"
+                            style="@style/TPLogistics.MaterialButton.Text"
+                            android:enabled="@{vm.signatureAvailable}"
+                            android:gravity="center|end"
+                            android:onClick="@{() -> vm.clearSignature()}"
+                            android:text="@string/e_sign_btn_clear"
+                            android:textColor="@color/btn_text_primary" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RootLayout.WrapHeight"
+                        android:background="@drawable/bg_e_sign">
+
+                        <com.williamww.silkysignature.views.SignaturePad
+                            android:id="@+id/signature_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_150sdp"
+                            app:penColor="@color/textPrimary" />
+
+                    </LinearLayout>
+
+                    <include layout="@layout/spacing_vertical" />
+
+                    <include
+                        android:id="@+id/input_remark"
+                        layout="@layout/view_input"
+                        app:hint="@{@string/e_sign_remark}"
+                        app:inputType="@{0x00020001}" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_16sdp"
+                android:paddingVertical="@dimen/_8sdp">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_confirm"
+                    style="@style/TPLogistics.MaterialButton.Accent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:onClick="@{() -> vm.submitSignature(jobVM.latestJob)}"
+                    android:text="@string/e_sign_btn_confirm" />
+
+                <include layout="@layout/spacing_horizontal" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/TPLogistics.MaterialButton.Secondary.Grey"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> vm.cancelESign()}"
+                    android:text="@string/alert_btn_negative" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

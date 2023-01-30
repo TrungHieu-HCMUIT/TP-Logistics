@@ -259,4 +259,13 @@
     <string name="valid_weight_less_or_equal_5_digits">Less than or equal to 5 digits</string>
     <string name="valid_weight_last_digit_must_be_zero">Last digit must be zero</string>
 
+    <!-- E-Signature -->
+    <string name="e_sign_title_dispatcher">Dispatcher\'s Confirmation</string>
+    <string name="e_sign_title_receiver">Receiver\'s Confirmation</string>
+    <string name="e_sign_btn_confirm">Confirm</string>
+    <string name="e_sign_name">Name</string>
+    <string name="e_sign_signature">Signature</string>
+    <string name="e_sign_remark">Remark</string>
+    <string name="e_sign_btn_clear">Clear</string>
+
 </resources>

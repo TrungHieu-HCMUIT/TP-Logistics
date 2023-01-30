@@ -10,6 +10,7 @@ import com.trunnghieu.tplogisticsapplication.ui.base.dialog.AppAlertDialog
 import com.trunnghieu.tplogisticsapplication.ui.base.fragment.BaseLocationFragment
 import com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM
 import com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.JobDetailVM
+import com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.esign.ESignDialog
 
 class PickupMaterialFragment(private val jobDetailVM: JobDetailVM? = null) :
     BaseLocationFragment<FragmentPickupMaterialBinding, PickupMaterialVM>(),
@@ -39,7 +40,7 @@ class PickupMaterialFragment(private val jobDetailVM: JobDetailVM? = null) :
     private var executedApi = false
 
     // E-Sign
-//    var eSignDialog: ESignDialog? = null
+    var eSignDialog: ESignDialog? = null
 
     override fun initView() {
 
@@ -188,12 +189,12 @@ class PickupMaterialFragment(private val jobDetailVM: JobDetailVM? = null) :
     }
 
     override fun showESignAtPickup() {
-//        eSignDialog = ESignDialog.show(parentFragmentManager, jobVM, true) {
-//            viewModel.run {
-//                needSubmitPickupDone = true
-//                getAvailableJob()
-//            }
-//        }
+        eSignDialog = ESignDialog.show(parentFragmentManager, jobVM, true) {
+            viewModel.run {
+                needSubmitPickupDone = true
+                getAvailableJob()
+            }
+        }
     }
 
     override fun showWorkingScreen() {
