@@ -31,13 +31,15 @@ class PickupMaterialVM : BaseRepoViewModel<WorkFlowRepo, PickupMaterialUV>() {
     private var isTripBased = true
     private var hasPickupQR = false
     private var pickUpQRScanned = false
-    private var doReminder = false
+//    TODO: UNCOMMENT private var doReminder = false
+    private var doReminder = true
     private var didTonnageSubmissionLocationIsPickup = false
     private var didTonnageSubmissionTypeIsManual = true
     val netWeight = MutableLiveData(0.0)
     var unLandedVehicleWeight = 0.0
     private var eSignAvailable = false
-    private var eSignRequired = false
+//    TODO: UNCOMMENT private var eSignRequired = false
+    private var eSignRequired = true
     var needSubmitPickupDone = false
 
     // [VERSION 1.6] Pickup Location = Unload Location
