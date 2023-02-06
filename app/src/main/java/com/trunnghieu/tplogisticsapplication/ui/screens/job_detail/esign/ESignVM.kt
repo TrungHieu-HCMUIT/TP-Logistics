@@ -87,7 +87,7 @@ class ESignVM : BaseRepoViewModel<DeliveryWorkFlowRepo, ESignUV>() {
 //
 //                override fun apiResponse(data: Job) {
 //                    uiCallback?.updateLatestJob(data)
-//                    uiCallback?.uploadESignSuccess()
+                    uiCallback?.uploadESignSuccess()
 //                }
 //
 //                override fun showMessage(message: String?) {

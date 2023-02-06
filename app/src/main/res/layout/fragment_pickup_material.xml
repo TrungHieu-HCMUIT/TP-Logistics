@@ -89,55 +89,56 @@
         </ScrollView>
 
         <!-- [VERSION 1.6] Pickup Location = Unload Location -->
-        <LinearLayout
-            style="@style/RootLayout.WrapHeight"
-            android:gravity="top|center"
-            android:paddingTop="@dimen/layout_detail_padding_default"
-            android:visibility="@{vm.showWorkingScreen ? View.VISIBLE : View.GONE}">
+<!--        <LinearLayout-->
+<!--            style="@style/RootLayout.WrapHeight"-->
+<!--            android:gravity="top|center"-->
+<!--            android:paddingTop="@dimen/layout_detail_padding_default"-->
+<!--            android:visibility="@{vm.showWorkingScreen ? View.VISIBLE : View.GONE}">-->
 
-            <include
-                layout="@layout/view_job_title"
-                app:bookingNo="@{jobVM.latestJob.bookingNo}"
-                app:loadNo="@{jobVM.latestJob.loadNo}" />
+<!--            <include-->
+<!--                layout="@layout/view_job_title"-->
+<!--                app:bookingNo="@{jobVM.latestJob.bookingNo}"-->
+<!--                app:loadNo="@{jobVM.latestJob.loadNo}" />-->
 
-            <ScrollView style="@style/RootLayout.WrapHeight">
+<!--            <ScrollView style="@style/RootLayout.WrapHeight">-->
 
-                <LinearLayout
-                    style="@style/RootLayout.WrapHeight"
-                    android:gravity="center"
-                    android:paddingStart="@dimen/layout_detail_padding_default"
-                    android:paddingEnd="@dimen/layout_detail_padding_default">
+<!--                <LinearLayout-->
+<!--                    style="@style/RootLayout.WrapHeight"-->
+<!--                    android:gravity="center"-->
+<!--                    android:paddingStart="@dimen/layout_detail_padding_default"-->
+<!--                    android:paddingEnd="@dimen/layout_detail_padding_default">-->
 
-                    <include layout="@layout/divider_vertical" />
+<!--                    <include layout="@layout/divider_vertical" />-->
 
-                    <include
-                        layout="@layout/view_job_detail_extra_data"
-                        app:highlightDataChanged="@{jobVM.highlightDataChanged}"
-                        app:jobData="@{jobVM.latestJob}" />
+<!--                    <include-->
+<!--                        layout="@layout/view_job_detail_extra_data"-->
+<!--                        app:highlightDataChanged="@{jobVM.highlightDataChanged}"-->
+<!--                        app:jobData="@{jobVM.latestJob}" />-->
 
-                    <include layout="@layout/divider_vertical" />
+<!--                    <include layout="@layout/divider_vertical" />-->
 
-                    <include layout="@layout/spacing_vertical" />
+<!--                    <include layout="@layout/spacing_vertical" />-->
 
-                    <TextView
-                        style="@style/TPLogistics.TextAppearance.Primary"
-                        android:text="@string/working_message" />
+<!--                    <TextView-->
+<!--                        style="@style/TPLogistics.TextAppearance.Primary"-->
+<!--                        android:text="@string/working_message" />-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
-            </ScrollView>
+<!--            </ScrollView>-->
 
-            <com.google.android.material.button.MaterialButton
-                style="@style/TPLogistics.MaterialButton.Accent.Margin"
-                android:onClick="@{() -> vm.confirmWorkingAndSubmitPickupDone()}"
-                android:text="@string/alert_btn_continue" />
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                style="@style/TPLogistics.MaterialButton.Accent.Margin"-->
+<!--                android:onClick="@{() -> vm.confirmWorkingAndSubmitPickupDone()}"-->
+<!--                android:text="@string/alert_btn_continue" />-->
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_pickup_material_action"
             style="@style/TPLogistics.MaterialButton.Accent.Margin"
-            android:onClick="@{() -> vm.submitPickupMaterial()}" />
+            android:onClick="@{() -> vm.submitPickupMaterial()}"
+            android:text="@string/alert_btn_continue" />
 
 
     </LinearLayout>

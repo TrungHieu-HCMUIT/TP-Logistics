@@ -101,14 +101,14 @@ class PickupMaterialVM : BaseRepoViewModel<WorkFlowRepo, PickupMaterialUV>() {
 //            CustomLogger.e("Need submit arrive at Pickup Location")
 //            repo?.submitPickupArrive(apiCallback)
 //        } else {
-//            getJobDataAtPickupMaterial()
+            getJobDataAtPickupMaterial()
 //        }
     }
 
     private fun getJobDataAtPickupMaterial() {
 //        needSubmitArriveAtPickupLocation = false
-//        latestJob = LocalJob.get().getLatestJob() ?: return
-//        isTripBased = latestJob!!.tripBase
+        latestJob = LocalJob.get().getLatestJob() ?: return
+        isTripBased = latestJob!!.tripBase
 //        unLandedVehicleWeight = latestJob!!.unladenWeight
 //        if (isTripBased) {
 //            repo?.getJobAtPickupDone(callback = apiCallback)
