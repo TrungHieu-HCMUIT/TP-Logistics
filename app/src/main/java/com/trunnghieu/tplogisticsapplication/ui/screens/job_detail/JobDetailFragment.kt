@@ -9,6 +9,7 @@ import com.trunnghieu.tplogisticsapplication.databinding.FragmentJobDetailBindin
 import com.trunnghieu.tplogisticsapplication.ui.base.fragment.BaseFragment
 import com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM
 import com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.delivery_location.DeliveryLocationFragment
+import com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.discharge_material.DischargeMaterialFragment
 
 class JobDetailFragment : BaseFragment<FragmentJobDetailBinding, JobDetailVM>(), JobDetailUV {
 
@@ -70,13 +71,13 @@ class JobDetailFragment : BaseFragment<FragmentJobDetailBinding, JobDetailVM>(),
     }
 
     override fun showDischargeMaterial(showJobCompleteButton: Boolean) {
-//        viewModel.replaceRootFragment(
-//            DischargeMaterialFragment.newInstance(
-//                showJobCompleteButton,
-//                jobVM.latestJob.value?.landenWeight ?: 0.0,
-//                jobVM.latestJob.value?.actualWeightKg ?: 0.0
-//            )
-//        )
+        viewModel.replaceRootFragment(
+            DischargeMaterialFragment.newInstance(
+                showJobCompleteButton,
+                0.0,
+                0.0
+            )
+        )
     }
 
     override fun replaceRootFragment(fragment: Fragment) {

@@ -31,6 +31,7 @@
             <LinearLayout
                 android:id="@+id/view_job_data"
                 style="@style/RootLayout.WrapHeight"
+                android:layout_height="400dp"
                 android:background="@android:color/transparent"
                 android:paddingStart="@dimen/layout_detail_padding_default"
                 android:paddingTop="@dimen/layout_detail_padding_default"

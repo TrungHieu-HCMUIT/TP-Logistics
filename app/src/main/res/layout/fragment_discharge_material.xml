@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.discharge_material.DischargeMaterialVM" />
+
+        <variable
+            name="jobVM"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+
+        <variable
+            name="showDischargeData"
+            type="Boolean" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/RootLayout"
+        android:background="@android:color/transparent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:fillViewport="true"
+            android:paddingStart="@dimen/layout_detail_padding_default"
+            android:paddingTop="@dimen/layout_detail_padding_default"
+            android:paddingEnd="@dimen/layout_detail_padding_default"
+            android:scrollbars="none"
+            tools:ignore="InefficientWeight,Suspicious0dp">
+
+            <LinearLayout style="@style/RootLayout.WrapHeight">
+
+                <include
+                    layout="@layout/view_job_title"
+                    app:bookingNo="@{jobVM.latestJob.bookingNo}"
+                    app:loadNo="@{jobVM.latestJob.loadNo}" />
+
+                <include
+                    android:id="@+id/view_job_detail"
+                    layout="@layout/view_job_detail"
+                    app:highlightDataChanged="@{jobVM.highlightDataChanged}"
+                    app:jobData="@{jobVM.latestJob}"
+                    app:showWeightData="@{jobVM.latestJob.tripBase == false}" />
+
+                <LinearLayout
+                    style="@style/RootLayout.WrapHeight"
+                    android:gravity="center">
+
+                    <include layout="@layout/spacing_vertical" />
+
+                    <include
+                        android:id="@+id/view_input_tonnage"
+                        layout="@layout/view_input_tonnage"
+                        android:visibility="gone" />
+
+                    <include
+                        android:id="@+id/view_net_weight"
+                        layout="@layout/view_net_weight"
+                        android:visibility="gone"
+                        app:editNetWeightOnClick="@{() -> vm.editNetWeight()}"
+                        app:netWeight="@{`18 tons`}"
+                        app:showEst="@{false}" />
+
+                    <TextView
+                        android:id="@+id/view_do_reminder"
+                        style="@style/TPLogistics.TextAppearance.Primary"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:textAllCaps="true"
+                        android:textColor="@color/primary"
+                        android:textStyle="bold"
+                        tools:text="@string/job_detail_msg_get_the_do_signed" />
+
+                    <include layout="@layout/spacing_vertical" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_submit"
+            style="@style/TPLogistics.MaterialButton.Accent.Margin"
+            android:onClick="@{() -> vm.confirmNetWeight()}"
+            android:text="@string/job_detail_btn_submit"
+            android:visibility="gone" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_job_complete"
+            style="@style/TPLogistics.MaterialButton.Accent.Margin"
+            android:onClick="@{() -> vm.requestJobComplete()}"
+            android:text="@string/job_detail_btn_complete_job"
+            android:visibility="gone" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_discharge"
+            style="@style/TPLogistics.MaterialButton.Accent.Margin"
+            android:onClick="@{() -> vm.requestJobComplete()}"
+            android:text="@string/job_detail_btn_discharge"
+            android:visibility="gone" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_scan_do"
+            style="@style/TPLogistics.MaterialButton.Accent.Margin"
+            android:onClick="@{() -> vm.startScanDO()}"
+            android:text="@string/job_detail_btn_scan_do"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</layout>

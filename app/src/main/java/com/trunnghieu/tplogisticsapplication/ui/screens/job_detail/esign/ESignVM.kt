@@ -73,7 +73,7 @@ class ESignVM : BaseRepoViewModel<DeliveryWorkFlowRepo, ESignUV>() {
 //            remark.value ?: "",
 //            job.orgCode,
 //            job.bookingNo,
-//            job.loadNo,
+//            job.load          No,
 //            forPickup.value ?: true,
 //            object : BaseProgressCallback<Job> {
 //                override fun showProgress(show: Boolean) {

@@ -91,7 +91,7 @@ class DeliveryLocationVM : BaseRepoViewModel<WorkFlowRepo, DeliveryLocationUV>()
 //        if (!isConnected) {
 //            // No-Connectivity mode
 //            latestJob = LocalJob.get().getLatestJob() ?: return
-            latestJob.jobStatus = ApiConst.JobStatus.DRIVER_DELIVERY_ARRIVED.statusCode
+//            latestJob.jobStatus = ApiConst.JobStatus.DRIVER_DELIVERY_ARRIVED.statusCode
             uiCallback?.deliveryArriveDone(ApiConst.JobStatus.DRIVER_DELIVERY_ARRIVED)
 //            return
 //        }

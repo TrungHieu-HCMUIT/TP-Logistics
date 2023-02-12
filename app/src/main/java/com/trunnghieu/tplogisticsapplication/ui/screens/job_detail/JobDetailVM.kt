@@ -39,12 +39,12 @@ class JobDetailVM : BaseRepoViewModel<DeliveryWorkFlowRepo, JobDetailUV>() {
             if (jobStatus == ApiConst.JobStatus.DRIVER_PICKUP_DONE) {
                 uiCallback?.showDeliveryLocation()
             }
-//            if (jobStatus == ApiConst.JobStatus.DRIVER_DELIVERY_ARRIVED
-//                || jobStatus == ApiConst.JobStatus.DRIVER_DISCHARGE_TONNAGE_SUBMITTED
-//            ) {
-//                jobTitle.value = context.getString(R.string.job_detail_title_discharge_material)
-//                uiCallback?.showDischargeMaterial(true)
-//            }
+            if (jobStatus == ApiConst.JobStatus.DRIVER_DELIVERY_ARRIVED
+                || jobStatus == ApiConst.JobStatus.DRIVER_DISCHARGED_DONE
+            ) {
+                jobTitle.value = context.getString(R.string.job_detail_title_discharge_material)
+                uiCallback?.showDischargeMaterial(true)
+            }
 //            if (jobStatus == ApiConst.JobStatus.DRIVER_DISCHARGED) {
 //                jobTitle.value = context.getString(R.string.job_detail_title_discharge_material)
 //                uiCallback?.showDischargeMaterial(false)

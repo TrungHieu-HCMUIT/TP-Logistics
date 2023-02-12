@@ -194,6 +194,9 @@ class PickupMaterialFragment(private val jobDetailVM: JobDetailVM? = null) :
                 needSubmitPickupDone = true
                 getAvailableJob()
             }
+            jobVM.run {
+                changeJobStatus(ApiConst.JobStatus.DRIVER_PICKUP_DONE)
+            }
         }
     }
 
