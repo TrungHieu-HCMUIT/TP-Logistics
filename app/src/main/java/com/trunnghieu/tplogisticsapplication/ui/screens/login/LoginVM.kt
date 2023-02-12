@@ -1,14 +1,15 @@
 package com.trunnghieu.tplogisticsapplication.ui.screens.login
 
 import android.Manifest
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.*
 import com.trunnghieu.tplogisticsapplication.data.preferences.AppPrefs
 import com.trunnghieu.tplogisticsapplication.data.repository.remote.account.AccountRepo
 import com.trunnghieu.tplogisticsapplication.ui.base.BaseRepoViewModel
 import com.trunnghieu.tplogisticsapplication.utils.helper.AppPreferences
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 
 class LoginVM : BaseRepoViewModel<AccountRepo, LoginUV>() {
@@ -99,7 +100,15 @@ class LoginVM : BaseRepoViewModel<AccountRepo, LoginUV>() {
      * Request login when touch on Login button
      */
     fun login() {
-        requestLogin()
+        //TODO: Fake
+        showLoading(true)
+        viewModelScope.launch(Dispatchers.IO) {
+            delay(2000)
+            withContext(Dispatchers.Main) {
+                showLoading(false)
+                requestLogin()
+            }
+        }
     }
 
     fun requestLogin(savedUserName: String? = null, savedPassword: String? = null) {

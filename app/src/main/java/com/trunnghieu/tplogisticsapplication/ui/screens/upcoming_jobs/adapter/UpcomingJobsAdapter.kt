@@ -41,6 +41,10 @@ class UpcomingJobsAdapter(private val listener: OnJobSelectedListener) :
         } else {
             binding.run {
                 selected = lastSelectedItemPosition == position
+                tvPickupLocation.text = item.pickUpLocation
+                tvDeliveryLocation.text = item.deliveryLocation
+                tvCustomerName.text = item.customerName
+                tvProductType.text = item.product
                 root.setOnClickListener {
                     if (lastSelectedItemPosition == holder.absoluteAdapterPosition) {
                         lastSelectedItemPosition = -1

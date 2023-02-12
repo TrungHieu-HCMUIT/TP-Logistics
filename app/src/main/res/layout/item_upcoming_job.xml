@@ -103,7 +103,6 @@
                     <TextView
                         android:id="@+id/tv_pickup_location"
                         style="@style/TPLogistics.TextAppearance.Primary"
-                        android:text="Pick up location"
                         android:textColor="@color/textPrimary"
                         android:textStyle="bold"
                         tools:text="Pick up location" />
@@ -135,7 +134,6 @@
                     <TextView
                         android:id="@+id/tv_delivery_location"
                         style="@style/TPLogistics.TextAppearance.Primary"
-                        android:text="Delivery location"
                         android:textColor="@color/textPrimary"
                         android:textStyle="bold"
                         tools:text="Delivery location" />
@@ -189,7 +187,6 @@
                             <TextView
                                 android:id="@+id/tv_customer_name"
                                 style="@style/TPLogistics.TextAppearance.Primary"
-                                android:text="VDTH"
                                 android:textColor="@color/textPrimary"
                                 android:textStyle="bold"
                                 tools:text="VDTH" />
@@ -213,7 +210,6 @@
                             <TextView
                                 android:id="@+id/tv_product_type"
                                 style="@style/TPLogistics.TextAppearance.Primary"
-                                android:text="20MM"
                                 android:textColor="@color/textPrimary"
                                 android:textStyle="bold"
                                 tools:text="20MM" />
