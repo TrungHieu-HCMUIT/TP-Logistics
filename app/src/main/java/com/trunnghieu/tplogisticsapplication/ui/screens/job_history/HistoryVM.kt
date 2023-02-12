@@ -1,6 +1,7 @@
 package com.trunnghieu.tplogisticsapplication.ui.screens.job_history
 
 import androidx.lifecycle.MutableLiveData
+import com.trunnghieu.tplogisticsapplication.FakeData
 import com.trunnghieu.tplogisticsapplication.data.repository.remote.delivery_driver_report.DeliveryDriverReportRepo
 import com.trunnghieu.tplogisticsapplication.data.repository.remote.delivery_workflow_service.Job
 import com.trunnghieu.tplogisticsapplication.ui.base.BaseRepoViewModel
@@ -49,8 +50,7 @@ class HistoryVM : BaseRepoViewModel<DeliveryDriverReportRepo, HistoryUV>() {
      * Request get all history
      */
     fun getAllHistoryJobs() {
-        val jobs = mutableListOf<Job>()
-        historyList.value = jobs
+        historyList.value = FakeData.upcomingJobList
     }
 
     /**

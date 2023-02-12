@@ -59,7 +59,7 @@
             <include
                 layout="@layout/view_job_detail"
                 app:jobData="@{item}"
-                app:showDetail="@{false}"
+                app:showDetail="@{true}"
                 app:showNoteForDriver="@{false}"
                 app:showWeightData="@{false}" />
 

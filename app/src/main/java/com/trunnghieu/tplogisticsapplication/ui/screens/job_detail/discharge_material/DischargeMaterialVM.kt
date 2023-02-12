@@ -41,8 +41,8 @@ class DischargeMaterialVM : BaseRepoViewModel<WorkFlowRepo, DischargeMaterialUV>
     private var netWeightFromPickup = 0.0
     val netWeight = MutableLiveData(0.0)
     private var deliveryESignAvailable = false
-    private var eSignRequired = true
-    var editWorkingTimeRequired = false
+    var eSignRequired = true
+    var editWorkingTimeRequired = true
     var alreadySubmitWorkingTime = false
     var needSubmitJobComplete = false
 
@@ -434,7 +434,7 @@ class DischargeMaterialVM : BaseRepoViewModel<WorkFlowRepo, DischargeMaterialUV>
      */
     fun submitJobComplete() {
 //        stopRefreshScanStatus()
-//        if (checkExtraCasesAtDischarge()) return
+        if (checkExtraCasesAtDischarge()) return
 //        repo?.submitJobComplete(callback = object : BaseRepoCallback<Job> {
 //            override fun apiRequesting(showLoading: Boolean) {
 //                showLoading(showLoading)

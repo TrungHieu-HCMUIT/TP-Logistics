@@ -77,8 +77,8 @@
                 app:showDrawableStartRight="@{true}"
                 app:titleLeft="@{@string/history_pickup_location}"
                 app:titleRight="@{@string/history_delivery_location}"
-                app:valueLeft="@{`Pick up location`}"
-                app:valueRight="@{`Delivery location`}" />
+                app:valueLeft="@{jobData.pickUpLocation}"
+                app:valueRight="@{jobData.deliveryLocation}" />
 
             <View
                 android:layout_width="0dp"
@@ -120,8 +120,8 @@
                     app:highlightRight="@{false}"
                     app:titleLeft="@{@string/history_customer_name}"
                     app:titleRight="@{@string/history_product_type}"
-                    app:valueLeft="@{`VDTH`}"
-                    app:valueRight="@{`VDTH`}" />
+                    app:valueLeft="@{jobData.customerName}"
+                    app:valueRight="@{jobData.product}" />
 
                 <LinearLayout style="@style/RootLayout.WrapHeight">
 
@@ -190,8 +190,8 @@
                             app:highlightRight="@{false}"
                             app:titleLeft="@{@string/history_pickup_date}"
                             app:titleRight="@{@string/history_pickup_time}"
-                            app:valueLeft="@{`19/09/2022`}"
-                            app:valueRight="@{`19/09/2022`}" />
+                            app:valueLeft="@{jobData.getFormattedDate(jobData.pickUpDoneTime)}"
+                            app:valueRight="@{jobData.getFormattedTime(jobData.pickUpDoneTime)}" />
 
                     </LinearLayout>
 
@@ -216,8 +216,8 @@
                             app:highlightRight="@{false}"
                             app:titleLeft="@{@string/history_discharge_date}"
                             app:titleRight="@{@string/history_discharge_time}"
-                            app:valueLeft="@{`19/09/2022`}"
-                            app:valueRight="@{`19/09/2022`}" />
+                            app:valueLeft="@{jobData.getFormattedDate(jobData.dischargeTime)}"
+                            app:valueRight="@{jobData.getFormattedTime(`Discharge`)}" />
 
                     </LinearLayout>
 
@@ -229,7 +229,6 @@
                             style="@style/RootLayout.WrapHeight"
                             android:layout_marginStart="@dimen/_32sdp"
                             android:layout_marginEnd="@dimen/_32sdp">
-
                             <include layout="@layout/divider_dashed" />
 
                         </LinearLayout>

@@ -60,6 +60,15 @@ object DateTimeHelper {
     }
 
     /**
+     * Convert current milliseconds to time
+     */
+    @JvmStatic
+    fun currentMillisToTime(timeFormat: String): String {
+        val sdf = SimpleDateFormat(timeFormat, Locale.ENGLISH)
+        return sdf.format(Date(System.currentTimeMillis()))
+    }
+
+    /**
      * Convert milliseconds to date
      */
     @JvmStatic
