@@ -111,6 +111,34 @@ class JobVM : BaseRepoViewModel<AccountRepo, JobUV>() {
         uiCallback?.loadHamburgerMenu(hamburgerMenuList)
     }
 
+    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
+    fun observeJobStatus() {
+        driverRepo.latestJobStatus.observe(lifecycleOwner, jobStatusObserver)
+    }
+
+    private val jobStatusObserver = Observer<ApiConst.JobStatus> { jobStatus ->
+        navigateScreenBasedOnStatus(jobStatus)
+    }
+
+    private fun navigateScreenBasedOnStatus(jobStatus: ApiConst.JobStatus? = null) {
+//        startUpdateDriverLocation()
+        when (jobStatus) {
+            ApiConst.JobStatus.OPEN,
+            ApiConst.JobStatus.ASSIGNED -> {
+
+            }
+            ApiConst.JobStatus.DRIVER_JOB_COMPLETED -> {
+                val latestJob = LocalJob.get().getLatestJob()
+                if (latestJob == null) {
+                    uiCallback?.goToStartWork()
+                } else {
+                    uiCallback?.goToJobSummary()
+                }
+            }
+        }
+
+    }
+
     /**
      * Change app language
      */

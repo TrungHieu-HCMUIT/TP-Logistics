@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.end_work.EndWorkVM" />
+
+        <variable
+            name="jobVM"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+
+    </data>
+
+    <LinearLayout style="@style/RootLayout">
+
+        <include
+            layout="@layout/view_toolbar"
+            app:leftIcon="@{@drawable/ic_hamburger}"
+            app:leftIconOnClick="@{() -> jobVM.openMenu()}"
+            app:title="@{@string/end_work_title}" />
+
+        <LinearLayout
+            style="@style/TPLogistics.Layout.BorderTop.JobDetail"
+            android:baselineAligned="false">
+
+            <TextView
+                style="@style/TPLogistics.TextAppearance.Primary"
+                android:layout_gravity="center"
+                android:text="@string/end_work_msg"
+                android:textStyle="bold" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="anims/end_work.json"
+                app:lottie_loop="false" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

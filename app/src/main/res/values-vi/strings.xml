@@ -269,4 +269,10 @@
     <string name="e_sign_remark">Remark</string>
     <string name="e_sign_btn_clear">Clear</string>
 
+    <string name="job_summary_btn_continue_work">Tiếp tục</string>
+    <string name="job_summary_btn_end_work">Hoàn thành</string>
+
+    <!-- End Work -->
+    <string name="end_work_title">Hoàn thành</string>
+    <string name="end_work_msg">Bạn đã hoàn thành công việc hôm nay!</string>
 </resources>

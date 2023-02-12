@@ -14,4 +14,6 @@ interface JobUV : BaseUserView {
     fun goToLogin()
     fun gotCsoPhoneNumber(csoPhoneNumbers: List<CsoPhoneNumber>)
     fun backToVehiclePairing()
+    fun goToStartWork()
+    fun goToJobSummary()
 }

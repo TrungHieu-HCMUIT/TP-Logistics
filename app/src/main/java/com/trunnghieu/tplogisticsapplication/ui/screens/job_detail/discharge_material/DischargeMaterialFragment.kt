@@ -256,7 +256,9 @@ class DischargeMaterialFragment :
         eSignDialog = ESignDialog.show(parentFragmentManager, jobVM, false) {
             viewModel.run {
                 needSubmitJobComplete = true
+                alreadySubmitWorkingTime = true
                 getAvailableJob()
+                showJobCompleteAction()
             }
         }
     }

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.job_summary.JobSummaryVM" />
+
+        <variable
+            name="jobVM"
+            type="com.trunnghieu.tplogisticsapplication.ui.screens.job.JobVM" />
+
+    </data>
+
+    <LinearLayout style="@style/RootLayout">
+
+        <include
+            layout="@layout/view_toolbar"
+            app:leftIcon="@{@drawable/ic_hamburger}"
+            app:leftIconOnClick="@{() -> jobVM.openMenu()}"
+            app:refreshOnClick="@{() -> jobVM.refreshJobData()}"
+            app:showRefresh="@{jobVM.showRefreshButton}"
+            app:title="@{@string/job_detail_title_job_summary}" />
+
+        <LinearLayout
+            style="@style/TPLogistics.Layout.BorderTop.JobDetail"
+            android:baselineAligned="false">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                tools:ignore="InefficientWeight">
+
+                <LinearLayout style="@style/RootLayout.WrapHeight">
+
+                    <include
+                        layout="@layout/view_job_title"
+                        app:bookingNo="@{jobVM.latestJob.bookingNo}"
+                        app:loadNo="@{jobVM.latestJob.loadNo}" />
+
+                    <include
+                        layout="@layout/view_job_detail"
+                        app:highlightDataChanged="@{jobVM.highlightDataChanged}"
+                        app:jobData="@{jobVM.latestJob}"
+                        app:showESign="@{false}"
+                        app:showWeightData="@{jobVM.latestJob.tripBase == false}" />
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:layout_marginStart="@dimen/layout_margin_default"
+                android:layout_marginEnd="@dimen/layout_margin_default">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/TPLogistics.MaterialButton.Accent"
+                    android:onClick="@{() -> vm.continueWork()}"
+                    android:text="@string/job_summary_btn_continue_work" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/TPLogistics.MaterialButton.Secondary.Grey"
+                    android:onClick="@{() -> vm.endWork()}"
+                    android:text="@string/job_summary_btn_end_work" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

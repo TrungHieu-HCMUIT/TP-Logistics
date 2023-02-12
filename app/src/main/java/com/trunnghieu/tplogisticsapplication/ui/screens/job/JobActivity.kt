@@ -11,6 +11,7 @@ import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import com.trunnghieu.tplogisticsapplication.R
+import com.trunnghieu.tplogisticsapplication.data.api.ApiConst
 import com.trunnghieu.tplogisticsapplication.data.repository.local.menu.HamburgerMenu
 import com.trunnghieu.tplogisticsapplication.data.repository.remote.account.cso.CsoPhoneNumber
 import com.trunnghieu.tplogisticsapplication.databinding.ActivityJobBinding
@@ -23,6 +24,7 @@ import com.trunnghieu.tplogisticsapplication.ui.base.fragment.FragmentNavigator
 import com.trunnghieu.tplogisticsapplication.ui.screens.account_settings.AccountSettingsFragment
 import com.trunnghieu.tplogisticsapplication.ui.screens.cso.CsoPhoneAdapter
 import com.trunnghieu.tplogisticsapplication.ui.screens.job.adapter.MenuAdapter
+import com.trunnghieu.tplogisticsapplication.ui.screens.job_detail.job_summary.JobSummaryFragment
 import com.trunnghieu.tplogisticsapplication.ui.screens.job_history.HistoryFragment
 import com.trunnghieu.tplogisticsapplication.ui.screens.login.LoginActivity
 import com.trunnghieu.tplogisticsapplication.ui.screens.vehicle_pairing.VehiclePairingFragment
@@ -77,6 +79,9 @@ class JobActivity : BaseConnectivityActivity<ActivityJobBinding, JobVM>(), JobUV
 
     override fun initData() {
         viewModel.appVersion.value = DeviceHelper.getAppVersion(context)
+
+        //TODO: Fake reset data
+        viewModel.changeJobStatus(ApiConst.JobStatus.DRIVER_JOB_STARTED)
 
         // Drawer Layout
         drawer.apply {
@@ -206,6 +211,14 @@ class JobActivity : BaseConnectivityActivity<ActivityJobBinding, JobVM>(), JobUV
             false,
             ""
         )
+    }
+
+    override fun goToStartWork() {
+
+    }
+
+    override fun goToJobSummary() {
+        getNavigator().rootFragment = JobSummaryFragment()
     }
 
     override fun onDrawerSlide(drawerView: View, slideOffset: Float) {

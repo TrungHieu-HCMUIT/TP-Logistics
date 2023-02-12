@@ -268,4 +268,11 @@
     <string name="e_sign_remark">Remark</string>
     <string name="e_sign_btn_clear">Clear</string>
 
+    <string name="job_summary_btn_continue_work">Continue Work</string>
+    <string name="job_summary_btn_end_work">End Work</string>
+
+    <!-- End Work -->
+    <string name="end_work_title">End Work</string>
+    <string name="end_work_msg">You have ended work for the day!</string>
+
 </resources>

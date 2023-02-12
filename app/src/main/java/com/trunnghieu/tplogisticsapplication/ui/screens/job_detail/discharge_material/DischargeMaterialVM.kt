@@ -4,6 +4,7 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.MutableLiveData
+import com.trunnghieu.tplogisticsapplication.data.api.ApiConst
 import com.trunnghieu.tplogisticsapplication.data.repository.local.job.LocalJob
 import com.trunnghieu.tplogisticsapplication.data.repository.remote.BaseRepoCallback
 import com.trunnghieu.tplogisticsapplication.data.repository.remote.delivery_workflow_service.DeliveryWorkFlowRepo
@@ -345,6 +346,12 @@ class DischargeMaterialVM : BaseRepoViewModel<WorkFlowRepo, DischargeMaterialUV>
         uiCallback?.showBtnAction(showSubmitBtn, showActionBtn, showDischargeBtn, actionForJobComplete)
     }
 
+    fun showJobCompleteAction() {
+        showDischargeBtn = false
+        uiCallback?.showBtnAction(showSubmitBtn, showActionBtn, showDischargeBtn, actionForJobComplete)
+    }
+
+
     /**
      * Edit net weight
      */
@@ -427,7 +434,7 @@ class DischargeMaterialVM : BaseRepoViewModel<WorkFlowRepo, DischargeMaterialUV>
      */
     fun submitJobComplete() {
 //        stopRefreshScanStatus()
-        if (checkExtraCasesAtDischarge()) return
+//        if (checkExtraCasesAtDischarge()) return
 //        repo?.submitJobComplete(callback = object : BaseRepoCallback<Job> {
 //            override fun apiRequesting(showLoading: Boolean) {
 //                showLoading(showLoading)
@@ -445,7 +452,7 @@ class DischargeMaterialVM : BaseRepoViewModel<WorkFlowRepo, DischargeMaterialUV>
 //                    }
 //                }
 //
-//                uiCallback?.dischargeDone(ApiConst.JobStatus.valueOf(data.jobStatus))
+                uiCallback?.dischargeDone(ApiConst.JobStatus.DRIVER_JOB_COMPLETED)
 //            }
 //
 //            override fun showMessage(message: String?) {

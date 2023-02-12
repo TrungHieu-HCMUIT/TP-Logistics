@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.trunnghieu.tplogisticsapplication.R
+import com.trunnghieu.tplogisticsapplication.data.api.ApiConst
 import com.trunnghieu.tplogisticsapplication.data.repository.local.driver.DriverRepo
 import com.trunnghieu.tplogisticsapplication.databinding.FragmentJobDetailBinding
 import com.trunnghieu.tplogisticsapplication.ui.base.fragment.BaseFragment
